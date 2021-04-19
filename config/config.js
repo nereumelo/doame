@@ -1,6 +1,6 @@
 module.exports = {
   "username": "root",
-  "password": "12345",
+  "password": "051996",
   "database": "doame",
   "host": "127.0.0.1",
   "dialect": "mysql",
