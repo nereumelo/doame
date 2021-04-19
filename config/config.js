@@ -1,8 +1,8 @@
 module.exports = {
-  "username": "root",
-  "password": "@Zoidegato232",
+  "username": "doameADM@doame-server",
+  "password": "doame123.",
   "database": "doame",
-  "host": "127.0.0.1",
+  "host": "doame-server.mysql.database.azure.com",
   "dialect": "mysql",
   "port": "3306"
 }

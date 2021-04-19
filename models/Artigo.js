@@ -4,11 +4,11 @@ module.exports = (sequelize, DataTypes) => {
       parceiros_id: DataTypes.INTEGER,
       titulo: DataTypes.STRING,
       corpo: DataTypes.TEXT,
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE
+      created_at: DataTypes.DATE,
+      updated_at: DataTypes.DATE
     }, {
       tableName: "artigos",
-      timestamps: true
+      timestamps: false
     }
   );
 
