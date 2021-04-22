@@ -2,11 +2,10 @@ module.exports = (sequelize, DataTypes) => {
     
     const Parceiro = sequelize.define(
       'Parceiro', {
-        enderecos_id: DataTypes.INTEGER,
-        nome: DataTypes.STRING,
-        cnpj: DataTypes.STRING(14),
-        email: DataTypes.STRING,
-        senha: DataTypes.STRING,
+        nome: DataTypes.STRING(150),
+        cnpj: DataTypes.STRING(20),
+        email: DataTypes.STRING(100),
+        senha: DataTypes.STRING(45),
         created_at: DataTypes.DATE,
      
       }, {

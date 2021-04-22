@@ -2,14 +2,15 @@ module.exports = (sequelize, DataTypes) => {
 
     const Endereco = sequelize.define(
         "Endereco", {
-            pais: DataTypes.STRING,
-            estado: DataTypes.STRING,
-            cidade: DataTypes.STRING,
-            bairro: DataTypes.STRING,
-            logradouro: DataTypes.STRING,
-            cep: DataTypes.STRING,
-            numero: DataTypes.STRING,
-            complemento: DataTypes.STRING
+            parceiros_id: DataTypes.INTEGER,
+            pais: DataTypes.STRING(100),
+            estado: DataTypes.STRING(100),
+            cidade: DataTypes.STRING(100),
+            bairro: DataTypes.STRING(100),
+            logradouro: DataTypes.STRING(200),
+            cep: DataTypes.STRING(20),
+            numero: DataTypes.STRING(10),
+            complemento: DataTypes.STRING(150)
         }, {
             tableName: "enderecos",
             timestamps: false
