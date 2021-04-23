@@ -7,6 +7,18 @@ const doacoesController = {
         return res.json(doacoes);
     },
 
+    showParceiros: async (req, res) => {
+        const { doadores_id } = req.params;
+
+        const doacoesDoador = await Doacao.findAll({
+            where: {
+                doadores_id: doadores_id
+            }
+        });
+
+        return res.json(doacoesDoador);
+    },
+
     create: async (req, res) => {
         const { parceiros_id, doadores_id, valor, forma_pagamento, status, created_at } = req.body;
 
