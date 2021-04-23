@@ -3,18 +3,16 @@ const { Imagem } = require('../models');
 const imagensController = {
     index: async (req, res) => {
         const imagens = await Imagem.findAll();
-
         return res.json(imagens);
     },
 
     create: async (req, res) => {
-        const { parceiros_id, artigos_id, url, created_at } = req.body;
+        const { parceiros_id, artigos_id, url } = req.body;
 
         const novaImagem = await Imagem.create({
             parceiros_id,
             artigos_id,
             url,
-            created_at
         });
         return res.json(novaImagem);
     },
@@ -24,9 +22,7 @@ const imagensController = {
         const newImagem = req.body;
 
         await Imagem.update(newImagem, {
-            where: {
-                id: id
-            }
+            where: { id }
         });
 
         return res.json(newImagem);
@@ -35,9 +31,7 @@ const imagensController = {
         const { id } = req.params;
 
         const imagemDeletada = await Imagem.destroy({
-            where: {
-                id: id
-            }
+            where: { id }
         });
 
         return res.json(imagemDeletada);

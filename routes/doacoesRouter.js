@@ -1,6 +1,6 @@
 const express = require('express');
-const doacoesController = require('../controllers/doacoesController');
 const router = express.Router();
+const doacoesController = require('../controllers/doacoesController');
 
 router.get('/', doacoesController.index);
 router.get('/:doadores_id', doacoesController.showParceiros);
