@@ -1,13 +1,13 @@
-const { Endereco, sequelize} = require('../models');
+const { Endereco, sequelize } = require('../models');
 
 const enderecoController = {
-    index: async(req, res) => {
+    index: async (req, res) => {
         let enderecos = await Endereco.findAll()
         return res.json(enderecos);
     },
 
-   create: async(req, res) => {
-        let { pais, estado, cidade, bairro, logradouro, cep, numero, complemento} = req.body;
+    create: async (req, res) => {
+        let { pais, estado, cidade, bairro, logradouro, cep, numero, complemento } = req.body;
         let crearEndereco = await Endereco.create({
             pais,
             estado,
@@ -23,8 +23,8 @@ const enderecoController = {
     },
 
     update: async (req, res) => {
-        let {id} = req.params;
-        let {pais, estado, cidade, bairro, logradouro, cep, numero, complemento} = req.body;
+        let { id } = req.params;
+        let { pais, estado, cidade, bairro, logradouro, cep, numero, complemento } = req.body;
 
         let enderecoAtualizar = await Endereco.update({
             pais,
@@ -35,18 +35,18 @@ const enderecoController = {
             cep,
             numero,
             complemento
-        },{
-            where: {id}
+        }, {
+            where: { id }
         });
 
         return res.send(enderecoAtualizar);
     },
 
-    delete: async(req, res) => {
-        let {id} = req.params;
+    delete: async (req, res) => {
+        let { id } = req.params;
 
         const enderecoDeletado = await Endereco.destroy({
-            where: {id}
+            where: { id }
         });
 
         return res.json(enderecoDeletado);

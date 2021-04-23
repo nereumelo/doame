@@ -7,15 +7,13 @@ const parceirosController = {
         return res.json(parceiros);
     },
     create: async (req, res) => {
-        const { enderecos_id, nome, cnpj, email, senha, created_at } = req.body;
+        const { nome, cnpj, email, senha } = req.body;
 
         const novoParceiro = await Parceiro.create({
-            enderecos_id,
             nome,
             cnpj,
             email,
-            senha,
-            created_at
+            senha
         });
         return res.json(novoParceiro);
     },
@@ -23,27 +21,27 @@ const parceirosController = {
     update: async (req, res) => {
         const { id } = req.params;
         const newParceiro = req.body;
-    
+
         await Parceiro.update(newParceiro, {
-          where: {
-            id: id
-          }
+            where: {
+                id: id
+            }
         });
-    
+
         return res.json(newParceiro);
-      }
+    }
     ,
-      delete: async (req, res) => {
+    delete: async (req, res) => {
         const { id } = req.params;
-    
+
         const parceiroDeletado = await Parceiro.destroy({
-          where: {
-            id: id
-          }
+            where: {
+                id: id
+            }
         });
-    
+
         return res.json(parceiroDeletado);
-      }
+    }
 }
 
 module.exports = parceirosController;
