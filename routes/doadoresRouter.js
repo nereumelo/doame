@@ -1,6 +1,6 @@
 const express = require('express');
-const doadoresController = require('../controllers/doadoresController');
 const router = express.Router();
+const doadoresController = require('../controllers/doadoresController');
 
 router.get('/', doadoresController.index);
 router.post('/', doadoresController.create);

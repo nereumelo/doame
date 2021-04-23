@@ -26,11 +26,9 @@ const doacoesController = {
         const { id } = req.params;
         const atualizarDoacao = req.body;
 
-        await Doador.update(
-            atualizarDoacao, {
-            where: { id: id }
-        }
-        );
+        await Doador.update( atualizarDoacao, {
+            where: { id }
+        });
 
         return res.json(atualizarDoacao);
     },
