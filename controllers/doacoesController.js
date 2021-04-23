@@ -7,7 +7,7 @@ const doacoesController = {
         return res.json(doacoes);
     },
 
-    showParceiros: async (req, res) => {
+    showDoadores: async (req, res) => {
         const { doadores_id } = req.params;
 
         const doacoesDoador = await Doacao.findAll({
@@ -17,6 +17,18 @@ const doacoesController = {
         });
 
         return res.json(doacoesDoador);
+    },
+
+    showParceiros: async (req, res) => {
+        const { parceiros_id } = req.params;
+
+        const doacoesParceiro = await Doacao.findAll({
+            where: {
+                parceiros_id: parceiros_id
+            }
+        });
+
+        return res.json(doacoesParceiro);
     },
 
     create: async (req, res) => {
