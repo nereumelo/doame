@@ -8,9 +8,3 @@ router.put('/:id', doacoesController.update);
 router.delete('/:id', doacoesController.delete);
 
 module.exports = router;
-
-app.js
-
-var doacoesRouter = require('./routes/doacoesRouter');
-
-app.use('/doacoes', doacoesRouter);
