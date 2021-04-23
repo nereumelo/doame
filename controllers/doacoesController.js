@@ -11,27 +11,27 @@ const doacoesController = {
         const { parceiros_id, doadores_id, valor, forma_pagamento, status, created_at } = req.body;
 
         const novaDoacao = await Doacao.create({
-           parceiros_id,
-           doadores_id,
-           valor,
-           forma_pagamento,
-           status,
-           created_at 
+            parceiros_id,
+            doadores_id,
+            valor,
+            forma_pagamento,
+            status,
+            created_at
         });
-        
+
         return res.json(novaDoacao);
     },
 
-    update: async (req,res) => {
+    update: async (req, res) => {
         const { id } = req.params;
         const atualizarDoacao = req.body;
 
-        await Doador.update (
+        await Doador.update(
             atualizarDoacao, {
-                where: { id: id}
-            }
+            where: { id: id }
+        }
         );
-         
+
         return res.json(atualizarDoacao);
     },
 
@@ -39,13 +39,13 @@ const doacoesController = {
         const { id } = req.params;
 
         const deletarDoacao = await Doador.destroy({
-            where: { id: id}
+            where: { id: id }
         });
 
         return res.json(deletarDoacao);
-    
+
     },
-        
+
 }
 
 module.exports = doacoesController;

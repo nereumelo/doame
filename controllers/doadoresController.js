@@ -8,7 +8,7 @@ const doadoresController = {
 
 
     create: async (req, res) => {
-        const { nome, email, senha } = req.body; 
+        const { nome, email, senha } = req.body;
 
         const novoDoador = await Doador.create({
             nome,
@@ -22,15 +22,15 @@ const doadoresController = {
     update: async (req, res) => {
         const { id } = req.params;
         const atualizarDoador = req.body;
-    
+
         await Doador.update(atualizarDoador, {
-          where: {
-            id: id
-          }
+            where: {
+                id: id
+            }
         });
-    
+
         return res.json(atualizarDoador);
-      },
+    },
 
     delete: async (req, res) => {
         const { id } = req.params;

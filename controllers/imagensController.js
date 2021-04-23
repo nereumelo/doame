@@ -6,7 +6,7 @@ const imagensController = {
 
         return res.json(imagens);
     },
-    
+
     create: async (req, res) => {
         const { parceiros_id, artigos_id, url, created_at } = req.body;
 
@@ -22,26 +22,26 @@ const imagensController = {
     update: async (req, res) => {
         const { id } = req.params;
         const newImagem = req.body;
-    
+
         await Imagem.update(newImagem, {
-          where: {
-            id: id
-          }
+            where: {
+                id: id
+            }
         });
-    
+
         return res.json(newImagem);
-      },
-      delete: async (req, res) => {
+    },
+    delete: async (req, res) => {
         const { id } = req.params;
-    
+
         const imagemDeletada = await Imagem.destroy({
-          where: {
-            id: id
-          }
+            where: {
+                id: id
+            }
         });
-    
+
         return res.json(imagemDeletada);
-      }
+    }
 
 }
 
