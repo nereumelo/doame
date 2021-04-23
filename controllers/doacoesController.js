@@ -38,7 +38,7 @@ const doacoesController = {
         const { id } = req.params;
         const atualizarDoacao = req.body;
 
-        await Doador.update( atualizarDoacao, {
+        await Doacao.update( atualizarDoacao, {
             where: { id }
         });
 
@@ -48,7 +48,7 @@ const doacoesController = {
     delete: async (req, res) => {
         const { id } = req.params;
 
-        const deletarDoacao = await Doador.destroy({
+        const deletarDoacao = await Doacao.destroy({
             where: { id: id }
         });
 
