@@ -8,5 +8,4 @@ router.post('/', ValidarParceiros, parceirosController.create);
 router.put('/:id', parceirosController.update);
 router.delete('/:id', parceirosController.delete);
 
-
 module.exports = router;
