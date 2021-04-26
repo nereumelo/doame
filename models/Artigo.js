@@ -4,11 +4,23 @@ module.exports = (sequelize, DataTypes) => {
         parceiros_id: DataTypes.INTEGER,
         titulo: DataTypes.STRING(200),
         corpo: DataTypes.TEXT,
-        created_at: DataTypes.DATE,
-        updated_at: DataTypes.DATE
+        createdAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field: 'created_at',
+            allowNull: false
+          },
+          updatedAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field:'updated_at',
+            allowNull: false 
+        }
+        // created_at: DataTypes.DATE,
+        // updated_at: DataTypes.DATE
     }, {
         tableName: "artigos",
-        timestamps: false
+        timestamps: true
     }
     );
     
