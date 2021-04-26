@@ -1,4 +1,5 @@
 const { Doador } = require("../models");
+const bcrypt = require('bcryptjs');
 
 const doadoresController = {
     index: async (req, res) => {
@@ -9,11 +10,12 @@ const doadoresController = {
 
     create: async (req, res) => {
         const { nome, email, senha } = req.body;
+        const senhaCrypt = bcrypt.hashSync(senha, 10);
 
         const novoDoador = await Doador.create({
             nome,
             email,
-            senha
+            senha : senhaCrypt
         });
 
         return res.json(novoDoador);
@@ -40,7 +42,6 @@ const doadoresController = {
                 id: id
             }
         });
-
         return res.json(deleteDoador);
     },
 
