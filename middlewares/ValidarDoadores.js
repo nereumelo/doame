@@ -30,6 +30,6 @@ module.exports = async(request, response, next) => {
 }
 
 function TipoEmail(email){
-    let tipo = /\S+@S+\.\S+/
+    let tipo = /\S+@\S+\.\S+/;
     return tipo.test(email);
 }
