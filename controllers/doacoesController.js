@@ -7,6 +7,30 @@ const doacoesController = {
         return res.json(doacoes);
     },
 
+    showDoadores: async (req, res) => {
+        const { doadores_id } = req.params;
+
+        const doacoesDoador = await Doacao.findAll({
+            where: {
+                doadores_id: doadores_id
+            }
+        });
+
+        return res.json(doacoesDoador);
+    },
+
+    showParceiros: async (req, res) => {
+        const { parceiros_id } = req.params;
+
+        const doacoesParceiro = await Doacao.findAll({
+            where: {
+                parceiros_id: parceiros_id
+            }
+        });
+
+        return res.json(doacoesParceiro);
+    },
+
     create: async (req, res) => {
         const { parceiros_id, doadores_id, valor, forma_pagamento, status } = req.body;
 
@@ -25,7 +49,7 @@ const doacoesController = {
         const { id } = req.params;
         const atualizarDoacao = req.body;
 
-        await Doador.update(atualizarDoacao, {
+        await Doacao.update( atualizarDoacao, {
             where: { id }
         });
 
@@ -35,7 +59,7 @@ const doacoesController = {
     delete: async (req, res) => {
         const { id } = req.params;
 
-        const deletarDoacao = await Doador.destroy({
+        const deletarDoacao = await Doacao.destroy({
             where: { id: id }
         });
 

@@ -9,6 +9,7 @@ var doacoesRouter = require('./routes/doacoesRouter');
 var doadoresRouter = require('./routes/doadoresRouter');
 var parceirosRouter = require('./routes/parceirosRouter');
 
+
 var app = express();
 
 // view engine setup
@@ -25,6 +26,7 @@ app.use('/artigos', artigosRouter);
 app.use('/doacoes', doacoesRouter);
 app.use('/doadores', doadoresRouter);
 app.use('/parceiros', parceirosRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
