@@ -21,7 +21,7 @@ main {
   width: 50%;
   height: 800px;
 
-  padding: 150px;
+  padding: 100px;
   margin: 80px;
 
   background-color: #F9514E;
@@ -37,7 +37,7 @@ main {
 }
 
 .container h1 {
-  font-size: 4.0rem;
+  font-size: 3.9rem;
   font-weight: 700;
   padding: 20px;
 }
@@ -52,6 +52,7 @@ main {
 }
 
 .container h3 {
+  margin-top: 50px;
   font-size: 1.8rem;
   padding: 25px;
 }
@@ -87,4 +88,49 @@ button:hover {
   color: white;
   box-shadow: inset 300px 0 0 0 #7CDCDF;
   width: 300px;
+}
+
+@media only screen and (min-width:1500px) and (max-width: 1800px) {
+  .container {
+    height: 1000px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .container {
+    height: 1000px;
+  }
+  .container h1 {
+    font-size: 3.0rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width:1200px) {
+  .container {
+    height: 1000px;
+    width: 800px;
+  }
+  .container h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+  .container {
+    height: 1000px;
+    width: 800px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 700px) {
+  .container {
+    height: 1200px;
+    width: 500px;
+  }
+  .container h1{
+    font-size: 2.0rem;
+  }
+  a button {
+    width: 200px;
+  }
 }
