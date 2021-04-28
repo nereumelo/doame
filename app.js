@@ -10,7 +10,7 @@ var doadoresRouter = require('./routes/doadoresRouter');
 var parceirosRouter = require('./routes/parceirosRouter');
 
 
-var app = express();
+var app = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', artigosRouter);
 app.use('/doacoes', doacoesRouter);
 app.use('/doadores', doadoresRouter);
-app.use('/parceiros', parceirosRouter);
+app.use('/', parceirosRouter);
 
 
 // catch 404 and forward to error handler

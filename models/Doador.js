@@ -5,11 +5,23 @@ module.exports = (sequelize, DataTypes) => {
         nome: DataTypes.STRING(150),
         email: DataTypes.STRING(100),
         senha: DataTypes.STRING(45),
-        created_at: DataTypes.DATE,
-        updated_at: DataTypes.DATE,
+        createdAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field: 'created_at',
+            allowNull: false
+          },
+          updatedAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field:'updated_at',
+            allowNull: false 
+        }
+        // created_at: DataTypes.DATE,
+        // updated_at: DataTypes.DATE,
     }, {
         tableName: "doadores",
-        timestamps: false
+        timestamps: true
     });
 
     Doador.associate = (models) => {

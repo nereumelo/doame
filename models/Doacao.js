@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM,
             values: ['Em andamento', 'Concluído', 'Não realizado']
         },
-        created_at: DataTypes.DATE,
+        
+         created_at: DataTypes.DATE,
     }, {
         tableName: "doacoes",
         timestamps: false
