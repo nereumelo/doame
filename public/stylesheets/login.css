@@ -161,7 +161,7 @@ form input {
   background-color: var(--vermelho-sangue);
   border: none;
   border-radius: 8px;
-  font-size: 1.0rem;
+  font-size: .8rem;
   font-weight: 700;
   cursor: pointer;
 
@@ -214,5 +214,5 @@ form input {
 
 .sign-up a button:hover {
   color: white;
-  box-shadow: inset 300px 0 0 0 var(--vermelho-claro);
+  box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
 }
