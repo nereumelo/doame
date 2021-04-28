@@ -1,4 +1,4 @@
-const { Parceiro } = require('../models');
+const { Parceiro, Imagem } = require('../models');
 const bcrypt = require('bcryptjs');
 
 const parceirosController = {
@@ -43,7 +43,38 @@ const parceirosController = {
         });
 
         return res.json(parceiroDeletado);
-    }
-}
+    },
 
+    //Controler (Imagem)
+    indexImg: async (req, res) => {
+        const { parceiros_id } = req.params;
+
+        const imagens = await Imagem.findAll({
+            attributes: ['id', 'artigos_id','path', 'created_at'],
+            where: {
+                parceiros_id
+                
+            }
+        });
+        return res.json(imagens);
+    },
+
+    createImg: async (req, res) => {
+        const { parceiros_id } = req.params;
+        const { artigos_id, path } = req.body;
+
+        const novaImagem = await Imagem.create({
+            parceiros_id,
+            artigos_id,
+            path,
+        });
+        
+        return res.json(novaImagem);
+    },
+
+    
+
+
+
+}
 module.exports = parceirosController;

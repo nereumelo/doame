@@ -11,17 +11,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM,
             values: ['Em andamento', 'Concluído', 'Não realizado']
         },
-        // createdAt: {
-        //     type: DataTypes.DATE,
-        //     defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-        //     field: 'created_at',
-        //     allowNull: false
-        //   },
-        //  
+        
          created_at: DataTypes.DATE,
     }, {
         tableName: "doacoes",
-        timestamps: true
+        timestamps: false
     }
     );
 
