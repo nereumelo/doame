@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
+@import url('/public/stylesheets/paleta.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 
 body {
   font-family: 'Poppins';
-  background-color: #FFFFFF;
+  background-color: var(--branco);
 }
 
 main {
@@ -25,9 +27,9 @@ main img {
 main #header {
   font-size: 2.4rem;
   font-weight: 600;
-  padding: 15px;
+  padding: 10px;
 
-  color: #AFAFAF;
+  color: var(--cinza-claro-escuro);
 }
 
 .formulario {
@@ -48,9 +50,9 @@ main #header {
 .formulario form input {
   border: none;
   border-radius: 8px;
-  background-color: #E5E4E4;
+  background-color: var(--cinza-claro);
 
-  color: black;
+  color: var(--black);
   font-size: 0.9rem;
 
   margin: 10px;
@@ -75,7 +77,7 @@ main #header {
 
 .agree-with label {
   font-size: .8rem;
-  color: #AFAFAF;
+  color: var(--cinza-claro-escuro);
 }
 
 .agree-with label span {
@@ -86,8 +88,8 @@ a button {
   margin-top: 45px;
 
   text-transform: uppercase;
-  background-color: #7CDCDF;
-  color: #FFFFFF;
+  background-color: var(--azul-claro);
+  color: var(--branco);
   border: none;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -102,5 +104,5 @@ a button {
 
 button:hover {
   color: white;
-  box-shadow: inset 300px 0 0 0 #8A0705;
+  box-shadow: inset 300px 0 0 0 var(--vermelho-claro);
 }
