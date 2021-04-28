@@ -9,9 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         forma_pagamento: DataTypes.STRING(45),
         status: {
             type: DataTypes.ENUM,
-            values: ['Em andamento', 'Conluído', 'Não realizado']
+            values: ['Em andamento', 'Concluído', 'Não realizado']
         },
-        created_at: DataTypes.DATE,
+        
+         created_at: DataTypes.DATE,
     }, {
         tableName: "doacoes",
         timestamps: false

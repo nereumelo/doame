@@ -1,4 +1,4 @@
-const { Artigo } = require('../models');
+const { Artigo, Parceiro, Imagem } = require('../models');
 
 const artigosController = {
     index: async (req, res) => {
@@ -41,7 +41,57 @@ const artigosController = {
         });
 
         return res.json(artigoDeletado);
+    },
+
+    //Controller (IMAGEM)
+    indexImg: async (req, res) => {
+        const { parceiros_id, artigos_id } = req.params;
+
+        const imagens = await Imagem.findAll({
+            attributes: ['id', 'path', 'created_at'],
+            where: {
+                parceiros_id,
+                artigos_id,
+            }
+        });
+
+        return res.json(imagens);
+    },
+
+    createImg: async (req, res) => {
+        const { parceiros_id, artigos_id } = req.params;
+        const { path } = req.body;
+
+        const novaImagem = await Imagem.create({
+            parceiros_id,
+            artigos_id,
+            path,
+        });
+        
+        return res.json(novaImagem);
+    },
+
+    // updateImg: async (req, res) => {
+    //     const { id } = req.params;
+    //     const imagem = req.body;
+
+    //     await Imagem.update(imagem, {
+    //         where: { id }
+    //     });
+
+    //     return res.json(imagem);
+    // },
+
+    deleteImg: async (req, res) => {
+        const { id } = req.params;
+
+        const imagemDeletada = await Imagem.destroy({
+            where: { id }
+        });
+
+        return res.json(imagemDeletada);
     }
+    
 }
 
 module.exports = artigosController;

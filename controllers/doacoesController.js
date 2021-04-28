@@ -32,7 +32,7 @@ const doacoesController = {
     },
 
     create: async (req, res) => {
-        const { parceiros_id, doadores_id, valor, forma_pagamento, status, created_at } = req.body;
+        const { parceiros_id, doadores_id, valor, forma_pagamento, status } = req.body;
 
         const novaDoacao = await Doacao.create({
             parceiros_id,
@@ -40,7 +40,6 @@ const doacoesController = {
             valor,
             forma_pagamento,
             status,
-            created_at
         });
 
         return res.json(novaDoacao);
