@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', artigosRouter);
 app.use('/doacoes', doacoesRouter);
 app.use('/doadores', doadoresRouter);
-app.use('/', parceirosRouter);
+app.use('/parceiros', parceirosRouter);
 
 
 // catch 404 and forward to error handler

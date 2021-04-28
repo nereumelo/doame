@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs');
 
 const parceirosController = {
     index: async (req, res) => {
-        const parceiros = await Parceiro.findAll();
+        const parceiros = await Parceiro.findAll({
+            include: ["enderecos"]
+        });
 
         return res.json(parceiros);
     },
@@ -66,18 +68,6 @@ const parceirosController = {
         return res.json(novoEndereco);
     },
  
-    // showAdress: async(req, res) =>{
-    //     const {parceiros_id} = req.params; //filtrar a busca pelo id do parceiro
-
-    //     let enderecoParceiro = await Parceiro.findAll({
-    //         where : {
-    //             parceiros_id 
-    //         }
-    //     });
-
-    //     return res.json(enderecoParceiro);  
-    // }
-
 
     //Controler (Imagem)
     indexImg: async (req, res) => {
