@@ -27,6 +27,7 @@ const imagensController = {
 
         return res.json(newImagem);
     },
+    
     delete: async (req, res) => {
         const { id } = req.params;
 
