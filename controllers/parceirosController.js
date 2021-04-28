@@ -1,4 +1,4 @@
-const { Parceiro } = require('../models');
+const { Parceiro, Endereco} = require('../models');
 const bcrypt = require('bcryptjs');
 
 const parceirosController = {
@@ -43,7 +43,40 @@ const parceirosController = {
         });
 
         return res.json(parceiroDeletado);
+    },
+
+   // //metodos para endereço
+    createAddress: async(req, res) =>{
+        const {parceiros_id} = req.params; //filtrar a busca pelo id do parceiro
+        const {pais, estado, cidade, bairro, logradouro, cep, numero, complemento } = req.body;
+
+        const novoEndereco = await Endereco.create({
+
+            parceiros_id,
+            pais,
+            estado,
+            cidade,
+            bairro,
+            logradouro,
+            cep,
+            numero,
+            complemento,
+            
+        });
+        return res.json(novoEndereco);
     }
+ 
+    // showAdress: async(req, res) =>{
+    //     const {parceiros_id} = req.params; //filtrar a busca pelo id do parceiro
+
+    //     let enderecoParceiro = await Parceiro.findAll({
+    //         where : {
+    //             parceiros_id 
+    //         }
+    //     });
+
+    //     return res.json(enderecoParceiro);  
+    // }
 }
 
 module.exports = parceirosController;
