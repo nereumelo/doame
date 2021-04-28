@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/artigos', artigosRouter);
+app.use('/', artigosRouter);
 app.use('/doacoes', doacoesRouter);
 app.use('/doadores', doadoresRouter);
 app.use('/parceiros', parceirosRouter);

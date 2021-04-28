@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         updated_at: DataTypes.DATE
     }, {
         tableName: "artigos",
-        timestamps: true
+        timestamps: false
     }
     );
     
