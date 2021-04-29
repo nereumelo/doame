@@ -5,6 +5,9 @@ margin: 0;
 padding: 0;
 list-style-type:none;
 }
+body {
+    font-family: 'Poppins';
+}
 /*HEADER*/
 header {
     height:85px;
@@ -16,7 +19,6 @@ header {
     justify-content: space-between;
     font-family: 'Poppins';
 }
-
 
 header .logo .logo-img {
     height: 85px;
@@ -57,8 +59,7 @@ header .nav ul :hover {
 
 .right-nav {
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 .search-box {
@@ -95,7 +96,6 @@ header .nav ul :hover {
     color: white;
     cursor: pointer;
     text-decoration: none;
-    
 }
 
 .search-btn > i {
@@ -114,7 +114,6 @@ header .nav ul :hover {
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
-    font-family: 'Poppins';
 }
 
 header .login {
@@ -224,14 +223,12 @@ article .info .querodoar:hover {
 /*pq doar*/
 
 section .porque-doar{
-    height: 300px;
-    
+    height: 300px; 
 }
 
 section .porque-doar h2{
     text-align: center;
     margin-top: 120px;
-    font-family: 'Poppins';
     font-size: 40px;
     color: #8a0705 ;
 }
@@ -240,7 +237,6 @@ section .porque-doar p {
     text-align: center;
     margin-top: 35px;
     font-size: 25px;
-    font-family: 'Poppins'; 
 }
 /*modal*/
 
@@ -249,7 +245,7 @@ footer  {
     height: 300px;
     width: 100%;
     background-color: #d96c6a;
-    color: rgba(255, 255, 255, 0.767);
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -259,13 +255,13 @@ footer  {
 
 footer .hiperlinks .footer-nav {
     margin-top: 30px;
-    display: flex;
-    
+    display: flex; 
 }
 
 footer .hiperlinks .footer-nav li {
     padding: 20px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 footer .social-media i{ 
@@ -273,3 +269,6 @@ footer .social-media i{
     font-size: 20px;
     cursor: pointer;
 }
+
+/*modal*/
+
