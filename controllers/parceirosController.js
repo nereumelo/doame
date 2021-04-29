@@ -106,7 +106,7 @@ const parceirosController = {
             where: { id }
         });
 
-        return res.send(endereco);
+        return res.send(endereco); 
     },
 
     //Controler (Imagem)
