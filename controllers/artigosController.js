@@ -2,7 +2,14 @@ const { Artigo, Parceiro, Imagem } = require('../models');
 
 const artigosController = {
     index: async (req, res) => {
-        const artigos = await Artigo.findAll();
+        const artigos = await Artigo.findAll({
+            include: [{
+                model: Imagem,
+                as: 'imagens',
+                attributes: ['id', 'path'],
+                where: { [Imagem.artigo_id]: [Artigo.id] }
+            }],
+        });
         return res.json(artigos);
     },
 

@@ -11,8 +11,9 @@ router.delete('/:id', parceirosController.delete);
 
 
 //Rotas de Endereços de Parceiros
-router.post('/:parceiros_id/enderecos/', parceirosController.createAddress);
-
+router.post('/:id', parceirosController.createAddress);
+router.put('/:parceiros_id/:id', parceirosController.updateAddress);
+router.delete('/:parceiros_id/:id', parceirosController.deleteAddress);
 
 
 //Rotas de Imagens de Parceiros
