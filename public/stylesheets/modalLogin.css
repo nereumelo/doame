@@ -12,7 +12,7 @@
 
 body {
   font-family: 'Poppins';
-  background-color: var(--branco);
+  background-color: var(--vermelho-claro);
 }
 
 main {
@@ -26,14 +26,6 @@ main {
   justify-content: space-evenly;
 }
 
-.wallpaper {
-  width: 800px;
-}
-
-.wallpaper img {
-  width: 800px;
-}
-
 
 /* Right side CSS */
 
@@ -45,11 +37,9 @@ main {
   flex-direction: column;
   justify-content: center;
 
-  margin-right: 180px;
-
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-
-  background: var(--azul-claro);
+  background:white;
+  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+  
   border-radius: 8px;
 }
 
@@ -145,34 +135,23 @@ form input {
   padding: 15px;
 }
 
-.password-missed p {
-  color: var(--branco);
-  font-size: 1.1rem;
-}
-
 .password-missed a {
   text-decoration: none;
+  color: var(--cinza-claro-escuro);
 }
 
-.password-missed a button {
-  margin-left: 10px;
+.password-missed #login {
+  margin-left: 20px;
+  text-decoration: underline;
+}
 
-  color: var(--branco);
-  background-color: var(--vermelho-sangue);
-  border: none;
-  border-radius: 8px;
-  font-size: .8rem;
-  font-weight: 700;
-  cursor: pointer;
+.password-missed #login:hover {
+  color: var(--vermelho-claro);
+}
 
-  width: 70px;
-  height: 30px;
-
-  transition: 0.5s;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.password-missed a:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 /* cadastre-se */
@@ -187,7 +166,7 @@ form input {
 }
 
 .sign-up p {
-  color: var(--branco);
+  color: var(--cinza-claro-escuro);
   font-size: 1.4rem;
 }
 
@@ -199,7 +178,7 @@ form input {
 
 .sign-up a button {
   color: var(--branco);
-  background-color: var(--vermelho-sangue);
+  background-color: var(--azul-claro);
   border: none;
   border-radius: 8px;
   font-size: 1.0rem;
