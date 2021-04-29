@@ -121,37 +121,32 @@ form input {
   outline: none;
 }
 
-/* esqueceu a senha ? */
+/* concordando com os termos */
 
-.password-missed {
-  margin-top: 15px;
+.agree-with {
+  margin-top: 20px;
+  margin-left: 14%;
+
+  width: 350px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 15px;
 }
 
-.password-missed a {
-  text-decoration: none;
+.agree-with input {
+  margin: 10px;
+}
+
+.agree-with label {
+  font-size: .8rem;
   color: var(--cinza-claro-escuro);
 }
 
-.password-missed #login {
-  margin-left: 20px;
+.agree-with label span {
   text-decoration: underline;
 }
 
-.password-missed #login:hover {
-  color: var(--vermelho-claro);
-}
-
-.password-missed a:hover {
-  text-decoration: underline;
-  color: black;
-}
-
-/* cadastre-se */
+/* botão cadastre-se */
 
 .sign-up {
   margin-top: 15px;
