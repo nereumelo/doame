@@ -192,3 +192,34 @@ form input {
   color: white;
   box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
 }
+
+/* responsividade */
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  main {
+    height: 900px;
+    width: 1250px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  main {
+    height: 500px;
+    width: 515px;
+  }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+  main {
+    height: 400px;
+    width: 360px;
+  }
+
+  .forms {
+    width: 300px;
+  }
+
+  .forms #lines {
+    width: 300px;
+  }
+}
