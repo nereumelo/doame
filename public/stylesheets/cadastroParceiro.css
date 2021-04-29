@@ -11,8 +11,6 @@
 body {
   font-family: 'Poppins';
   background-color: var(--branco);
-
-  background: url('/public/images/background-try.jfif');
 }
 
 main {
