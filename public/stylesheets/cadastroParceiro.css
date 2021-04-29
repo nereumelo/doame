@@ -109,6 +109,13 @@ button:hover {
 
 /* responsividade */
 
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  main {
+    height: 900px;
+    width: 1300px;
+  }
+}
+
 @media only screen and (min-width: 1100px) and (max-width: 1200px) {
   main {
     height: 800px;
