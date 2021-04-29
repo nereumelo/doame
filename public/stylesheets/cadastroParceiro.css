@@ -11,6 +11,8 @@
 body {
   font-family: 'Poppins';
   background-color: var(--branco);
+
+  font-size: 16px;
 }
 
 main {

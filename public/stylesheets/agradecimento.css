@@ -11,6 +11,8 @@
 body {
   font-family: 'Poppins';
   background-color: var(--branco);
+
+  font-size: 16px;
 }
 
 main {
@@ -91,6 +93,8 @@ button:hover {
   box-shadow: inset 300px 0 0 0 var(--azul-claro);
   width: 270px;
 }
+
+/* responsividade */
 
 @media only screen and (min-width:1500px) and (max-width: 1800px) {
   .container {
