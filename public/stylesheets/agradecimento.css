@@ -9,6 +9,26 @@
 body {
   font-family: 'Poppins';
   background-color: #FFFFFF;
+  z-index: 1;
+  
+}
+
+.image-background {
+  animation: jump 1s 2s forwards cubic-bezier(.84,-0.54,.31,1.19);
+  height: 100px;
+  width: 100px;
+  filter:alpha(opacity=30);
+	opacity: 0.3;
+
+}
+    
+@keyframes jump {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-2em);
+  }
 }
 
 main {
@@ -30,6 +50,7 @@ main {
   text-align: center;
   justify-content: center;
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .container h1, h3 {
