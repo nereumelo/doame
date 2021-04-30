@@ -11,6 +11,7 @@ const btnLogin = () => {
     document.querySelector('.modal').style.display = "flex";
 }
 
+
 const btnClose = () => {
     document.querySelector('.modal').style.display = "none";
 }
