@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const parceirosController = require('../controllers/parceirosController');
+
 const validarCadastroParceiros = require('../middlewares/ValidarCadastroParceiros');
 const ValidarSenha = require('../middlewares/ValidarSenha');
 
@@ -10,13 +11,10 @@ router.post('/', validarCadastroParceiros, parceirosController.create);
 router.put('/:id', ValidarSenha, parceirosController.update);
 router.delete('/:id', parceirosController.delete);
 
-
-
 //Rotas de Endereços de Parceiros
 router.post('/:parceiros_id/endereco', parceirosController.createAddress);
 router.put('/:parceiros_id/endereco/:id', parceirosController.updateAddress);
 router.delete('/:parceiros_id/endereco/:id/', parceirosController.deleteAddress);
-
 
 //Rotas de Imagens de Parceiros
 router.post('/:parceiros_id/imagem', parceirosController.createImg);

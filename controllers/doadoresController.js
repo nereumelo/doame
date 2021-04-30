@@ -4,9 +4,9 @@ const bcrypt = require('bcryptjs');
 const doadoresController = {
     index: async (req, res) => {
         const doadores = await Doador.findAll();
+
         return res.json(doadores);
     },
-
 
     create: async (req, res) => {
         const { nome, email, senha } = req.body;
@@ -15,7 +15,7 @@ const doadoresController = {
         const novoDoador = await Doador.create({
             nome,
             email,
-            senha : senhaCrypt
+            senha: senhaCrypt
         });
 
         return res.json(novoDoador);
@@ -23,15 +23,13 @@ const doadoresController = {
 
     update: async (req, res) => {
         const { id } = req.params;
-        const atualizarDoador = req.body;
+        const atualizaDoador = req.body;
 
-        await Doador.update(atualizarDoador, {
-            where: {
-                id: id
-            }
+        await Doador.update(atualizaDoador, {
+            where: { id }
         });
 
-        return res.json(atualizarDoador);
+        return res.json(atualizaDoador);
     },
 
     updatePassword: async (req, res) => {
@@ -43,7 +41,7 @@ const doadoresController = {
 
         if (validaSenha) {
             const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
-            await Doador.update({ senha: novaSenhaCrypt }, { where: {id}});
+            await Doador.update({ senha: novaSenhaCrypt }, { where: { id } });
         }
 
         return res.send(validaSenha);
@@ -53,10 +51,9 @@ const doadoresController = {
         const { id } = req.params;
 
         const deleteDoador = await Doador.destroy({
-            where: {
-                id: id
-            }
+            where: { id }
         });
+
         return res.json(deleteDoador);
     },
 
