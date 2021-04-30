@@ -22,6 +22,11 @@ router.delete('/:parceiros_id/endereco/:id/', parceirosController.deleteAddress)
 router.post('/:parceiros_id/imagem', parceirosController.createImg);
 router.delete('/:parceiros_id/imagem/:id', parceirosController.deleteImg);
 
+// Rotar de Artigos de Parceiros
+router.post('/:parceiros_id/artigo', parceirosController.createArt);
+router.put('/:parceiros_id/artigo/:id', parceirosController.updateArt);
+router.delete('/:parceiros_id/artigo/:id', parceirosController.deleteArt);
+
 module.exports = router;
 
 

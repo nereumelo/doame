@@ -143,8 +143,8 @@ const parceirosController = {
     
     // Controller (Artigo)
     createArt: async (req, res) => {
-        const { parceiros_id, titulo, corpo } = req.body;
-        console.log(req.body);
+        const { parceiros_id } = req.params;
+        const { titulo, corpo } = req.body;
         
         const parceiro = await buscaParceiro(parceiros_id)
         
@@ -153,6 +153,8 @@ const parceirosController = {
             titulo,
             corpo
         });
+
+        
 
         return res.json(parceiro);
     },
