@@ -255,10 +255,7 @@ section .porque-doar p {
 }
 
 
-/*modal*/
-
-
-/* modal */
+/* modal login */
 
 .modal {
     height: 500px;
@@ -274,16 +271,19 @@ section .porque-doar p {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.589);
+    background-color: rgba(0, 0, 0, 0.74);
     z-index: 10;
     align-items: center;
     justify-content: center;
 }
 
-.modal #google-button {
+.modal .modal #google-button {
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.modal #google-button {
     text-decoration: none;
 }
 
@@ -295,12 +295,12 @@ section .porque-doar p {
     font-size: 1.0rem;
     font-weight: 700;
     cursor: pointer;
-    width: 70%;
+    width: 350px;
     height: 40px;
     transition: 0.5s;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .modal #google-button button:hover {
@@ -336,8 +336,8 @@ section .porque-doar p {
 /* Email e senha */
 
 .modal input {
-    height: 50px;
-    width: 300px;
+    height: 20px;
+    width: 320px;
     display: flex;
     background-color: var(--cinza-claro);
     border: none;
@@ -374,11 +374,163 @@ section .porque-doar p {
 
 .password-missed a:hover {
     text-decoration: underline;
-    color: black;
+    color: white;
 }
 
 
 /* cadastre-se */
+
+.sign-up {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up p {
+    color: white;
+    font-size: 1rem;
+}
+
+.sign-up a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.sign-up a button {
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.sign-up a button:hover {
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+}
+
+
+/*modal cadastro*/
+
+
+/* forms */
+
+.modal-cadastro {
+    height: 500px;
+    width: 500px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.forms #google-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.forms #google-button button {
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.forms #google-button button:hover {
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--vermelho-sangue);
+}
+
+.forms #google-button img {
+    width: 30px;
+}
+
+.forms #lines {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.forms #lines .line {
+    border: 0.7px solid var(--cinza-claro);
+    width: 80px;
+    height: 1px;
+}
+
+.forms #lines p {
+    font-size: 14px;
+    color: var(--cinza-claro);
+}
+
+
+/* Email e senha */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    height: 40px;
+    width: 70%;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 15px;
+    outline: none;
+}
+
+
+/* concordando com os termos */
+
+.agree-with {
+    margin-top: 20px;
+    margin-left: 14%;
+    width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.agree-with input {
+    margin: 10px;
+}
+
+.agree-with label {
+    font-size: .8rem;
+    color: var(--cinza-claro-escuro);
+}
+
+.agree-with label span {
+    text-decoration: underline;
+}
+
+
+/* botão cadastre-se */
 
 .sign-up {
     margin-top: 15px;

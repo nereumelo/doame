@@ -1,230 +1,207 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-
 @import url('/public/stylesheets/paleta.css');
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins';
-  background-color: var(--vermelho-claro);
-
-  font-size: 16px;
+    font-family: 'Poppins';
+    background-color: var(--vermelho-claro);
+    font-size: 16px;
 }
 
 main {
-  margin-top: 18vh;
-
-  width: 100%;
-  height: 600px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+    margin-top: 18vh;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
+
 
 /* forms */
 
 .forms {
-  height: 500px;
-  width: 500px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background:white;
-  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
-  
-  border-radius: 8px;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 
 .forms #google-button {
-  display: flex;
-  justify-content: center;
-
-  cursor: pointer;
-  text-decoration: none;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .forms #google-button button {
-
-  background-color: var(--vermelho-claro);
-  color: var(--branco);
-  border: none;
-  border-radius: 8px;
-  font-size: 1.0rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  width: 70%;
-  height: 40px;
-
-  transition: 0.5s;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .forms #google-button button:hover {
-  color: var(--branco);
-  box-shadow: inset 400px 0 0 0 var(--vermelho-sangue);
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--vermelho-sangue);
 }
 
 .forms #google-button img {
-  width: 30px;
+    width: 30px;
 }
 
 .forms #lines {
-  margin-top: 15px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-
-  width: 500px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
 }
 
 .forms #lines .line {
-  border: 0.7px solid var(--cinza-claro);
-  width: 80px;
-  height: 1px;
+    border: 0.7px solid var(--cinza-claro);
+    width: 80px;
+    height: 1px;
 }
 
 .forms #lines p {
-  font-size: 14px;
-  color: var(--cinza-claro);
+    font-size: 14px;
+    color: var(--cinza-claro);
 }
+
 
 /* Email e senha */
 
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
 form input {
-  height: 40px;
-  width: 70%;
-
-  background-color: var(--cinza-claro);
-  border: none;
-  border-radius: 8px;
-
-  margin-top: 15px;
-  padding: 15px;
-
-  outline: none;
+    height: 40px;
+    width: 70%;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 15px;
+    outline: none;
 }
+
 
 /* concordando com os termos */
 
 .agree-with {
-  margin-top: 20px;
-  margin-left: 14%;
-
-  width: 350px;
-
-  display: flex;
-  align-items: center;
+    margin-top: 20px;
+    margin-left: 14%;
+    width: 350px;
+    display: flex;
+    align-items: center;
 }
 
 .agree-with input {
-  margin: 10px;
+    margin: 10px;
 }
 
 .agree-with label {
-  font-size: .8rem;
-  color: var(--cinza-claro-escuro);
+    font-size: .8rem;
+    color: var(--cinza-claro-escuro);
 }
 
 .agree-with label span {
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
 
 /* botão cadastre-se */
 
 .sign-up {
-  margin-top: 15px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .sign-up p {
-  color: var(--cinza-claro-escuro);
-  font-size: 1.4rem;
+    color: var(--cinza-claro-escuro);
+    font-size: 1.4rem;
 }
 
 .sign-up a {
-  margin-top: 15px;
-
-  text-decoration: none;
+    margin-top: 15px;
+    text-decoration: none;
 }
 
 .sign-up a button {
-  color: var(--branco);
-  background-color: var(--azul-claro);
-  border: none;
-  border-radius: 8px;
-  font-size: 1.0rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  width: 270px;
-  height: 40px;
-
-  transition: 0.5s;
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
 }
 
 .sign-up a button:hover {
-  color: white;
-  box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
 }
+
 
 /* responsividade */
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
-  main {
-    height: 900px;
-    width: 1250px;
-  }
+    main {
+        height: 900px;
+        width: 1250px;
+    }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 500px) {
-  main {
-    height: 500px;
-    width: 515px;
-  }
+    main {
+        height: 500px;
+        width: 515px;
+    }
 }
 
 @media only screen and (min-width: 200px) and (max-width: 400px) {
-  main {
-    height: 400px;
-    width: 360px;
-  }
-
-  .forms {
-    width: 300px;
-  }
-
-  .forms #google-button button {
-    font-size: 0.7rem;
-  }
-
-  .forms #lines {
-    width: 300px;
-  }
-
-  .agree-with {
-    width: 200px;
-  }
+    main {
+        height: 400px;
+        width: 360px;
+    }
+    .forms {
+        width: 300px;
+    }
+    .forms #google-button button {
+        font-size: 0.7rem;
+    }
+    .forms #lines {
+        width: 300px;
+    }
+    .agree-with {
+        width: 200px;
+    }
 }
