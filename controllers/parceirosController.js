@@ -40,15 +40,19 @@ const parceirosController = {
 
     update: async (req, res) => {
         const { id } = req.params;
-        const newParceiro = req.body;
+        const { senha, novaSenha } = req.body;
 
-        await Parceiro.update(newParceiro, {
-            where: { id }
-        });
+        const parceiro = await Parceiro.findByPk(id);
+        const validaSenha = (parceiro && bcrypt.compareSync(senha, parceiro.senha));
 
-        return res.json(newParceiro);
-    }
-    ,
+        if (validaSenha) {
+            const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
+            await Parceiro.update({ senha: novaSenhaCrypt }, { where: {id}});
+        }
+
+        return res.send(validaSenha);
+    },
+
     delete: async (req, res) => {
         const { id } = req.params;
 
@@ -139,8 +143,8 @@ const parceirosController = {
     
     // Controller (Artigo)
     createArt: async (req, res) => {
-        const { parceiros_id, titulo, corpo } = req.body;
-        console.log(req.body);
+        const { parceiros_id } = req.params;
+        const { titulo, corpo } = req.body;
         
         const parceiro = await buscaParceiro(parceiros_id)
         
@@ -149,6 +153,8 @@ const parceirosController = {
             titulo,
             corpo
         });
+
+        
 
         return res.json(parceiro);
     },

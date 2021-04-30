@@ -34,6 +34,21 @@ const doadoresController = {
         return res.json(atualizarDoador);
     },
 
+    updatePassword: async (req, res) => {
+        const { id } = req.params;
+        const { senha, novaSenha } = req.body;
+
+        const doador = await Doador.findByPk(id);
+        const validaSenha = (doador && bcrypt.compareSync(senha, doador.senha));
+
+        if (validaSenha) {
+            const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
+            await Doador.update({ senha: novaSenhaCrypt }, { where: {id}});
+        }
+
+        return res.send(validaSenha);
+    },
+
     delete: async (req, res) => {
         const { id } = req.params;
 
