@@ -1,8 +1,4 @@
-const { response } = require('express');
-const { request } = require('../app');
-const parceirosController = require('../controllers/parceirosController');
-const { Parceiro, sequelize} = require('../models');
-
+const { Parceiro } = require('../models');
 
 module.exports = async(request, response, next) => {
     let {nome, cnpj, email, senha} = request.body;
