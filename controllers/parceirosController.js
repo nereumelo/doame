@@ -40,15 +40,19 @@ const parceirosController = {
 
     update: async (req, res) => {
         const { id } = req.params;
-        const newParceiro = req.body;
+        const { senha, novaSenha } = req.body;
 
-        await Parceiro.update(newParceiro, {
-            where: { id }
-        });
+        const parceiro = await Parceiro.findByPk(id);
+        const validaSenha = (parceiro && bcrypt.compareSync(senha, parceiro.senha));
 
-        return res.json(newParceiro);
-    }
-    ,
+        if (validaSenha) {
+            const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
+            await Parceiro.update({ senha: novaSenhaCrypt }, { where: {id}});
+        }
+
+        return res.send(validaSenha);
+    },
+
     delete: async (req, res) => {
         const { id } = req.params;
 

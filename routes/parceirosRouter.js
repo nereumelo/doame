@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const parceirosController = require('../controllers/parceirosController');
-const ValidarParceiros = require('../middlewares/ValidarParceiros');
+const validarCadastroParceiros = require('../middlewares/ValidarCadastroParceiros');
+const ValidarSenha = require('../middlewares/ValidarSenha');
 
 router.get('/',  parceirosController.index);
 router.get('/:id/', parceirosController.show);
-router.post('/', ValidarParceiros, parceirosController.create);
-router.put('/:id', parceirosController.update);
+router.post('/', validarCadastroParceiros, parceirosController.create);
+router.put('/:id', ValidarSenha, parceirosController.update);
 router.delete('/:id', parceirosController.delete);
 
 
