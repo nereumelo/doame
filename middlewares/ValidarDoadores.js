@@ -1,7 +1,4 @@
-const { response } = require('express');
-const { request } = require('../app');
-const doadoresController = require('../controllers/doadoresController');
-const { Doador, sequelize} = require('../models');
+const { Doador } = require('../models');
 
 
 module.exports = async(request, response, next) => {
