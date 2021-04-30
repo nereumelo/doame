@@ -79,11 +79,10 @@ const parceirosController = {
             cep,
             numero,
             complemento,
-            
         });
         return res.json(parceiro);
     },
-
+  
     updateAddress: async (req, res) => {
         const { parceiros_id, id } = req.params;
         const endereco = req.body;
@@ -109,9 +108,6 @@ const parceirosController = {
 
         return res.send(endereco); 
     },
-
-
-
 
     //Controler (Imagem)
     createImg: async (req, res) => {
@@ -141,5 +137,51 @@ const parceirosController = {
         return res.send(imagem);
     },
     
+    // Controller (Artigo)
+    createArt: async (req, res) => {
+        const { parceiros_id, titulo, corpo } = req.body;
+        console.log(req.body);
+        
+        const parceiro = await buscaParceiro(parceiros_id)
+        
+        parceiro.artigos = await Artigo.create({
+            parceiros_id,
+            titulo,
+            corpo
+        });
+
+        return res.json(parceiro);
+    },
+
+    updateArt: async (req, res) => {
+        const { parceiros_id, id } = req.params;
+        const newArtigo = req.body;
+
+        const parceiro = await buscaParceiro(parceiros_id);
+        
+        parceiro.artigo = await Artigo.update(newArtigo, {
+            where: {
+                id: id
+            }
+        });
+
+        return res.json(newArtigo);
+    },
+
+    deleteArt: async (req, res) => {
+        const { parceiros_id, id } = req.params;
+        const artigoDel = req.body
+        
+        const parceiro = await buscaParceiro (parceiros_id);
+
+        parceiro.artigos = await Artigo.destroy({
+            where: {
+                id: id
+            }
+        });
+
+        return res.json(artigoDel);
+    },
 }
+
 module.exports = parceirosController;
