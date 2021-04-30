@@ -1,4 +1,4 @@
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', function() {
     let header = document.querySelector('header');
     let windowPosition = window.scrollY > 0
 
@@ -10,6 +10,7 @@ window.addEventListener('scroll', function () {
 const btnLogin = () => {
     document.querySelector('.modal').style.display = "flex";
 }
+
 
 const btnClose = () => {
     document.querySelector('.modal').style.display = "none";

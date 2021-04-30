@@ -1,21 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url('/public/stylesheets/paleta.css');
-
 * {
-margin: 0;
-padding: 0;
-list-style-type:none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
+
 body {
     font-family: 'Poppins';
 }
+
+
 /*HEADER*/
+
 header {
-    height:85px;
-    width:100%;
+    height: 85px;
+    width: 100%;
     position: fixed;
-    background: linear-gradient(rgba(92, 221, 223, 0.6),rgba(92, 221, 223, 0)80%);
-    z-index:120;
+    background: linear-gradient(rgba(92, 221, 223, 0.6), rgba(92, 221, 223, 0)80%);
+    z-index: 5;
     display: flex;
     justify-content: space-between;
 }
@@ -31,20 +34,20 @@ header .nav {
     display: flex;
 }
 
-header .nav ul{
+header .nav ul {
     width: 400px;
-	height: 100px;
-	padding: 25px;
-	outline: none;
+    height: 100px;
+    padding: 25px;
+    outline: none;
     display: flex;
     justify-content: space-evenly;
-    margin-right: 400px;	
+    margin-right: 400px;
 }
 
 header .nav a {
     text-decoration: none;
     color: white;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
 header .nav ul :hover {
@@ -59,7 +62,7 @@ header .nav ul :hover {
 
 .right-nav {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .search-box {
@@ -74,13 +77,13 @@ header .nav ul :hover {
     display: flex;
 }
 
-.search-box:hover > .search-txt {
+.search-box:hover>.search-txt {
     width: 200px;
     padding: 0 10px;
 }
 
-.search-box:hover > .search-btn {
-    background: #7CDCDF; 
+.search-box:hover>.search-btn {
+    background: #7CDCDF;
 }
 
 .search-btn {
@@ -98,7 +101,7 @@ header .nav ul :hover {
     text-decoration: none;
 }
 
-.search-btn > i {
+.search-btn>i {
     font-size: 20px;
 }
 
@@ -131,38 +134,44 @@ header .btn-login {
     background: #7CDCDF;
     color: white;
     cursor: pointer;
-    
 }
 
-header .btn-login:hover  {
+header .btn-login:hover {
     background: #8a0705;
     transition: 0.5s;
 }
+
+
 /*FIXANDO HEADER COM SCROLL*/
+
 .scrolling-ativado {
     background-color: #ffffff;
-    box-shadow: 0 3px, 1rem, rgba(0,0,0,0.1);
+    box-shadow: 0 3px, 1rem, rgba(0, 0, 0, 0.1);
     transition: 0.7s;
-    text-shadow:  0.1em 0.1em 0.2em #333;
+    text-shadow: 0.1em 0.1em 0.2em #333;
 }
 
 .scrolling-ativado nav a {
-    text-shadow: 0.02em 0.02em  #333
+    text-shadow: 0.02em 0.02em #333
 }
 
+
 /*MAIN-BANNER*/
+
 main .banner {
     width: 100%;
     height: 475px;
 }
 
+
 /*ARTICLES*/
+
 section.projects .container {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 60px ; 
+    padding: 60px;
 }
 
 section.projects article {
@@ -172,7 +181,7 @@ section.projects article {
     border-radius: 5px;
     align-items: center;
     padding: 20px;
-    box-shadow: 0px 0px 17px -10px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.51);
     transition: 0.4s ease-in;
 }
 
@@ -181,7 +190,6 @@ section.projects article:hover {
     transition: 0.4s;
     transform: scale(1.02, 1.02);
 }
-
 
 section.projects article .thumb {
     width: 250px;
@@ -213,7 +221,7 @@ article .info .querodoar {
     text-align: center;
     margin-left: 180px;
     width: 85px;
-    position: relative;  
+    position: relative;
 }
 
 article .info .querodoar:hover {
@@ -226,17 +234,18 @@ article .info .querodoar:hover {
     cursor: pointer;
 }
 
-/*pq doar*/
 
-section .porque-doar{
+/*SECTION - frase*/
+
+section .porque-doar {
     height: 300px;
 }
 
-section .porque-doar h2{
+section .porque-doar h2 {
     text-align: center;
     margin-top: 120px;
     font-size: 40px;
-    color: #8a0705 ;
+    color: #8a0705;
 }
 
 section .porque-doar p {
@@ -244,10 +253,173 @@ section .porque-doar p {
     margin-top: 35px;
     font-size: 25px;
 }
+
+
 /*modal*/
 
+
+/* modal */
+
+.modal {
+    height: 500px;
+    width: 500px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.589);
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal #google-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal #google-button button {
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modal #google-button button:hover {
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--vermelho-sangue);
+}
+
+.modal #google-button img {
+    width: 30px;
+}
+
+.modal #lines {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.modal #lines .line {
+    border: 0.7px solid var(--cinza-claro);
+    width: 80px;
+    height: 1px;
+}
+
+.modal #lines p {
+    font-size: 14px;
+    color: var(--cinza-claro);
+}
+
+
+/* Email e senha */
+
+.modal input {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 15px;
+    outline: none;
+}
+
+
+/* esqueceu a senha ? */
+
+.password-missed {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.password-missed a {
+    text-decoration: none;
+    color: var(--cinza-claro-escuro);
+}
+
+.password-missed #login {
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+.password-missed #login:hover {
+    color: var(--vermelho-claro);
+}
+
+.password-missed a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+
+/* cadastre-se */
+
+.sign-up {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up p {
+    color: var(--cinza-claro-escuro);
+    font-size: 1.4rem;
+}
+
+.sign-up a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.sign-up a button {
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.sign-up a button:hover {
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+}
+
+
 /*FOOTER*/
-footer  {
+
+footer {
     height: 300px;
     width: 100%;
     background-color: #d96c6a;
@@ -261,7 +433,7 @@ footer  {
 
 footer .hiperlinks .footer-nav {
     margin-top: 30px;
-    display: flex; 
+    display: flex;
 }
 
 footer .hiperlinks .footer-nav li {
@@ -274,18 +446,18 @@ footer .hiperlinks .footer-nav li:hover {
     color: #8a0705;
 }
 
-footer .social-media i{ 
+footer .social-media i {
     padding: 20px;
     font-size: 20px;
     cursor: pointer;
 }
 
-footer .social-media i:hover{ 
+footer .social-media i:hover {
     padding: 20px;
     font-size: 20px;
     cursor: pointer;
     color: #8a0705;
 }
 
-/*modal*/
 
+/*modal*/
