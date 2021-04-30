@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
+@import url('/public/stylesheets/paleta.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,9 @@
 
 body {
   font-family: 'Poppins';
-  background-color: #FFFFFF;
+  background-color: var(--branco);
+
+  font-size: 16px;
 }
 
 main {
@@ -24,7 +28,7 @@ main {
   padding: 100px;
   margin: 80px;
 
-  background-color: #F9514E;
+  background-color: var(--vermelho-claro);
   border-radius: 8px;
 
   text-align: center;
@@ -33,7 +37,7 @@ main {
 }
 
 .container h1, h3 {
-  color: #FFFFFF;
+  color: var(--branco);
 }
 
 .container h1 {
@@ -43,7 +47,7 @@ main {
 }
 
 .container p{
-  color: #FFFFFF;
+  color: var(--branco);
 }
 
 .container #agradecimento {
@@ -70,8 +74,8 @@ a button {
   margin-top: 100px;
 
   text-transform: uppercase;
-  background-color: #FFFFFF;
-  color: #F9514E;
+  background-color: var(--branco);
+  color: var(--vermelho-claro);
   border: none;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -85,10 +89,12 @@ a button {
 }
 
 button:hover {
-  color: white;
-  box-shadow: inset 300px 0 0 0 #7CDCDF;
-  width: 300px;
+  color: var(--branco);
+  box-shadow: inset 300px 0 0 0 var(--azul-claro);
+  width: 270px;
 }
+
+/* responsividade */
 
 @media only screen and (min-width:1500px) and (max-width: 1800px) {
   .container {

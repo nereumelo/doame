@@ -79,11 +79,10 @@ const parceirosController = {
             cep,
             numero,
             complemento,
-            
         });
         return res.json(parceiro);
     },
-
+  
     updateAddress: async (req, res) => {
         const { parceiros_id, id } = req.params;
         const endereco = req.body;

@@ -1,0 +1,463 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url('/public/stylesheets/paleta.css');
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+
+/*HEADER*/
+
+header {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(rgba(92, 221, 223, 0.6), rgba(92, 221, 223, 0)80%);
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo .logo-img {
+    height: 85px;
+    height: 80px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+header .nav {
+    display: flex;
+}
+
+header .nav ul {
+    width: 400px;
+    height: 100px;
+    padding: 25px;
+    outline: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 400px;
+}
+
+header .nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+header .nav ul :hover {
+    color: #fff;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.9s;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background: #5cdddf00;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.search-box:hover>.search-txt {
+    width: 200px;
+    padding: 0 10px;
+}
+
+.search-box:hover>.search-btn {
+    background: #7CDCDF;
+}
+
+.search-btn {
+    color: #e84118;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #7CDCDF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search-btn>i {
+    font-size: 20px;
+}
+
+.search-txt {
+    border: none;
+    background: rgba(255, 255, 255, 0.507);
+    border-radius: 30px;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: rgb(110, 110, 110);
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+header .login {
+    display: flex;
+    align-items: center;
+}
+
+header .btn-login {
+    margin-right: 40px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    background: #7CDCDF;
+    color: white;
+    cursor: pointer;
+}
+
+header .btn-login:hover {
+    background: #8a0705;
+    transition: 0.5s;
+}
+
+
+/*FIXANDO HEADER COM SCROLL*/
+
+.scrolling-ativado {
+    background-color: #ffffff;
+    box-shadow: 0 3px, 1rem, rgba(0, 0, 0, 0.1);
+    transition: 0.7s;
+    text-shadow: 0.1em 0.1em 0.2em #333;
+}
+
+.scrolling-ativado nav a {
+    text-shadow: 0.02em 0.02em #333
+}
+
+
+/*MAIN-BANNER*/
+
+main .banner {
+    width: 100%;
+    height: 475px;
+}
+
+
+/*ARTICLES*/
+
+section.projects .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 60px;
+}
+
+section.projects article {
+    width: 250px;
+    max-width: 100%;
+    background-color: #7cdcdf83;
+    border-radius: 5px;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.51);
+    transition: 0.4s ease-in;
+}
+
+section.projects article:hover {
+    background-color: #7CDCDF;
+    transition: 0.4s;
+    transform: scale(1.02, 1.02);
+}
+
+section.projects article .thumb {
+    width: 250px;
+    height: 200px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+article .info {
+    width: 200px;
+    padding: 10px;
+    height: 80px;
+    text-overflow: ellipsis;
+}
+
+article .info p {
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 4.5em;
+    line-height: 1.2em;
+    text-align: center;
+    margin-left: 20px;
+}
+
+article .info .querodoar {
+    text-align: center;
+    margin-left: 180px;
+    width: 85px;
+    position: relative;
+}
+
+article .info .querodoar:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.9s;
+    cursor: pointer;
+}
+
+
+/*SECTION - frase*/
+
+section .porque-doar {
+    height: 300px;
+}
+
+section .porque-doar h2 {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 40px;
+    color: #8a0705;
+}
+
+section .porque-doar p {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 25px;
+}
+
+
+/*modal*/
+
+
+/* modal */
+
+.modal {
+    height: 500px;
+    width: 500px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.589);
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal #google-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal #google-button button {
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modal #google-button button:hover {
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--vermelho-sangue);
+}
+
+.modal #google-button img {
+    width: 30px;
+}
+
+.modal #lines {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.modal #lines .line {
+    border: 0.7px solid var(--cinza-claro);
+    width: 80px;
+    height: 1px;
+}
+
+.modal #lines p {
+    font-size: 14px;
+    color: var(--cinza-claro);
+}
+
+
+/* Email e senha */
+
+.modal input {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 15px;
+    outline: none;
+}
+
+
+/* esqueceu a senha ? */
+
+.password-missed {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.password-missed a {
+    text-decoration: none;
+    color: var(--cinza-claro-escuro);
+}
+
+.password-missed #login {
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+.password-missed #login:hover {
+    color: var(--vermelho-claro);
+}
+
+.password-missed a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+
+/* cadastre-se */
+
+.sign-up {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up p {
+    color: var(--cinza-claro-escuro);
+    font-size: 1.4rem;
+}
+
+.sign-up a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.sign-up a button {
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.sign-up a button:hover {
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+}
+
+
+/*FOOTER*/
+
+footer {
+    height: 300px;
+    width: 100%;
+    background-color: #d96c6a;
+    color: rgb(216, 216, 216);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+footer .hiperlinks .footer-nav {
+    margin-top: 30px;
+    display: flex;
+}
+
+footer .hiperlinks .footer-nav li {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+footer .hiperlinks .footer-nav li:hover {
+    color: #8a0705;
+}
+
+footer .social-media i {
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+footer .social-media i:hover {
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #8a0705;
+}
+
+
+/*modal*/
