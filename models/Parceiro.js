@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
             field: 'created_at',
             allowNull: false
-          },
-          updatedAt: {
+        },
+        updatedAt: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-            field:'updated_at',
-            allowNull: false 
+            field: 'updated_at',
+            allowNull: false
         }
         // created_at: DataTypes.DATE,
         // updated_at: DataTypes.DATE,
@@ -32,10 +32,10 @@ module.exports = (sequelize, DataTypes) => {
         Parceiro.hasMany(models.Imagem, { as: "imagens", foreignKey: "parceiros_id" });
 
         Parceiro.belongsToMany(models.Doador, {
-            as: "doacao", 
-            through: "doacoes", 
-            foreignKey: "parceiros_id", 
-            otherKey: "doadores_id", 
+            as: "doacao",
+            through: "doacoes",
+            foreignKey: "parceiros_id",
+            otherKey: "doadores_id",
             timestamps: false
         });
     };

@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
             field: 'created_at',
             allowNull: false
-          },
-          updatedAt: {
+        },
+        updatedAt: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-            field:'updated_at',
-            allowNull: false 
+            field: 'updated_at',
+            allowNull: false
         }
         // created_at: DataTypes.DATE,
         // updated_at: DataTypes.DATE
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     }
     );
-    
+
     Artigo.associate = (models) => {
         Artigo.belongsTo(models.Parceiro, { as: "parceiro", foreignKey: "parceiros_id" });
         Artigo.hasMany(models.Imagem, { as: "imagens", foreignKey: "artigos_id" });

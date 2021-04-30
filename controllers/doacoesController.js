@@ -1,9 +1,9 @@
 const { Doacao } = require("../models");
-const Doador = require("../models/Doador");
 
 const doacoesController = {
     index: async (req, res) => {
         const doacoes = await Doacao.findAll();
+
         return res.json(doacoes);
     },
 
@@ -11,9 +11,7 @@ const doacoesController = {
         const { doadores_id } = req.params;
 
         const doacoesDoador = await Doacao.findAll({
-            where: {
-                doadores_id: doadores_id
-            }
+            where: { doadores_id }
         });
 
         return res.json(doacoesDoador);
@@ -23,9 +21,7 @@ const doacoesController = {
         const { parceiros_id } = req.params;
 
         const doacoesParceiro = await Doacao.findAll({
-            where: {
-                parceiros_id: parceiros_id
-            }
+            where: { parceiros_id }
         });
 
         return res.json(doacoesParceiro);
@@ -49,7 +45,7 @@ const doacoesController = {
         const { id } = req.params;
         const atualizarDoacao = req.body;
 
-        await Doacao.update( atualizarDoacao, {
+        await Doacao.update(atualizarDoacao, {
             where: { id }
         });
 
@@ -60,11 +56,10 @@ const doacoesController = {
         const { id } = req.params;
 
         const deletarDoacao = await Doacao.destroy({
-            where: { id: id }
+            where: { id }
         });
 
         return res.json(deletarDoacao);
-
     },
 
 }
