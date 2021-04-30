@@ -13,4 +13,5 @@ const btnLogin = () => {
 
 const btnClose = () => {
     document.querySelector('.modal').style.display = "none";
+    window.open('modalCadastro.html');
 }
