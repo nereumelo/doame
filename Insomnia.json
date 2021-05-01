@@ -1,15 +1,15 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2021-04-30T17:56:54.678Z",
+    "__export_date": "2021-05-01T16:47:57.783Z",
     "__export_source": "insomnia.desktop.app:v2021.3.0",
     "resources": [
         {
             "_id": "req_049be0ab0739403095226dd10e278a46",
             "parentId": "fld_780cd0ca772b434f96f90a16166822ec",
-            "modified": 1619805247567,
+            "modified": 1619886166239,
             "created": 1619804884651,
-            "url": "http://localhost:3000/parceiros/20/artigo/7",
+            "url": "http://localhost:3000/parceiros/32/artigo/9",
             "name": "delete",
             "description": "",
             "method": "DELETE",
@@ -64,9 +64,9 @@
         {
             "_id": "req_166a70f5c0394480a86004bcd30680ad",
             "parentId": "fld_780cd0ca772b434f96f90a16166822ec",
-            "modified": 1619805211068,
+            "modified": 1619886131960,
             "created": 1619804877028,
-            "url": "http://localhost:3000/parceiros/20/artigo/7",
+            "url": "http://localhost:3000/parceiros/32/artigo/9",
             "name": "update",
             "description": "",
             "method": "PUT",
@@ -96,9 +96,9 @@
         {
             "_id": "req_567ae11b32f0433a93c72991602926ca",
             "parentId": "fld_780cd0ca772b434f96f90a16166822ec",
-            "modified": 1619805095362,
+            "modified": 1619886079004,
             "created": 1619804851779,
-            "url": "http://localhost:3000/parceiros/20/artigo",
+            "url": "http://localhost:3000/parceiros/32/artigo",
             "name": "create",
             "description": "",
             "method": "POST",
@@ -128,9 +128,9 @@
         {
             "_id": "req_d0b8bfa5fc26409c8fc68d68d9463628",
             "parentId": "fld_025585e07d3e4dfb98b526ae06ddfc56",
-            "modified": 1619720530361,
+            "modified": 1619886212807,
             "created": 1619634602074,
-            "url": "http://localhost:3000/parceiros/20/endereco/56",
+            "url": "http://localhost:3000/parceiros/34/endereco/57",
             "name": "delete",
             "description": "",
             "method": "DELETE",
@@ -163,9 +163,9 @@
         {
             "_id": "req_da5a138cd23d49b5912a3fa5578fbcb2",
             "parentId": "fld_025585e07d3e4dfb98b526ae06ddfc56",
-            "modified": 1619720442864,
+            "modified": 1619885964828,
             "created": 1619634339182,
-            "url": "http://localhost:3000/parceiros/20/endereco/56",
+            "url": "http://localhost:3000/parceiros/34/endereco/57",
             "name": "update",
             "description": "",
             "method": "PUT",
@@ -195,9 +195,9 @@
         {
             "_id": "req_dd8880f5607947f9a3551bd8c3965759",
             "parentId": "fld_025585e07d3e4dfb98b526ae06ddfc56",
-            "modified": 1619720231503,
+            "modified": 1619885890193,
             "created": 1619570583722,
-            "url": "http://localhost:3000/parceiros/20/endereco",
+            "url": "http://localhost:3000/parceiros/34/endereco",
             "name": "create",
             "description": "",
             "method": "POST",
@@ -227,9 +227,9 @@
         {
             "_id": "req_4eaf1936bdae40a7aec696b9b1ddacc0",
             "parentId": "fld_7551dc67db584f25a16d1b532d8bbadd",
-            "modified": 1619720212331,
+            "modified": 1619886180857,
             "created": 1619718723316,
-            "url": "http://localhost:3000/parceiros/20/imagem/7",
+            "url": "http://localhost:3000/parceiros/32/imagem/8",
             "name": "delete",
             "description": "",
             "method": "DELETE",
@@ -262,9 +262,9 @@
         {
             "_id": "req_c7e76c3e90ab4473afda2c2becb1bb81",
             "parentId": "fld_7551dc67db584f25a16d1b532d8bbadd",
-            "modified": 1619720175512,
+            "modified": 1619885997009,
             "created": 1619617556566,
-            "url": "http://localhost:3000/parceiros/20/imagem",
+            "url": "http://localhost:3000/parceiros/32/imagem",
             "name": "create",
             "description": "",
             "method": "POST",
@@ -317,9 +317,9 @@
         {
             "_id": "req_ebbabcbf5ef7492c81bd28949a4be65d",
             "parentId": "fld_9ded0a3fb7a44684b9087153dbb8ff07",
-            "modified": 1619805064737,
+            "modified": 1619886189396,
             "created": 1619718960714,
-            "url": "http://localhost:3000/parceiros/20/",
+            "url": "http://localhost:3000/parceiros/34",
             "name": "show",
             "description": "",
             "method": "GET",
@@ -340,7 +340,7 @@
         {
             "_id": "req_7003cb2a3e064974b68cea1cb75ec025",
             "parentId": "fld_9ded0a3fb7a44684b9087153dbb8ff07",
-            "modified": 1619800757132,
+            "modified": 1619885789961,
             "created": 1618942373210,
             "url": "http://localhost:3000/parceiros/",
             "name": "create",
@@ -348,7 +348,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"nome\": \"Casas Bahia\",\n  \"cnpj\": \"12345678901234\",\n\t\"email\": \"rh@casasbahia.com\",\n  \"senha\": \"casasbh123\"\n}"
+                "text": "{\n  \"nome\": \"Casas Bhia\",\n  \"cnpj\": \"12345678901233\",\n\t\"email\": \"rh@casasbahia.co\",\n  \"senha\": \"Casasbh123@\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -372,15 +372,15 @@
         {
             "_id": "req_8fd04497963f4582ac299f5b8df60bdc",
             "parentId": "fld_9ded0a3fb7a44684b9087153dbb8ff07",
-            "modified": 1619802314888,
+            "modified": 1619885822937,
             "created": 1618943250781,
-            "url": "http://localhost:3000/parceiros/23",
+            "url": "http://localhost:3000/parceiros/32",
             "name": "update",
             "description": "",
             "method": "PUT",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"senha\": \"casasbh123\",\n\t\"novaSenha\": \"123\"\n}"
+                "text": "{\n  \"senha\": \"Casasbh123@\",\n\t\"novaSenha\": \"Casasbh123#\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -404,9 +404,9 @@
         {
             "_id": "req_cb04047d79da428c99ee3326e6ad10ab",
             "parentId": "fld_9ded0a3fb7a44684b9087153dbb8ff07",
-            "modified": 1619801247070,
+            "modified": 1619886235229,
             "created": 1618943659134,
-            "url": "http://localhost:3000/parceiros/22",
+            "url": "http://localhost:3000/parceiros/",
             "name": "delete",
             "description": "",
             "method": "DELETE",
@@ -669,50 +669,6 @@
             "_type": "request"
         },
         {
-            "_id": "req_076c8791267b4bc49ad2cbb5dac89d07",
-            "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
-            "modified": 1619803083771,
-            "created": 1619802595782,
-            "url": "http://localhost:3000/doadores/13/new_password",
-            "name": "updatePassword",
-            "description": "",
-            "method": "PUT",
-            "body": {
-                "mimeType": "application/json",
-                "text": "{\n  \"senha\": \"1234\",\n\t\"novaSenha\": \"herbertl\"\n}"
-            },
-            "parameters": [],
-            "headers": [
-                {
-                    "name": "Content-Type",
-                    "value": "application/json",
-                    "id": "pair_66975079b5c744368a4e3bab36924248"
-                }
-            ],
-            "authentication": {},
-            "metaSortKey": -1619802595782,
-            "isPrivate": false,
-            "settingStoreCookies": true,
-            "settingSendCookies": true,
-            "settingDisableRenderRequestBody": false,
-            "settingEncodeUrl": true,
-            "settingRebuildPath": true,
-            "settingFollowRedirects": "global",
-            "_type": "request"
-        },
-        {
-            "_id": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
-            "parentId": "wrk_5c62c65f6760402f95f8039d4d49be22",
-            "modified": 1619142219563,
-            "created": 1618859402674,
-            "name": "Doadores",
-            "description": "",
-            "environment": {},
-            "environmentPropertyOrder": null,
-            "metaSortKey": -1618758819196,
-            "_type": "request_group"
-        },
-        {
             "_id": "req_8b4b65ce5d4c4519af0f81af3b5b865f",
             "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
             "modified": 1619142094838,
@@ -736,9 +692,21 @@
             "_type": "request"
         },
         {
+            "_id": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
+            "parentId": "wrk_5c62c65f6760402f95f8039d4d49be22",
+            "modified": 1619142219563,
+            "created": 1618859402674,
+            "name": "Doadores",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1618758819196,
+            "_type": "request_group"
+        },
+        {
             "_id": "req_f88d825201744850adf1cb5ce4a6787f",
             "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
-            "modified": 1619802566302,
+            "modified": 1619883946609,
             "created": 1618859858795,
             "url": "http://localhost:3000/doadores/",
             "name": "create",
@@ -746,7 +714,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"nome\": \"herbert lindo\",\n  \"email\": \"herbertlindo@email.c\",\n  \"senha\": \"herbert123\"\n}"
+                "text": "{\n  \"nome\": \"Nereu Melo\",\n  \"email\": \"nereumelo@email.com\",\n  \"senha\": \"Nereumelo1#\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -770,15 +738,15 @@
         {
             "_id": "req_899969cc374e43dba9af7112d5c93d2a",
             "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
-            "modified": 1619196812177,
+            "modified": 1619877704627,
             "created": 1618874809200,
-            "url": "http://localhost:3000/doadores/8",
+            "url": "http://localhost:3000/doadores/16",
             "name": "update",
             "description": "",
             "method": "PUT",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"nome\": \"herbert feio\",\n  \"email\": \"herbertfeio@email\",\n  \"senha\": \"ehmentira\"\n}"
+                "text": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joaosilva@gmail.com\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -800,11 +768,43 @@
             "_type": "request"
         },
         {
+            "_id": "req_076c8791267b4bc49ad2cbb5dac89d07",
+            "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
+            "modified": 1619884778631,
+            "created": 1619802595782,
+            "url": "http://localhost:3000/doadores/3/new_password",
+            "name": "updatePassword",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"senha\": \"herbert123\",\n\t\"novaSenha\": \"Herbert123@\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_66975079b5c744368a4e3bab36924248"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1618875123224.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
             "_id": "req_09fa8784613844f49aad718ae1bca220",
             "parentId": "fld_6e9780b4da2c4a1a8f8a17535194fe93",
-            "modified": 1619802809101,
+            "modified": 1619887292319,
             "created": 1618875123218,
-            "url": "http://localhost:3000/doadores/12",
+            "url": "http://localhost:3000/doadores/16",
             "name": "delete",
             "description": "",
             "method": "DELETE",
@@ -823,19 +823,19 @@
             "_type": "request"
         },
         {
-            "_id": "req_b66e6f01b86b461e86d8d1b49904058e",
+            "_id": "req_9408f3c3287543acb3f598a4273ff05b",
             "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
-            "modified": 1619142242677,
-            "created": 1619142214282,
-            "url": "http://localhost:3000/doacoes",
-            "name": "index",
+            "modified": 1619887654716,
+            "created": 1619887647113,
+            "url": "http://localhost:3000/doacoes/parceiro/32",
+            "name": "show (parceiro)",
             "description": "",
             "method": "GET",
             "body": {},
             "parameters": [],
             "headers": [],
             "authentication": {},
-            "metaSortKey": -1618943659184,
+            "metaSortKey": -1619887647113,
             "isPrivate": false,
             "settingStoreCookies": true,
             "settingSendCookies": true,
@@ -858,9 +858,55 @@
             "_type": "request_group"
         },
         {
+            "_id": "req_e4d6a7f5d1d84624a917aa8b9eb1eb94",
+            "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
+            "modified": 1619887607611,
+            "created": 1619887581081,
+            "url": "http://localhost:3000/doacoes/doador/19",
+            "name": "show (doador)",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1619887581081,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b66e6f01b86b461e86d8d1b49904058e",
+            "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
+            "modified": 1619887566874,
+            "created": 1619142214282,
+            "url": "http://localhost:3000/doacoes",
+            "name": "index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1618943659184,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
             "_id": "req_e5baecb58b69464b81d2b4a66a829d88",
             "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
-            "modified": 1619197062095,
+            "modified": 1619887318696,
             "created": 1619142214283,
             "url": "http://localhost:3000/doacoes",
             "name": "create",
@@ -868,7 +914,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"parceiros_id\": 10,\n\t\"doadores_id\": 5,\n\t\"valor\": 500.00,\n\t\"forma_pagamento\": \"cartão de crédito\",\n\t\"status\": \"Concluído\"\n}"
+                "text": "{\n  \"parceiros_id\": 32,\n\t\"doadores_id\": 19,\n\t\"valor\": 500.50,\n\t\"forma_pagamento\": \"cartão de crédito\",\n\t\"status\": \"Concluído\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -892,15 +938,15 @@
         {
             "_id": "req_4aba21a6c90d4e489859086eb0c8e5a9",
             "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
-            "modified": 1619197202325,
+            "modified": 1619887501576,
             "created": 1619142214285,
-            "url": "http://localhost:3000/doacoes/6",
+            "url": "http://localhost:3000/doacoes/14",
             "name": "update",
             "description": "",
             "method": "PUT",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n  \"parceiros_id\": 10,\n\t\"doadores_id\": 5,\n\t\"valor\": 1000.00,\n\t\"forma_pagamento\": \"cartão de crédito\",\n\t\"status\": \"Em andamento\"\n}"
+                "text": "{\n\t\"valor\": 1000.00,\n\t\"forma_pagamento\": \"cartão de crédito\",\n\t\"status\": \"Em andamento\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -924,9 +970,9 @@
         {
             "_id": "req_640fa08cf4094209ad8db04b861f3727",
             "parentId": "fld_edb2923171c74fed8421e1de68c7ebeb",
-            "modified": 1619197276302,
+            "modified": 1619887476398,
             "created": 1619142214288,
-            "url": "http://localhost:3000/doacoes/6",
+            "url": "http://localhost:3000/doacoes/13",
             "name": "delete",
             "description": "",
             "method": "DELETE",

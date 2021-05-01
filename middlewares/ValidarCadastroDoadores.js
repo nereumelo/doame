@@ -14,7 +14,9 @@ module.exports = async (request, response, next) => {
         return;
 
     } else if (!tipoSenha(senha)) {
-        response.status(400).json({ erro: "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e um símbolo especial"});
+        response.status(400).json({
+            erro: "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e 1 símbolo especial ($, *, &, @, #)"
+        });
         return;
 
     } else if (!tipoEmail(email)) {
@@ -27,11 +29,11 @@ module.exports = async (request, response, next) => {
 }
 
 function tipoEmail(email) {
-    let tipo = 	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let tipo = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return tipo.test(email);
 }
 
-function tipoSenha(senha){
+function tipoSenha(senha) {
     let tipo = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
     return tipo.test(senha);
 }

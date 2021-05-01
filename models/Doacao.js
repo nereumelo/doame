@@ -1,8 +1,7 @@
 
 module.exports = (sequelize, DataTypes) => {
 
-    const Doacao = sequelize.define(
-        'Doacao', {
+    const Doacao = sequelize.define('Doacao', {
         parceiros_id: DataTypes.INTEGER,
         doadores_id: DataTypes.INTEGER,
         valor: DataTypes.DOUBLE,
@@ -10,14 +9,23 @@ module.exports = (sequelize, DataTypes) => {
         status: {
             type: DataTypes.ENUM,
             values: ['Em andamento', 'Concluído', 'Não realizado']
+        }, createdAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field: 'created_at',
+            allowNull: false
         },
-
-        created_at: DataTypes.DATE,
-    }, {
+        updatedAt: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+            field: 'updated_at',
+            allowNull: false
+        },
+    }, 
+    {
         tableName: "doacoes",
-        timestamps: false
-    }
-    );
+        timestamps: true
+    });
 
     return Doacao;
 }
