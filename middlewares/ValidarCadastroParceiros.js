@@ -17,7 +17,7 @@ module.exports = async (request, response, next) => {
         return;
 
     }else if(!tipoSenha(senha)){
-        response.status(400).json({ erro: "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e um Símbolo especial"});
+        response.status(400).json({ erro: "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e um símbolo especial"});
         return;
     }else {
         next();
