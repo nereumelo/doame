@@ -2,7 +2,9 @@ const { Doacao } = require("../models");
 
 const doacoesController = {
     index: async (req, res) => {
-        const doacoes = await Doacao.findAll();
+        const doacoes = await Doacao.findAll({
+            order: [['updatedAt', 'DESC']]
+        });
 
         return res.json(doacoes);
     },

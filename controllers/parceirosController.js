@@ -12,7 +12,8 @@ const buscaParceiro = (id) => Parceiro.findByPk(id, ({
 const parceirosController = {
     index: async (req, res) => {
         const parceiros = await Parceiro.findAll({
-            attributes: ['id', 'nome', 'cnpj', 'email']
+            attributes: ['id', 'nome', 'cnpj', 'email', 'updatedAt'],
+            order: [['updatedAt', 'DESC']]
         });
 
         return res.json(parceiros);

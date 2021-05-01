@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs');
 
 const doadoresController = {
     index: async (req, res) => {
-        const doadores = await Doador.findAll();
+        const doadores = await Doador.findAll({
+            order: [['updatedAt', 'DESC']]
+        });
 
         return res.json(doadores);
     },
