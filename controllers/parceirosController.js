@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
