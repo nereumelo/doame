@@ -146,8 +146,7 @@ header .btn-login:hover {
 
 .scrolling-ativado {
     background-color: #ffffff;
-    box-shadow: 0 3px, 1rem, rgba(0, 0, 0, 0.1);
-    transition: 0.7s;
+    transition: 3s;
     text-shadow: 0.1em 0.1em 0.2em #333;
 }
 
@@ -177,18 +176,20 @@ section.projects .container {
 section.projects article {
     width: 250px;
     max-width: 100%;
-    background-color: #7cdcdf83;
+    background-color: #ececec;
     border-radius: 5px;
     align-items: center;
     padding: 20px;
     box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.51);
     transition: 0.4s ease-in;
+    opacity: 0.8;
 }
 
 section.projects article:hover {
-    background-color: #7CDCDF;
+    background-color: #7cdcdfa4;
     transition: 0.4s;
     transform: scale(1.02, 1.02);
+    opacity: 1;
 }
 
 section.projects article .thumb {
@@ -250,8 +251,34 @@ section .porque-doar h2 {
 
 section .porque-doar p {
     text-align: center;
-    margin-top: 35px;
     font-size: 25px;
+    width: 800px;
+    margin-left: 270px;
+    margin-top: 25px;
+}
+
+
+/*parallax*/
+
+.body-site {
+    background-image: url(/public/images/donation_opacityblue.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 10px;
+    padding-bottom: 350px;
+    margin-top: 100px;
+    opacity: 0.7;
+}
+
+.body-site p {
+    font-family: 'Poppins';
+    text-align: end;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
 }
 
 
@@ -271,7 +298,7 @@ section .porque-doar p {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.74);
+    background-color: rgba(29, 29, 29, 0.74);
     z-index: 10;
     align-items: center;
     justify-content: center;
@@ -483,4 +510,18 @@ footer .social-media i:hover {
 }
 
 
-/*modal*/
+/*scroll animate*/
+
+[data-anime] {
+    opacity: 0;
+    transition: 1s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-170px, 0px, 0px);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
