@@ -1,5 +1,8 @@
+require('dotenv').config();
 const { Doador } = require("../models");
 const bcrypt = require('bcryptjs');
+const saltRounds = 10;
+const pepper = process.env.PWD_PEPPER;
 
 const doadoresController = {
     index: async (req, res) => {
@@ -12,7 +15,7 @@ const doadoresController = {
 
     create: async (req, res) => {
         const { nome, email, senha } = req.body;
-        const senhaCrypt = bcrypt.hashSync(senha, 10);
+        const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoDoador = await Doador.create({
             nome,
@@ -39,10 +42,10 @@ const doadoresController = {
         const { senha, novaSenha } = req.body;
 
         const doador = await Doador.findByPk(id);
-        const validaSenha = (doador && bcrypt.compareSync(senha, doador.senha));
+        const validaSenha = (doador && bcrypt.compareSync(senha + pepper, doador.senha));
 
         if (validaSenha) {
-            const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
+            const novaSenhaCrypt = bcrypt.hashSync(novaSenha + pepper, saltRounds);
             await Doador.update({ senha: novaSenhaCrypt }, { where: { id } });
         }
 
