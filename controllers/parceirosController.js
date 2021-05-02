@@ -1,5 +1,7 @@
 const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
+const saltRounds = 10;
+const pepper = process.env.PWD_PEPPER;
 
 const buscaParceiro = (id) => Parceiro.findByPk(id, ({
     include: ["enderecos", "imagens", {
@@ -28,7 +30,7 @@ const parceirosController = {
 
     create: async (req, res) => {
         const { nome, cnpj, email, senha } = req.body;
-        const senhaCrypt = bcrypt.hashSync(senha, 10);
+        const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoParceiro = await Parceiro.create({
             nome,
@@ -44,10 +46,10 @@ const parceirosController = {
         const { senha, novaSenha } = req.body;
 
         const parceiro = await Parceiro.findByPk(id);
-        const validaSenha = (parceiro && bcrypt.compareSync(senha, parceiro.senha));
+        const validaSenha = (parceiro && bcrypt.compareSync(senha + pepper, parceiro.senha));
 
         if (validaSenha) {
-            const novaSenhaCrypt = bcrypt.hashSync(novaSenha, 10);
+            const novaSenhaCrypt = bcrypt.hashSync(novaSenha + pepper, saltRounds);
             await Parceiro.update({ senha: novaSenhaCrypt }, { where: { id } });
         }
 
