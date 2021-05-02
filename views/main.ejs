@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/images/logo/7.png">
-    <link rel='stylesheet' href='/public/stylesheets/main.css'>
+    <link rel="icon" href="/images/logo/7.png">
+    <link rel='stylesheet' href='/stylesheets/main.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>DOAME</title>
 </head>
@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="logo">
-            <img class="logo-img" src="/public/images/logo/Logomarca Doame (3).png">
+            <img class="logo-img" src="/images/logo/Logomarca Doame (3).png">
         </div>
         <div class="nav">
             <ul>
@@ -34,36 +34,36 @@
 
     <main>
         <section class="container">
-            <img class="banner" src="/public/images/logo/banner.png">
+            <img class="banner" src="/images/logo/banner.png">
         </section>
 
         <section class="projects">
             <div class="container">
                 <article>
-                    <div class="thumb" style="background-image: url('/public/images/logo/doguineos.png')"></div>
+                    <div class="thumb" style="background-image: url('/images/logo/doguineos.png')"></div>
                     <span class="titulo-projeto">NOME DO PROJETO</span>
                     <div class="info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                        <img class="querodoar" src="/public/images/logo/querodoar.png">
+                        <img class="querodoar" src="/images/logo/querodoar.png">
                     </div>
                 </article>
                 <article>
-                    <div class="thumb" style="background-image: url('/public/images/logo/doguineos.png')"></div>
+                    <div class="thumb" style="background-image: url('/images/logo/doguineos.png')"></div>
                     <span class="titulo-projeto">NOME DO PROJETO</span>
                     <div class="info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                        <img class="querodoar" src="/public/images/logo/querodoar.png">
+                        <img class="querodoar" src="/images/logo/querodoar.png">
                     </div>
                 </article>
                 <article>
-                    <div class="thumb" style="background-image: url('/public/images/logo/doguineos.png')"></div>
+                    <div class="thumb" style="background-image: url('/images/logo/doguineos.png')"></div>
                     <span class="titulo-projeto">NOME DO PROJETO</span>
                     <div class="info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                        <img class="querodoar" src="/public/images/logo/querodoar.png">
+                        <img class="querodoar" src="/images/logo/querodoar.png">
                     </div>
                 </article>
             </div>
@@ -106,7 +106,7 @@
             <button class="close" onclick="btnClose()">X</button>
         </div>
 
-        <a href="#" id="google-button"><button><img src="/public/images/icons/google_icon.png" alt="Google">Login com Google</button></a>
+        <a href="#" id="google-button"><button><img src="/images/icons/google_icon.png" alt="Google">Login com Google</button></a>
 
         <div id="lines">
             <div class="line"></div>
@@ -114,15 +114,15 @@
             <div class="line"></div>
         </div>
 
-        <form id="form_contact">
+        <form id="form_contact" action='/login' method='POST'>
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="senha" name="senha" placeholder="Senha">
             <div class="mensagem-erro"></div>
+            <button id="login" type="submit">Login</button>
         </form>
-
+        
         <div class="password-missed">
             <a href="#">Esqueceu a senha?</a>
-            <a id="login" href="#">Login</a>
         </div>
 
         <div class="sign-up">
@@ -130,7 +130,7 @@
             <a href="#"><button onclick="btnCadastro()" href="#modalCadastro.html">Cadastre-se</button></a>
         </div>
     </div>
-    <script src="/public/js/main.js"></script>
+    <script src="/javascripts/main.js"></script>
 </body>
 
 </html>
