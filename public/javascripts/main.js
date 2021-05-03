@@ -1,6 +1,6 @@
 //header fixo com scroll
 var urlRoot = location.protocol + '//' + location.host;
-console.log(urlRoot + '/parceiros/cadastro');
+
 window.addEventListener('scroll', function() {
     let header = document.querySelector('header');
     let windowPosition = window.scrollY > 0
@@ -18,10 +18,6 @@ const btnClose = () => {
 
 }
 
-const btnCadastro = () => {
-    window.open('modalCadastro.html');
-}
-
 //animate-scroll
 
 const target = document.querySelectorAll('[data-anime]');
@@ -33,7 +29,7 @@ function animeScroll() {
         if ((windowTop) > element.offsetTop) {
             element.classList.add(animationClass)
         }
-        console.log(element.offsetTop);
+        // console.log(element.offsetTop);
 
     })
 }
@@ -70,6 +66,6 @@ const sendLoginData = async(email, senha) => {
 }
 
 
-const callCadastroParceiro = () => {
-    location = 'parceiros/cadastro';
+const redirectUrl = (pathName) => {
+    location = pathName;
 }

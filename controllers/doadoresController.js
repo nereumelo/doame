@@ -5,6 +5,10 @@ const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 
 const doadoresController = {
+    view: async (req,res) => {
+        await res.render('cadastro');
+    },
+    
     index: async (req, res) => {
         const doadores = await Doador.findAll({
             order: [['updatedAt', 'DESC']]
