@@ -225,7 +225,7 @@ article .titulo-projeto {
     justify-content: center;
     color: rgb(255, 255, 255);
     background-color: #7cdcdf;
-    width: 250;
+    width: 250px;
 }
 
 article .info .querodoar {
@@ -271,7 +271,7 @@ section .porque-doar p {
 /*parallax*/
 
 .body-site {
-    background-image: url(/public/images/donation_opacityblue.png);
+    background-image: url(/public/images/doações_opblue.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
