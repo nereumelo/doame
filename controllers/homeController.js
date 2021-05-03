@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const pepper = process.env.PWD_PEPPER;
 
 const homeController = {
-    index: async (req,res) => {
+    view: async (req,res) => {
 
         res.render('main');
     },
