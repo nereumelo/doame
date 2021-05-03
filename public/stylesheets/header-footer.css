@@ -99,6 +99,7 @@ header .nav ul :hover {
     color: white;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 10px;
 }
 
 .search-btn>i {
