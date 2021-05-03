@@ -28,6 +28,7 @@
         </div>
         <div class="login">
             <button class="btn-login" onclick="btnLogin()">Login</button>
+            <p class="nome-usuario"></p>
         </div>
         </div>
     </header>
@@ -114,15 +115,15 @@
             <div class="line"></div>
         </div>
 
-        <form id="form_contact" action='/login' method='POST'>
+        <form id="form_contact">
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="senha" name="senha" placeholder="Senha">
             <div class="mensagem-erro"></div>
-            <button id="login" type="submit">Login</button>
         </form>
         
         <div class="password-missed">
             <a href="#">Esqueceu a senha?</a>
+            <a id="login" onclick="sendLoginData(email.value, senha.value)">Login</a>
         </div>
 
         <div class="sign-up">
