@@ -49,6 +49,7 @@ header .nav a {
     color: white;
     font-size: 20px;
     text-shadow: 0.1em 0.1em 0.2em #333;
+    cursor: pointer;
 }
 
 header .nav ul :hover {
