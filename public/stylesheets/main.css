@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url('/stylesheets/paleta.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -105,22 +106,23 @@ article .info .querodoar:hover {
 /*SECTION - frase*/
 
 section .porque-doar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 300px;
 }
 
 section .porque-doar h2 {
-    text-align: center;
-    margin-top: 120px;
     font-size: 40px;
     color: #8a0705;
+    margin-bottom: 25px;
 }
 
 section .porque-doar p {
-    text-align: center;
     font-size: 25px;
     width: 900px;
-    margin-left: 175px;
-    margin-top: 25px;
+    text-align: center;
 }
 
 
@@ -348,3 +350,5 @@ section .porque-doar p {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
 }
+
+/* Responsividade */
