@@ -39,3 +39,29 @@ function animeScroll() {
 window.addEventListener('scroll', function() {
     animeScroll();
 })
+
+const sendLoginData = async (email, senha) => {
+    const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            email,
+            senha
+        }),
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if (data.logado) {
+        document.querySelector('.modal').style.display = "none";
+        document.querySelector('.btn-login').style.display = "none";
+        document.querySelector('.nome-usuario').innerText = data.usuario;
+        document.querySelector('.nome-usuario').style.marginRight = "40px";
+        document.querySelector('.nome-usuario').style.marginLeft = "-20px";
+        document.querySelector('.nome-usuario').style.color = "white";
+        document.querySelector('.nome-usuario').style.fontSize = "20px";
+
+    } else {
+        alert(data.message);
+    }
+}
