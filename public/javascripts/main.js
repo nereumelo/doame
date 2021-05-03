@@ -40,7 +40,7 @@ window.addEventListener('scroll', function() {
     animeScroll();
 })
 
-const sendLoginData = async (email, senha) => {
+const sendLoginData = async(email, senha) => {
     const res = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -64,4 +64,9 @@ const sendLoginData = async (email, senha) => {
     } else {
         alert(data.message);
     }
+
+}
+
+const callCadastroParceiro = () => {
+    location = "/parceiros/cadastro"
 }
