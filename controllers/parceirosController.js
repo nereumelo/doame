@@ -19,7 +19,7 @@ const parceirosController = {
 
     index: async (req, res) => {
         const parceiros = await Parceiro.findAll({
-            attributes: ['id', 'nome', 'descricao', 'cnpj', 'email', 'updatedAt'],
+            attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
         });
 
@@ -34,13 +34,14 @@ const parceirosController = {
     },
 
     create: async (req, res) => {
-        const { nome, descricao, cnpj, email, senha } = req.body;
+        const { nome, descricao, cnpj, imagem, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoParceiro = await Parceiro.create({
             nome,
             descricao,
             cnpj,
+            imagem,
             email,
             senha: senhaCrypt
         });
