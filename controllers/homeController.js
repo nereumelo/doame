@@ -1,12 +1,21 @@
 require('dotenv').config();
 const { Doador, Parceiro} = require('../models');
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
 const pepper = process.env.PWD_PEPPER;
 
 const homeController = {
     view: async (req,res) => {
+        try {
+            await fetch('http://localhost:3000/parceiros/')
+                .then(res => res.json())
+                .then(data => {
+                    res.render('main', { listaParceiros: data })
+                });
 
-        res.render('main');
+        } catch(err) {
+            res.render('main', console.log('erro: ' + err));
+        }
     },
 
     auth: async (req,res) => {

@@ -19,7 +19,7 @@ const parceirosController = {
 
     index: async (req, res) => {
         const parceiros = await Parceiro.findAll({
-            attributes: ['id', 'nome', 'cnpj', 'email', 'updatedAt'],
+            attributes: ['id', 'nome', 'descricao', 'cnpj', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
         });
 
