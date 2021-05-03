@@ -1,10 +1,12 @@
+//header fixo com scroll
 window.addEventListener('scroll', function() {
-        let header = document.querySelector('header');
-        let windowPosition = window.scrollY > 0
+    let header = document.querySelector('header');
+    let windowPosition = window.scrollY > 0
 
-        header.classList.toggle('scrolling-ativado', windowPosition);
-    })
-    /*JS para modal*/
+    header.classList.toggle('scrolling-ativado', windowPosition);
+})
+
+//JS no modal
 const btnLogin = () => {
     document.querySelector('.modal').style.display = "flex";
 }
@@ -18,7 +20,7 @@ const btnCadastro = () => {
     window.open('modalCadastro.html');
 }
 
-//animte-scroll
+//animate-scroll
 
 const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
