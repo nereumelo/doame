@@ -6,7 +6,11 @@ const parceirosController = require('../controllers/parceirosController');
 // const ValidarSenha = require('../middlewares/ValidarSenha');
 const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Valida');
 
-router.get('/',  parceirosController.index);
+router.get('/cadastro', async(req, res) => {
+    res.render('cadastroParceiro')
+});
+
+router.get('/', parceirosController.index);
 router.get('/:id/', parceirosController.show);
 router.post('/', campoVazio, campoRepetido, formatoValido, parceirosController.create);
 router.put('/:id', campoVazio, formatoValido, parceirosController.update);
@@ -27,5 +31,3 @@ router.put('/:parceiros_id/artigo/:id', campoVazio, parceirosController.updateAr
 router.delete('/:parceiros_id/artigo/:id', parceirosController.deleteArt);
 
 module.exports = router;
-
-
