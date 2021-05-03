@@ -18,13 +18,23 @@ const homeController = {
         }
 
         if(!usuario) {
-            return res.status(400).json({ erro: 'Usuário não encontrado no banco de dados' });
+            return res.status(400).json({ 
+                message: 'Usuário não encontrado no banco de dados',
+                logado: false
+            });
         }
         else if (bcrypt.compareSync(senha + pepper, usuario.senha)) {
-            return res.json({ authStatus: 'Usuário logado com sucesso' });
+            return res.json({
+                message: 'Usuário logado com sucesso',
+                logado: true,
+                usuario: usuario.nome
+            });
         }
         else {
-            return res.status(400).json({ authStatus: 'Credenciais incorretas' });
+            return res.status(400).json({
+                message: 'Credenciais incorretas',
+                logado: false
+            });
         }
     }
 }
