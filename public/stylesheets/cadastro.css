@@ -173,17 +173,52 @@ form input {
 
 /* responsividade */
 
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
     main {
         height: 400px;
         width: 1250px;
     }
 }
 
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    main {
+        height: 370px;
+        width: 1100px;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    main {
+        height: 370px;
+        width: 950px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+    main {
+        height: 370px;
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+    main {
+        height: 370px;
+        width: 620px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    main {
+        height: 370px;
+        width: 525px;
+    }
+}
+
 @media only screen and (min-width: 400px) and (max-width: 500px) {
     main {
-        height: 500px;
-        width: 515px;
+        height: 370px;
+        width: 500px;
     }
 }
 
