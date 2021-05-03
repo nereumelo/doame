@@ -6,9 +6,7 @@ const parceirosController = require('../controllers/parceirosController');
 // const ValidarSenha = require('../middlewares/ValidarSenha');
 const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Valida');
 
-router.get('/cadastro', async(req, res) => {
-    res.render('cadastroParceiro')
-});
+router.get('/cadastro', parceirosController.view);
 
 router.get('/', parceirosController.index);
 router.get('/:id/', parceirosController.show);

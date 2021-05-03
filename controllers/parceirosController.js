@@ -13,6 +13,10 @@ const buscaParceiro = (id) => Parceiro.findByPk(id, ({
 }));
 
 const parceirosController = {
+    view: async (req,res) => {
+        await res.render('cadastroParceiro');
+    },
+
     index: async (req, res) => {
         const parceiros = await Parceiro.findAll({
             attributes: ['id', 'nome', 'cnpj', 'email', 'updatedAt'],
