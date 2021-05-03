@@ -34,11 +34,12 @@ const parceirosController = {
     },
 
     create: async (req, res) => {
-        const { nome, cnpj, email, senha } = req.body;
+        const { nome, descricao, cnpj, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoParceiro = await Parceiro.create({
             nome,
+            descricao,
             cnpj,
             email,
             senha: senhaCrypt
