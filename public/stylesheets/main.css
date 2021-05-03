@@ -271,7 +271,7 @@ section .porque-doar p {
 /*parallax*/
 
 .body-site {
-    background-image: url(/public/images/doações_opblue.png);
+    background-image: url(/images/doações_opblue.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
