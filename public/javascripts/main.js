@@ -1,4 +1,6 @@
 //header fixo com scroll
+var urlRoot = location.protocol + '//' + location.host;
+console.log(urlRoot + '/parceiros/cadastro');
 window.addEventListener('scroll', function() {
     let header = document.querySelector('header');
     let windowPosition = window.scrollY > 0
@@ -41,7 +43,7 @@ window.addEventListener('scroll', function() {
 })
 
 const sendLoginData = async(email, senha) => {
-    const res = await fetch('http://localhost:3000/login', {
+    const res = await fetch(urlRoot + '/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -67,6 +69,7 @@ const sendLoginData = async(email, senha) => {
 
 }
 
+
 const callCadastroParceiro = () => {
-    location = "/parceiros/cadastro"
+    location = 'parceiros/cadastro';
 }
