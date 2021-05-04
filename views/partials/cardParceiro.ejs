@@ -1,10 +1,13 @@
-<div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
-<span class="titulo-projeto">
-    <%= parceiro.nome %>
-</span>
-<div class="info">
-    <p>
-        <%= parceiro.descricao %>
-    </p>
-    <img class="querodoar" src="/images/logo/querodoar.png" onclick="redirectUrl('/page-parceiro')">
-</div>
+<% let parceiro=listaParceiros[i]; %>
+    <article onclick="location='/parceiro/:id'" style='cursor: pointer'>
+        <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
+        <span class="titulo-projeto">
+            <%= parceiro.nome %>
+        </span>
+        <div class="info">
+            <p>
+                <%= parceiro.descricao %>
+            </p>
+            <img class="querodoar" src="/images/logo/querodoar.png" onclick="redirectUrl('/page-parceiro')">
+        </div>
+    </article>

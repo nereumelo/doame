@@ -16,10 +16,8 @@
                     <div class="container">
                         <% for( let i = 0; i < listaParceiros.length; i++ ) { %>
                             <% let parceiro = listaParceiros[i]; %>
-                                <article>
-                                    <%- include partials/cardParceiro %>
-                                </article>
-                                <% } %>
+                                <%- include partials/cardParceiro %>
+                            <% } %>
                     </div>
                 </section>
                 <%- include partials/modalLogin %>
