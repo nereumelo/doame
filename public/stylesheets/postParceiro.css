@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@import url('/public/stylesheets/paleta.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: var(--branco);
+
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+.container div {
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.card-1, .card-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.postParceiro {
+    height: auto;
+    width: 85%;
+    padding-bottom: 5px;
+   
+}
+
+/* botão cadastre-se */
+
+.sign-up {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up p {
+    color: var(--cinza-claro-escuro);
+    font-size: 1.4rem;
+}
+
+.sign-up a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.sign-up a button {
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.sign-up a button:hover {
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+}
+
+/* responsividade */
+
+/* @media only screen and (min-width:1500px) and (max-width: 1800px) {
+    .container {
+      height: 1000px;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) and (max-width: 1500px) {
+    .container {
+      height: 1000px;
+    }
+    .container h1 {
+      font-size: 3.0rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1000px) and (max-width:1200px) {
+    .container {
+      height: 1000px;
+      width: 800px;
+    }
+    .container h1 {
+      font-size: 2.8rem;
+    }
+  }
+  
+  @media only screen and (min-width: 700px) and (max-width: 1000px) {
+    .container {
+      height: 1000px;
+      width: 800px;
+    }
+  }
+  
+  @media only screen and (min-width: 400px) and (max-width: 700px) {
+    .container {
+      height: 1200px;
+      width: 500px;
+    }
+    .container h1{
+      font-size: 2.0rem;
+    }
+    a button {
+      width: 200px;
+    }
+  } */
