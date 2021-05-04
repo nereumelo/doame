@@ -20,6 +20,10 @@ const homeController = {
         }
     },
 
+    thanks: async (req, res) => {
+        res.render('agradecimento');
+    },
+
     auth: async (req,res) => {
         const { email, senha } = req.body;
         const usuario = await Doador.findOne({ where: { email} });
