@@ -37,6 +37,7 @@ section.projects article {
     transition: 0.4s ease-in;
     opacity: 0.8;
     padding-bottom: 10px;
+    margin-top: 50px;
 }
 
 section.projects article:hover {
@@ -67,11 +68,13 @@ article .info p {
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 4.9em;
-    line-height: 1em;
+    max-height: 3.7em;
+    line-height: 1.2em;
     text-align: justify;
     margin-left: 8px;
     font-size: 15px;
+    height: 290px;
+    margin-top: 5px;
 }
 
 article .titulo-projeto {
@@ -170,6 +173,7 @@ section .porque-doar p {
 }
 
 .modal-header button {
+    background-color: var(--vermelho-claro);
     margin-left: 400px;
     margin-bottom: 30px;
     width: 45px;
@@ -177,8 +181,8 @@ section .porque-doar p {
     border-radius: 35px;
     border: none;
     font-size: 20px;
-    color: var(--vermelho-sangue);
-    background-color: white;
+    color: white;
+    cursor: pointer;
 }
 
 .modal-header button:hover {
@@ -204,6 +208,7 @@ section .porque-doar p {
 
 .modal #google-button button {
     background-color: var(--vermelho-claro);
+    color: var(--branco);
     border: none;
     border-radius: 8px;
     font-size: 1.0rem;
@@ -259,6 +264,31 @@ section .porque-doar p {
     margin-top: 15px;
     padding: 15px;
     outline: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logar {
+    margin-top: 30px;
+    background-color: greenyellow;
+    width: 50%;
+    height: 40px;
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.login-logar:hover {
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--azul-claro);
 }
 
 

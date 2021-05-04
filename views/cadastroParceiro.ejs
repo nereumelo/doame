@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include partials/head %>
 
-    <link rel="icon" href="/images/logo/7.png">
-    <link rel="stylesheet" href="/stylesheets/cadastroParceiro.css">
+    <head>
+        <link rel="stylesheet" href="/stylesheets/cadastroParceiro.css">
 
-    <title>DoAME | Cadastro do Parceiro</title>
-</head>
+        <title>DoAME | Cadastro do Parceiro</title>
+    </head>
 
-<body>
-    <main>
-        <img src="/images/logo/6.png" alt="Logo" class="logo-background">
+    <body>
+        <main>
+            <a class="image"  onclick="redirectUrl('/')"><img src="/images/logo/6.png" alt="Logo"></a>
 
-        <p id="header">Cadastro Parceiro</p>
+            <p id="header">Cadastro Parceiro</p>
 
-        <div class="forms">
-            <form>
-                <input type="text" name="nome" id="name" placeholder="Digite o seu nome">
-                <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ">
-                <input type="text" name="descricao" id="descricao" placeholder="Descrição">
-            </form>
+            <div class="forms">
+                <form>
+                    <input type="text" name="nome" id="name" placeholder="Digite o seu nome">
+                    <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ">
+                    <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+                </form>
 
-            <form>
-                <input type="email" name="email" id="email" placeholder="Email">
-                <input type="password" name="senha" id="senha" placeholder="Senha">
-                <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha">
-            </form>
-        </div>
+                <form>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha">
+                </form>
+            </div>
 
-        <div class="agree-with">
-            <input type="checkbox" id="terms" name="terms">
-            <label for="terms">Declaro ter lido e aceitado os <span>termos de uso e a política de privacidade</span>.</label>
-        </div>
+            <div class="agree-with">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Declaro ter lido e aceitado os <span>termos de uso e a política de privacidade</span>.</label>
+            </div>
 
-        <a href="#"><button>Cadastre-se</button></a>
-    </main>
-</body>
+            <a href="#"><button>Cadastre-se</button></a>
+        </main>
+        <script src="/javascripts/main.js"></script>
+    </body>
 
 </html>

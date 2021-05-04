@@ -1,0 +1,25 @@
+<div class="modal">
+    <div class="modal-header">
+        <button class="close" onclick="btnClose()"><i class="fas fa-times"></i></i></button>
+    </div>
+
+    <a href="#" id="google-button"><button><img src="/images/icons/google_icon.png" alt="Google">Login com Google</button></a>
+
+    <div id="lines">
+        <div class="line"></div>
+        <p>OU</p>
+        <div class="line"></div>
+    </div>
+
+    <form id="form_contact" action="/login" method='POST'>
+        <input type="email" id="email" name="email" placeholder="Email">
+        <input type="password" id="senha" name="senha" placeholder="Senha">
+        <div class="mensagem-erro"></div>
+        <button class="login-logar" id="login" type="submit">Entrar</button>
+    </form>
+
+    <div class="sign-up">
+        <p>Criar uma conta é fácil</p>
+        <a href="#"><button onclick="redirectUrl('doadores/cadastro')">Cadastre-se</button></a>
+    </div>
+</div>

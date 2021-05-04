@@ -6,8 +6,9 @@ const pepper = process.env.PWD_PEPPER;
 
 const homeController = {
     view: async (req,res) => {
+        const url = req.protocol + '://' + req.get('host');
         try {
-            await fetch('http://localhost:3000/parceiros/')
+            await fetch(url + '/parceiros')
                 .then(res => res.json())
                 .then(data => {
                     return res.render('main', { listaParceiros: data })
@@ -20,8 +21,9 @@ const homeController = {
 
 
     listaParceiros: async (req,res) => {
+        const url = req.protocol + '://' + req.get('host');
         try {
-            await fetch('http://localhost:3000/parceiros/')
+            await fetch(url + '/parceiros')
                 .then(res => res.json())
                 .then(data => {
                     return res.render('parceiros', { listaParceiros: data })
