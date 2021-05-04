@@ -3,77 +3,51 @@
 
 <%- include partials/head %>
 
-<head>
-    <link rel='stylesheet' href='/stylesheets/main.css'>
-    <title>DOAME</title>
-</head>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/main.css'>
+        <title>DOAME</title>
+    </head>
 
-<body>
-    <%- include partials/header %>
-    <main>
-        <section class="container">
-            <img class="banner" src="/images/logo/banner.png">
-        </section>
+    <body>
+        <%- include partials/header %>
+            <main>
+                <section class="container">
+                    <img class="banner" src="/images/logo/banner.png">
+                </section>
 
-        <section class="projects">
-            <div class="container">
-                <% for( let i = 0; i <= 2; i++ ) { %>
-                    <% let parceiro = listaParceiros[i]; %> 
-                <article>
-                    <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
-                    <span class="titulo-projeto"><%= parceiro.nome %></span>
-                    <div class="info">
-                        <p><%= parceiro.descricao %></p>
-                        <img class="querodoar" src="/images/logo/querodoar.png">
+                <section class="projects">
+                    <div class="container">
+                        <% for( let i = 0; i <= 2; i++ ) { %>
+                            <% let parceiro = listaParceiros[i]; %>
+                                <article>
+                                    <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
+                                    <span class="titulo-projeto"><%= parceiro.nome %></span>
+                                    <div class="info">
+                                        <p>
+                                            <%= parceiro.descricao %>
+                                        </p>
+                                        <img class="querodoar" src="/images/logo/querodoar.png">
+                                    </div>
+                                </article>
+                                <% } %>
                     </div>
-                </article>
-                <% } %>
-            </div>
-        </section>
+                </section>
 
-        <section>
-            <div class="body-site"></div>
-        </section>
+                <section>
+                    <div class="body-site"></div>
+                </section>
 
-        <section data-anime="left">
-            <div class="porque-doar">
-                <h2>É mais sobre pessoas e menos sobre dinheiro!</h2>
-                <p>O mundo precisa de mais solidariedade. Seja um motivador! Ao doar com a DoAME, você inspira amor e influencia outras pessoas a praticarem atos de bondade.</p>
-            </div>
-        </section>
+                <section data-anime="left">
+                    <div class="porque-doar">
+                        <h2>É mais sobre pessoas e menos sobre dinheiro!</h2>
+                        <p>O mundo precisa de mais solidariedade. Seja um motivador! Ao doar com a DoAME, você inspira amor e influencia outras pessoas a praticarem atos de bondade.</p>
+                    </div>
+                </section>
 
-    </main>
-    <%- include partials/footer %>
-    <div class="modal">
-        <div class="modal-header">
-            <button class="close" onclick="btnClose()">X</button>
-        </div>
-
-        <a href="#" id="google-button"><button><img src="/images/icons/google_icon.png" alt="Google">Login com Google</button></a>
-
-        <div id="lines">
-            <div class="line"></div>
-            <p>OU</p>
-            <div class="line"></div>
-        </div>
-
-        <form id="form_contact">
-            <input type="email" id="email" name="email" placeholder="Email">
-            <input type="password" id="senha" name="senha" placeholder="Senha">
-            <div class="mensagem-erro"></div>
-        </form>
-
-        <div class="password-missed">
-            <a href="#">Esqueceu a senha?</a>
-            <a class="login-logar" id="login" onclick="sendLoginData(email.value, senha.value)">Login</a>
-        </div>
-
-        <div class="sign-up">
-            <p>Criar uma conta é fácil</p>
-            <a href="#"><button onclick="redirectUrl('doadores/cadastro')">Cadastre-se</button></a>
-        </div>
-    </div>
-    <script src="/javascripts/main.js"></script>
-</body>
+            </main>
+            <%- include partials/footer %>
+                <%- include partials/modalLogin %>
+                    <script src="/javascripts/main.js"></script>
+    </body>
 
 </html>
