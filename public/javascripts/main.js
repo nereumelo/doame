@@ -34,9 +34,28 @@ function animeScroll() {
     })
 }
 
+function login(){
+    document.querySelector('.modal').style.display = "none";
+    document.querySelector('.btn-login').style.display = "block";
+    document.querySelector('.nome-usuario').innerText = localStorage.getItem("nome");
+    document.querySelector('.nome-usuario').style.marginRight = "40px";
+    document.querySelector('.nome-usuario').style.marginLeft = "-20px";
+    document.querySelector('.nome-usuario').style.color = "white";
+    document.querySelector('.nome-usuario').style.fontSize = "20px";
+    // if (localStorage.getItem('name') === '[]') {
+    //     console.log('Local storage is empty');
+    // }
+}
+
 window.addEventListener('scroll', function() {
     animeScroll();
 })
+
+window.addEventListener('load', function(){
+    login()
+})
+
+
 
 const sendLoginData = async(email, senha) => {
     const res = await fetch(urlRoot + '/login', {
@@ -50,14 +69,19 @@ const sendLoginData = async(email, senha) => {
     const data = await res.json();
     console.log(data);
 
+    window.localStorage;
+
     if (data.logado) {
+        localStorage.setItem("nome", data.usuario);
         document.querySelector('.modal').style.display = "none";
-        document.querySelector('.btn-login').style.display = "none";
-        document.querySelector('.nome-usuario').innerText = data.usuario;
-        document.querySelector('.nome-usuario').style.marginRight = "40px";
-        document.querySelector('.nome-usuario').style.marginLeft = "-20px";
-        document.querySelector('.nome-usuario').style.color = "white";
-        document.querySelector('.nome-usuario').style.fontSize = "20px";
+        document.querySelector('.btn-login').style.display = "block";
+        document.querySelector('.nome-usuario').innerText = localStorage.getItem("nome");
+        // document.querySelector('.nome-usuario').style.marginRight = "40px";
+        // document.querySelector('.nome-usuario').style.marginLeft = "-20px";
+        // document.querySelector('.nome-usuario').style.color = "white";
+        // document.querySelector('.nome-usuario').style.fontSize = "20px";;
+        console.log(localStorage)
+        
 
     } else {
         alert(data.message);
@@ -69,3 +93,4 @@ const sendLoginData = async(email, senha) => {
 const redirectUrl = (pathName) => {
     location = pathName;
 }
+
