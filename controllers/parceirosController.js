@@ -51,7 +51,7 @@ const parceirosController = {
             email,
             senha: senhaCrypt
         });
-        return res.json(novoParceiro);
+        return res.redirect('/');
     },
 
     update: async (req, res) => {
