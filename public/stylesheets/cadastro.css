@@ -24,8 +24,16 @@ main {
 
 /* forms */
 
+.logo-background {
+    height: 90px;
+    width: 270px;
+    margin-left: 120px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
 .forms {
-    height: 500px;
+    height: 560px;
     width: 500px;
     display: flex;
     flex-direction: column;

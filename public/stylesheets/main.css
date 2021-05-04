@@ -181,7 +181,6 @@ section .porque-doar p {
     border: none;
     font-size: 20px;
     color: var(--vermelho-sangue);
-    background-color: white;
 }
 
 .modal-header button:hover {
@@ -263,6 +262,31 @@ section .porque-doar p {
     margin-top: 15px;
     padding: 15px;
     outline: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logar {
+    margin-top: 30px;
+    background-color: greenyellow;
+    width: 50%;
+    height: 40px;
+    background-color: var(--vermelho-claro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.login-logar:hover {
+    color: var(--branco);
+    box-shadow: inset 400px 0 0 0 var(--azul-claro);
 }
 
 
