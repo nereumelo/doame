@@ -11,11 +11,12 @@ const homeController = {
             await fetch(url + '/parceiros')
                 .then(res => res.json())
                 .then(data => {
-                    return res.render('main', { listaParceiros: data })
+                    return res.render('main', { usuario: req.session.usuarioLogado, listaParceiros: data });
                 });
 
         } catch(err) {
-            return res.render('main', console.log('erro: ' + err));
+            res.json({ erro: err });
+            res.render('error');
         }
     },
 
@@ -44,22 +45,24 @@ const homeController = {
         if(!usuario) {
             return res.status(400).json({ 
                 message: 'Usuário não encontrado no banco de dados',
-                logado: false
+                usuario: null
             });
         }
         else if (bcrypt.compareSync(senha + pepper, usuario.senha)) {
-            return res.json({
-                message: 'Usuário logado com sucesso',
-                logado: true,
-                usuario: usuario.nome
-            });
+            req.session.usuarioLogado = usuario;
+            return res.redirect('/');
         }
         else {
             return res.status(400).json({
                 message: 'Credenciais incorretas',
-                logado: false
+                usuario: null
             });
         }
+    },
+
+    logout: async (req, res) => {
+        req.session.usuarioLogado = null;
+        return res.redirect('/');
     }
 }
 

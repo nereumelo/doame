@@ -13,8 +13,14 @@
         </div>
     </div>
     <div class="login">
-        <button class="btn-login" onclick="btnLogin()">Login</button>
-        <p class="nome-usuario"></p>
+        <% if(usuario) { %>
+            <form action="/logout" method="POST">
+                <p class="nome-usuario"><%= usuario.nome %></p>
+                <button type="submit">Sair</button>
+            </form>
+        <% } else { %>
+            <button class="btn-login" onclick="btnLogin()">Login</button>
+        <% } %>
     </div>
     </div>
 </header>
