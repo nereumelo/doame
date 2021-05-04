@@ -56,44 +56,6 @@ window.addEventListener('load', function(){
     login()
 })
 
-
-
-const sendLoginData = async(email, senha) => {
-    const res = await fetch(urlRoot + '/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            email,
-            senha
-        }),
-    });
-    const data = await res.json();
-    console.log(data);
-
-    window.localStorage;
-
-    if (data.logado) {
-        localStorage.setItem("nome", data.usuario);
-        let nome = localStorage.getItem("nome");
- 
-        document.querySelector('.modal').style.display = "none";
-        document.querySelector('.btn-login').style.display = "block";
-        document.querySelector('.nome-usuario').innerText = nome.split(' ')[0];
-        document.querySelector('.nome-usuario').style.marginRight = "40px";
-        document.querySelector('.nome-usuario').style.marginLeft = "-20px";
-        document.querySelector('.nome-usuario').style.color = "white";
-        document.querySelector('.nome-usuario').style.fontSize = "16px";
-        // console.log(localStorage)
-        
-
-    } else {
-        alert(data.message);
-    }
-
-}
-
-
 const redirectUrl = (pathName) => {
     location = pathName;
 }
-
