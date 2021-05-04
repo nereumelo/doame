@@ -127,7 +127,6 @@ header .nav ul :hover {
 
 header .login {
     display: flex;
-    align-items: center;
 }
 
 header .login .nome-usuario {
