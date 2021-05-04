@@ -31,7 +31,6 @@ module.exports = (sequelize, DataTypes) => {
     Parceiro.associate = (models) => {
         Parceiro.hasMany(models.Endereco, { as: "enderecos", foreignKey: "parceiros_id" });
         Parceiro.hasMany(models.Artigo, { as: "artigos", foreignKey: "parceiros_id" });
-        Parceiro.hasMany(models.Imagem, { as: "imagens", foreignKey: "parceiros_id" });
 
         Parceiro.belongsToMany(models.Doador, {
             as: "doacao",

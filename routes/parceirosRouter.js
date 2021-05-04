@@ -6,12 +6,14 @@ const parceirosController = require('../controllers/parceirosController');
 // const ValidarSenha = require('../middlewares/ValidarSenha');
 const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Valida');
 
-router.get('/cadastro', parceirosController.view);
-//router.show('/page-parceiro', parceirosController.view);
+router.get('/cadastro', parceirosController.viewCadastro);
 
+router.get('/JSON', parceirosController.indexJSON);
+router.get('/', parceirosController.viewIndex);
 
-router.get('/', parceirosController.index);
-router.get('/:id/', parceirosController.show);
+router.get('/:id/JSON', parceirosController.showJSON);
+router.get('/:id/', parceirosController.viewShow);
+
 router.post('/', campoVazio, campoRepetido, formatoValido, parceirosController.create);
 router.put('/:id', campoVazio, formatoValido, parceirosController.update);
 router.delete('/:id', parceirosController.delete);
@@ -20,10 +22,6 @@ router.delete('/:id', parceirosController.delete);
 router.post('/:parceiros_id/endereco', campoVazio, parceirosController.createAddress);
 router.put('/:parceiros_id/endereco/:id', campoVazio, parceirosController.updateAddress);
 router.delete('/:parceiros_id/endereco/:id/', parceirosController.deleteAddress);
-
-//Rotas de Imagens de Parceiros
-router.post('/:parceiros_id/imagem', campoVazio, parceirosController.createImg);
-router.delete('/:parceiros_id/imagem/:id', parceirosController.deleteImg);
 
 // Rotar de Artigos de Parceiros
 router.post('/:parceiros_id/artigo', campoVazio, parceirosController.createArt);

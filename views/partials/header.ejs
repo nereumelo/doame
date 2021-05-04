@@ -1,11 +1,11 @@
 <header>
     <div class="logo">
-        <img class="logo-img" onclick="redirectUrl('/')" src="/images/logo/Logomarca Doame (3).png">
+        <img class="logo-img" onclick="location='/'" src="/images/logo/Logomarca Doame (3).png">
     </div>
     <div class="nav">
         <ul>
-            <li><a onclick="redirectUrl('parceiros/cadastro')" class='buttonParceiros'>Seja um parceiro</a></li>
-            <li><a onclick="redirectUrl('lista-parceiros')">Parceiros</a></li>
+            <li><a onclick="location='/parceiros/cadastro'" class='buttonParceiros'>Seja um parceiro</a></li>
+            <li><a onclick="location='/parceiros/'">Parceiros</a></li>
         </ul>
         <!-- <div class="search-box">
             <input type="text" class="search-txt" placeholder="Buscar"></input>
@@ -17,7 +17,7 @@
                     <p class="nome-usuario">
                         <%= usuario.nome %>
                     </p>
-                    <button type="submit">Sair</button>
+                    <button class="btn-sair" type="submit">Sair</button>
                 </form>
                 <% } else { %>
                     <button class="btn-login" onclick="btnLogin()">Login</button>

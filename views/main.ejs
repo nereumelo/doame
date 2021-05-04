@@ -4,6 +4,7 @@
 <%- include partials/head %>
 
     <head>
+
         <link rel='stylesheet' href='/stylesheets/main.css'>
         <title>DOAME</title>
     </head>
@@ -18,18 +19,8 @@
                 <section class="projects">
                     <div class="container">
                         <% for( let i=0; i <=2; i++ ) { %>
-                            <% let parceiro=listaParceiros[i]; %>
-                                <article>
-                                    <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
-                                    <span class="titulo-projeto"><%= parceiro.nome %></span>
-                                    <div class="info">
-                                        <p>
-                                            <%= parceiro.descricao %>
-                                        </p>
-                                        <img class="querodoar" src="/images/logo/querodoar.png" onclick="redirectUrl('/page-parceiro')">
-                                    </div>
-                                </article>
-                                <% } %>
+                            <%- include partials/cardParceiro %>
+                        <% } %>
                     </div>
                 </section>
                 <section>
@@ -39,7 +30,8 @@
                 <section data-anime="left">
                     <div class="porque-doar">
                         <h2>É mais sobre pessoas e menos sobre dinheiro!</h2>
-                        <p>O mundo precisa de mais solidariedade. Seja um motivador! Ao doar com a DoAME, você inspira amor e influencia outras pessoas a praticarem atos de bondade.</p>
+                        <p>O mundo precisa de mais solidariedade. Seja um motivador! Ao doar com a DoAME, você inspira
+                            amor e influencia outras pessoas a praticarem atos de bondade.</p>
                     </div>
                 </section>
 

@@ -1,24 +1,20 @@
 require('dotenv').config();
-const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
+const { Parceiro, Artigo, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
 const fetch = require('node-fetch');
 const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 
 const buscaParceiro = (id) => Parceiro.findByPk(id, ({
-    include: ["enderecos", "imagens", {
-        model: Artigo,
-        as: 'artigos',
-        include: ['imagens']
-    }]
+    include: ["enderecos", "artigos"]
 }));
 
 const parceirosController = {
-    view: async (req,res) => {
+    viewCadastro: async (req,res) => {
         await res.render('cadastroParceiro');
     },
 
-    index: async (req, res) => {
+    indexJSON: async (req, res) => {
         const parceiros = await Parceiro.findAll({
             attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
@@ -27,17 +23,41 @@ const parceirosController = {
         // return res.render('parceiros', {listaParceiros: parceiros});
     },
 
-    show: async (req, res) => {
+    viewIndex: async (req,res) => {
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + '/parceiros/JSON')
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('parceiros', { usuario: req.session.usuarioLogado, listaParceiros: data })
+                });
+
+        } catch(err) {
+            return res.render('parceiros', console.log('erro: ' + err));
+        }
+    },
+
+    showJSON: async (req, res) => {
         const { id } = req.params;
         const parceiro = await buscaParceiro(id);
 
         return res.json(parceiro);
     },
 
-    /*view: async(req, res) => {
+    viewShow: async (req, res) => {
+        const { id } = req.params;
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + `/parceiros/${id}/JSON`)
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('perfilParceiro', { usuario: req.session.usuarioLogado, parceiro: data })
+                });
 
-        await res.render('page-parceiro', {id});
-    },*/
+        } catch(err) {
+            return res.render('perfilParceiro', console.log('erro: ' + err));
+        }
+    },
 
     create: async (req, res) => {
         const { nome, descricao, cnpj, imagem, email, senha } = req.body;
@@ -51,7 +71,7 @@ const parceirosController = {
             email,
             senha: senhaCrypt
         });
-        return res.json(novoParceiro);
+        return res.redirect('/');
     },
 
     update: async (req, res) => {
@@ -128,37 +148,6 @@ const parceirosController = {
 
         return res.send(endereco);
     },
-
-
-
-    //Controler (Imagem)
-    createImg: async (req, res) => {
-        const { parceiros_id } = req.params;
-        const { path } = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.imagens = await Imagem.create({
-            parceiros_id,
-            path,
-        });
-
-        return res.json(parceiro);
-    },
-
-    deleteImg: async (req, res) => {
-        const { parceiros_id, id } = req.params;
-        const imagem = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.imagens = await Imagem.destroy({
-            where: { id }
-        });
-
-        return res.send(imagem);
-    },
-
 
 
     // Controller (Artigo)
