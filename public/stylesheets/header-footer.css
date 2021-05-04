@@ -52,7 +52,7 @@ header .nav a {
     cursor: pointer;
 }
 
-.nome-usuario{
+.nome-usuario {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -69,11 +69,6 @@ header .nav ul :hover {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     transition: 0.9s;
-}
-
-.right-nav {
-    display: flex;
-    align-items: center;
 }
 
 .search-box {
@@ -209,6 +204,7 @@ footer .social-media i:hover {
     color: #8a0705;
 }
 
+
 /* responsividade footer */
 
 @media only screen and (min-width: 950px) and (max-width: 1000px) {
@@ -216,14 +212,12 @@ footer .social-media i:hover {
         width: 1000px;
         height: 800px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -236,14 +230,12 @@ footer .social-media i:hover {
         width: 950px;
         height: 800px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -256,14 +248,12 @@ footer .social-media i:hover {
         width: 850px;
         height: 800px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -276,14 +266,12 @@ footer .social-media i:hover {
         width: 800px;
         height: 700px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -296,14 +284,12 @@ footer .social-media i:hover {
         width: 750px;
         height: 700px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -311,20 +297,17 @@ footer .social-media i:hover {
     }
 }
 
-
 @media only screen and (min-width: 650px) and (max-width: 700px) {
     footer {
         width: 670px;
         height: 700px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -337,14 +320,12 @@ footer .social-media i:hover {
         width: 630px;
         height: 700px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -360,13 +341,11 @@ footer .social-media i:hover {
         justify-content: center;
         align-items: center;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -385,13 +364,11 @@ footer .social-media i:hover {
         justify-content: center;
         align-items: center;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;
@@ -407,14 +384,12 @@ footer .social-media i:hover {
         width: 500px;
         height: 700px;
     }
-
     footer .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     footer .social-media {
         display: flex;
         align-items: center;

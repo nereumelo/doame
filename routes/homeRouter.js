@@ -8,4 +8,6 @@ router.get('/lista-parceiros', homeController.listaParceiros);
 
 router.post('/login', homeController.auth);
 
+router.post('/logout', homeController.logout);
+
 module.exports = router;

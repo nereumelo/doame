@@ -7,14 +7,22 @@
             <li><a onclick="redirectUrl('parceiros/cadastro')" class='buttonParceiros'>Seja um parceiro</a></li>
             <li><a onclick="redirectUrl('lista-parceiros')">Parceiros</a></li>
         </ul>
-        <div class="search-box">
+        <!-- <div class="search-box">
             <input type="text" class="search-txt" placeholder="Buscar"></input>
             <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        </div> -->
+        <div class="login">
+            <% if(usuario) { %>
+                <form action="/logout" method="POST">
+                    <p class="nome-usuario">
+                        <%= usuario.nome %>
+                    </p>
+                    <button type="submit">Sair</button>
+                </form>
+                <% } else { %>
+                    <button class="btn-login" onclick="btnLogin()">Login</button>
+                    <% } %>
         </div>
-    </div>
-    <div class="login">
-        <button class="btn-login" onclick="btnLogin()">Login</button>
-        <p class="nome-usuario"></p>
     </div>
     </div>
 </header>

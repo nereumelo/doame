@@ -3,7 +3,8 @@
 
 <%- include partials/head %>
 
- <head>
+    <head>
+
         <link rel='stylesheet' href='/stylesheets/main.css'>
         <title>DOAME</title>
     </head>
@@ -17,8 +18,8 @@
 
                 <section class="projects">
                     <div class="container">
-                        <% for( let i = 0; i <= 2; i++ ) { %>
-                            <% let parceiro = listaParceiros[i]; %>
+                        <% for( let i=0; i <=2; i++ ) { %>
+                            <% let parceiro=listaParceiros[i]; %>
                                 <article>
                                     <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
                                     <span class="titulo-projeto"><%= parceiro.nome %></span>
@@ -26,11 +27,10 @@
                                         <p>
                                             <%= parceiro.descricao %>
                                         </p>
-                                        <img class="querodoar" src="/images/logo/querodoar.png">
+                                        <img class="querodoar" src="/images/logo/querodoar.png" onclick="redirectUrl('/page-parceiro')">
                                     </div>
                                 </article>
                                 <% } %>
-
                     </div>
                 </section>
                 <section>
@@ -46,7 +46,8 @@
 
             </main>
             <%- include partials/footer %>
-            <%- include partials/modalLogin %>
-            <script src="/javascripts/main.js"></script>
+                <%- include partials/modalLogin %>
+                    <script src="/javascripts/main.js"></script>
     </body>
+
 </html>
