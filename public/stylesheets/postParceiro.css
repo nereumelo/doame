@@ -40,6 +40,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-left: 30px;
     
 }
 .postParceiro {

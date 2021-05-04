@@ -204,7 +204,6 @@ section .porque-doar p {
 
 .modal #google-button button {
     background-color: var(--vermelho-claro);
-    color: var(--branco);
     border: none;
     border-radius: 8px;
     font-size: 1.0rem;
