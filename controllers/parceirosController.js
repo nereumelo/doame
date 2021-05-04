@@ -34,6 +34,11 @@ const parceirosController = {
         return res.json(parceiro);
     },
 
+    /*view: async(req, res) => {
+
+        await res.render('page-parceiro', {id});
+    },*/
+
     create: async (req, res) => {
         const { nome, descricao, cnpj, imagem, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);

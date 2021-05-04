@@ -7,6 +7,7 @@ const parceirosController = require('../controllers/parceirosController');
 const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Valida');
 
 router.get('/cadastro', parceirosController.view);
+//router.show('/page-parceiro', parceirosController.view);
 
 
 router.get('/', parceirosController.index);

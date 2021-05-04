@@ -18,6 +18,7 @@ const homeController = {
         }
     },
 
+
     listaParceiros: async (req,res) => {
         try {
             await fetch('http://localhost:3000/parceiros/')
