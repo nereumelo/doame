@@ -1,12 +1,34 @@
 require('dotenv').config();
 const { Doador, Parceiro} = require('../models');
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
 const pepper = process.env.PWD_PEPPER;
 
 const homeController = {
     view: async (req,res) => {
+        try {
+            await fetch('http://localhost:3000/parceiros/')
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('main', { listaParceiros: data })
+                });
 
-        res.render('main');
+        } catch(err) {
+            return res.render('main', console.log('erro: ' + err));
+        }
+    },
+
+    listaParceiros: async (req,res) => {
+        try {
+            await fetch('http://localhost:3000/parceiros/')
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('parceiros', { listaParceiros: data })
+                });
+
+        } catch(err) {
+            return res.render('parceiros', console.log('erro: ' + err));
+        }
     },
 
     auth: async (req,res) => {

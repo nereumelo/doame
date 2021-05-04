@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
 const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 
@@ -19,11 +20,11 @@ const parceirosController = {
 
     index: async (req, res) => {
         const parceiros = await Parceiro.findAll({
-            attributes: ['id', 'nome', 'cnpj', 'email', 'updatedAt'],
+            attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
         });
-
         return res.json(parceiros);
+        // return res.render('parceiros', {listaParceiros: parceiros});
     },
 
     show: async (req, res) => {
@@ -34,12 +35,14 @@ const parceirosController = {
     },
 
     create: async (req, res) => {
-        const { nome, cnpj, email, senha } = req.body;
+        const { nome, descricao, cnpj, imagem, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoParceiro = await Parceiro.create({
             nome,
+            descricao,
             cnpj,
+            imagem,
             email,
             senha: senhaCrypt
         });

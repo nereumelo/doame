@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@import url('/public/stylesheets/paleta.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: var(--branco);
+  font-size: 16px;
+  color: var(--vermelho-claro);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+    display: flex;
+    padding-top: 90px;
+    padding-bottom: 50px;
+    justify-content: space-around;
+}
+
+.forms {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form input {
+    height: 40px;
+    width: 70%;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding-left: 8px;
+    outline: none;
+
+}
+
+select{
+    height: 40px;
+    width: 70%;
+    background-color: var(--cinza-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    outline: none;
+    cursor: inherit;
+    text-align: center;
+    color :rgb(110, 110, 110);
+    padding-left: 5px;
+}
+
+
+.sign-up {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.sign-up a button {
+    color: var(--branco);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.sign-up a button:hover {
+    color: white;
+    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+}
+
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.mapa{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.forms #lines {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.forms #lines .line {
+    border: 0.7px solid var(--cinza-claro);
+    width: 60%;
+    height: 1px;
+}
+
