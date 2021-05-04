@@ -1,77 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/logo/7.png">
-    <link rel='stylesheet' href='/stylesheets/main.css'>
-    <link rel='stylesheet' href='/stylesheets/header-footer.css'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <title>DOAME</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img class="logo-img" src="/images/logo/Logomarca Doame (3).png">
-        </div>
-        <div class="nav">
-            <ul>
-                <li><a onclick="redirectUrl('parceiros/cadastro')" class='buttonParceiros'>Seja um parceiro</a></li>
-                <li><a href="">Parceiros</a></li>
-            </ul>
-            <div class="search-box">
-                <input type="text" class="search-txt" placeholder="Buscar"></input>
-                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-            </div>
-        </div>
-        <div class="login">
-            <button class="btn-login" onclick="btnLogin()">Login</button>
-            <p class="nome-usuario"></p>
-        </div>
-        </div>
-    </header>
+<%- include partials/head %>
 
-    <main>
-        <section class="projects">
-            <div class="container">
-                <% for( let i = 0; i < listaParceiros.length; i++ ) { %>
-                    <% let parceiro = listaParceiros[i]; %> 
-                <article>
-                    <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
-                    <span class="titulo-projeto"><%= parceiro.nome %></span>
-                    <div class="info">
-                        <p><%= parceiro.descricao %></p>
-                        <img class="querodoar" src="/images/logo/querodoar.png">
+    <head>
+        <link rel='stylesheet' href='/stylesheets/main.css'>
+        <title>DOAME</title>
+    </head>
+
+    <body>
+
+        <%- include partials/header %>
+            <main>
+                <section class="projects">
+                    <div class="container">
+                        <% for( let i = 0; i < listaParceiros.length; i++ ) { %>
+                            <% let parceiro = listaParceiros[i]; %>
+                                <article>
+                                    <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
+                                    <span class="titulo-projeto"><%= parceiro.nome %></span>
+                                    <div class="info">
+                                        <p>
+                                            <%= parceiro.descricao %>
+                                        </p>
+                                        <img class="querodoar" src="/images/logo/querodoar.png">
+                                    </div>
+                                </article>
+                                <% } %>
                     </div>
-                </article>
-                <% } %>
-            </div>
-        </section>
+                </section>
+                <%- include partials/modalLogin %>
+            </main>
+            <%- include partials/footer %>
+                <script src="/javascripts/main.js"></script>
+    </body>
 
-    </main>
-
-    <footer>
-        <div class="hiperlinks">
-            <ul class="footer-nav">
-                <li class="footer-nav-hiperlink">Institucional</li>
-                <li>Como funciona</li>
-                <li>Imprensa</li>
-                <li>Contato</li>
-                <li>Seja um parceiro</li>
-                <li>Termos de uso</li>
-                <li>Políticas de privacidade</li>
-            </ul>
-        </div>
-        <div class="social-media">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-        DOAME © 2021
-    </footer>
-
-
-</body>
+</html>
