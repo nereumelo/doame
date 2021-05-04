@@ -52,6 +52,15 @@ header .nav a {
     cursor: pointer;
 }
 
+.nome-usuario{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0.1em 0.1em 0.2em #333;
+    cursor: pointer;
+    text-align: center;
+}
+
 header .nav ul :hover {
     color: #fff;
     -webkit-transform: scale(1.1);
