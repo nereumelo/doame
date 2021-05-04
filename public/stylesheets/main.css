@@ -182,6 +182,7 @@ section .porque-doar p {
     border: none;
     font-size: 20px;
     color: white;
+    cursor: pointer;
 }
 
 .modal-header button:hover {
