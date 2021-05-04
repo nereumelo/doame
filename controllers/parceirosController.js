@@ -34,10 +34,19 @@ const parceirosController = {
         return res.json(parceiro);
     },
 
-    /*view: async(req, res) => {
+    listAll: async (req,res) => {
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + '/parceiros/JSON')
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('parceiros', { usuario: req.session.usuarioLogado, listaParceiros: data })
+                });
 
-        await res.render('page-parceiro', {id});
-    },*/
+        } catch(err) {
+            return res.render('parceiros', console.log('erro: ' + err));
+        }
+    },
 
     create: async (req, res) => {
         const { nome, descricao, cnpj, imagem, email, senha } = req.body;

@@ -8,7 +8,7 @@ const homeController = {
     view: async (req,res) => {
         const url = req.protocol + '://' + req.get('host');
         try {
-            await fetch(url + '/parceiros')
+            await fetch(url + '/parceiros/JSON')
                 .then(res => res.json())
                 .then(data => {
                     return res.render('main', { usuario: req.session.usuarioLogado, listaParceiros: data });
@@ -17,21 +17,6 @@ const homeController = {
         } catch(err) {
             res.json({ erro: err });
             res.render('error');
-        }
-    },
-
-
-    listaParceiros: async (req,res) => {
-        const url = req.protocol + '://' + req.get('host');
-        try {
-            await fetch(url + '/parceiros')
-                .then(res => res.json())
-                .then(data => {
-                    return res.render('parceiros', { usuario: req.session.usuarioLogado, listaParceiros: data })
-                });
-
-        } catch(err) {
-            return res.render('parceiros', console.log('erro: ' + err));
         }
     },
 

@@ -55,7 +55,3 @@ window.addEventListener('scroll', function() {
 window.addEventListener('load', function(){
     login()
 })
-
-const redirectUrl = (pathName) => {
-    location = pathName;
-}
