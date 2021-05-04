@@ -38,7 +38,8 @@
     font-size: 24px;
     text-align: center;
     margin-right: 100px;
-    color: #8a0705;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em 0.1em 0.2em rgb(37, 37, 37);
 }
 
 .bottom-parceiro-noticias {
@@ -71,7 +72,7 @@
 }
 
 .noticias .texto-noticias {
-    height: 80px;
+    height: 100px;
     text-align: center;
     align-items: center;
     margin-top: 20px;

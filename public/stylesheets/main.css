@@ -68,8 +68,8 @@ article .info p {
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 4.9em;
-    line-height: 1em;
+    max-height: 4em;
+    line-height: 1.2em;
     text-align: justify;
     margin-left: 8px;
     font-size: 15px;
