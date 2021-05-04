@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<%- include partials/head %>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/public/stylesheets/page-parceiro.css'>
-    <link rel='stylesheet' href='/public/stylesheets/header-footer.css'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/page-parceiro.css'>
     <title>Parceiro</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img class="logo-img" src="/public/images/logo/Logomarca Doame (3).png">
-        </div>
-        <div class="nav">
-            <ul>
-                <li><a href="">Seja um parceiro</a></li>
-                <li><a href="">Projetos</a></li>
-            </ul>
-            <div class="search-box">
-                <input type="text" class="search-txt" placeholder="Buscar"></input>
-                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-            </div>
-
-        </div>
-        <div class="login">
-            <button class="btn-login" onclick="btnLogin()">Login</button>
-        </div>
-        </div>
-    </header>
+    <%- include partials/header %>
     <main>
 
         <div class="noticias-parceiros">
             <div class="top-parceiro">
                 <div class="imagens-parceiros">
-                    <img title="Imagem do artigo do parceiro" style="background-image: url('<%= parceiros.imagem %>');">
+                    <img title="Imagem do artigo do parceiro" style="background-image: url('<%= parceiro.imagem %>');">
                 </div>
 
                 <div class="texto-parceiros"> Conheça as instituições parceiras da DOAME. Saiba o que precisam e conte conosco como facilitador!</div>
@@ -45,43 +22,23 @@
 
             <div class="bottom-parceiro-noticias">
                 <div class="noticias">
-                    <img src="/public/images/donation_opacityred.png" class="imagem-noticias">
+                    <img src="/images/donation_opacityred.png" class="imagem-noticias">
                     <p class="texto-noticias" >NOTICIAS INSTITUIÇÕES</p>
                 </div>
                 <div class="noticias">
-                    <img src="/public/images/donation_opacityred.png" class="imagem-noticias">
+                    <img src="/images/donation_opacityred.png" class="imagem-noticias">
                     <p class="texto-noticias" >NOTICIAS INSTITUIÇÕES</p>
                 </div>
                 <div class="noticias">
-                    <img src="/public/images/donation_opacityred.png" class="imagem-noticias">
+                    <img src="/images/donation_opacityred.png" class="imagem-noticias">
                     <p class="texto-noticias" >NOTICIAS INSTITUIÇÕES</p>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="hiperlinks">
-                <ul class="footer-nav">
-                    <li class="footer-nav-hiperlink">Institucional</li>
-                    <li>Como funciona</li>
-                    <li>Imprensa</li>
-                    <li>Contato</li>
-                    <li>Seja um parceiro</li>
-                    <li>Termos de uso</li>
-                    <li>Políticas de privacidade</li>
-                </ul>
-            </div>
-            <div class="social-media">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-            <p>DOAME © 2021</p>
-        </footer>
+        <%- include partials/footer %>
     </main>
 
-    <script src="/public/javascripts/main.js">
+    <script src="/javascripts/main.js">
     </script>
 </body>
 
