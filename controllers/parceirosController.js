@@ -1,16 +1,12 @@
 require('dotenv').config();
-const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
+const { Parceiro, Artigo, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
 const fetch = require('node-fetch');
 const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 
 const buscaParceiro = (id) => Parceiro.findByPk(id, ({
-    include: ["enderecos", "imagens", {
-        model: Artigo,
-        as: 'artigos',
-        include: ['imagens']
-    }]
+    include: ["enderecos", "artigos"]
 }));
 
 const parceirosController = {
@@ -137,37 +133,6 @@ const parceirosController = {
 
         return res.send(endereco);
     },
-
-
-
-    //Controler (Imagem)
-    createImg: async (req, res) => {
-        const { parceiros_id } = req.params;
-        const { path } = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.imagens = await Imagem.create({
-            parceiros_id,
-            path,
-        });
-
-        return res.json(parceiro);
-    },
-
-    deleteImg: async (req, res) => {
-        const { parceiros_id, id } = req.params;
-        const imagem = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.imagens = await Imagem.destroy({
-            where: { id }
-        });
-
-        return res.send(imagem);
-    },
-
 
 
     // Controller (Artigo)
