@@ -173,6 +173,7 @@ section .porque-doar p {
 }
 
 .modal-header button {
+    background-color: var(--vermelho-claro);
     margin-left: 400px;
     margin-bottom: 30px;
     width: 45px;
@@ -180,7 +181,7 @@ section .porque-doar p {
     border-radius: 35px;
     border: none;
     font-size: 20px;
-    color: var(--vermelho-sangue);
+    color: white;
 }
 
 .modal-header button:hover {
