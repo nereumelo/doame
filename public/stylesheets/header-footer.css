@@ -202,6 +202,66 @@ footer .social-media i:hover {
 
 /* responsividade footer */
 
+@media only screen and (min-width: 950px) and (max-width: 1000px) {
+    footer {
+        width: 1000px;
+        height: 800px;
+    }
+
+    footer .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 950px) {
+    footer {
+        width: 950px;
+        height: 800px;
+    }
+
+    footer .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+    footer {
+        width: 850px;
+        height: 800px;
+    }
+
+    footer .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media only screen and (min-width: 750px) and (max-width: 800px) {
     footer {
         width: 800px;
