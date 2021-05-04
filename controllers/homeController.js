@@ -20,6 +20,7 @@ const homeController = {
         }
     },
 
+
     listaParceiros: async (req,res) => {
         const url = req.protocol + '://' + req.get('host');
         try {
