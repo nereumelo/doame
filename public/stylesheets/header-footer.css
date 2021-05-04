@@ -10,7 +10,6 @@ body {
     font-family: 'Poppins';
 }
 
-
 /*HEADER*/
 
 header {
@@ -24,30 +23,31 @@ header {
 }
 
 header .logo .logo-img {
-    height: 85px;
-    height: 80px;
-    margin-left: 30px;
     cursor: pointer;
+    height: 85px;
+    margin-left: 10%;
 }
 
 header .nav {
     display: flex;
+    flex-direction: row;
+    width: 800px;
+    justify-content: space-evenly;
 }
 
 header .nav ul {
-    width: 350px;
+    width: 500px;
     height: 100px;
     padding: 25px;
     outline: none;
     display: flex;
     justify-content: space-evenly;
-    margin-right: 400px;
 }
 
 header .nav a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.6rem;
     text-shadow: 0.1em 0.1em 0.2em #333;
     cursor: pointer;
 }
@@ -71,67 +71,17 @@ header .nav ul :hover {
     transition: 0.9s;
 }
 
-.search-box {
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    background: #5cdddf00;
-    height: 40px;
-    padding: 10px;
-    align-items: center;
-    display: flex;
-}
-
-.search-box:hover>.search-txt {
-    width: 200px;
-    padding: 0 10px;
-}
-
-.search-box:hover>.search-btn {
-    background: #7CDCDF;
-}
-
-.search-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #7CDCDF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.search-btn>i {
-    font-size: 20px;
-}
-
-.search-txt {
-    border: none;
-    background: rgba(255, 255, 255, 0.507);
-    border-radius: 30px;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: rgb(110, 110, 110);
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-}
-
 header .login {
     display: flex;
     align-items: center;
 }
 
-header .btn-login {
+header .login .nome-usuario {
     margin-right: 40px;
+    margin-bottom: 5px;
+}
+
+header .btn-login {
     width: 100px;
     height: 50px;
     border-radius: 15px;
@@ -147,6 +97,22 @@ header .btn-login:hover {
     transition: 0.5s;
 }
 
+header .btn-sair {
+    margin-right: 40px;
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    background: #7CDCDF;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .btn-sair:hover {
+    background: #8a0705;
+}
 
 /*FIXANDO HEADER COM SCROLL*/
 
@@ -160,7 +126,6 @@ header .btn-login:hover {
 .scrolling-ativado nav a {
     text-shadow: 0.02em 0.02em #333
 }
-
 
 /* FOOTER */
 
@@ -208,6 +173,18 @@ footer .social-media i:hover {
 /* responsividade footer */
 
 @media only screen and (min-width: 950px) and (max-width: 1000px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 400px;
+    }
+    header .nav ul a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 100px;
+    }
     footer {
         width: 1000px;
         height: 800px;
@@ -226,6 +203,18 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 900px) and (max-width: 950px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 390px;
+    }
+    header .nav ul a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 100px;
+    }
     footer {
         width: 950px;
         height: 800px;
@@ -243,7 +232,49 @@ footer .social-media i:hover {
     }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 900px) {
+@media only screen and (min-width: 850px) and (max-width: 900px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 390px;
+    }
+    header .nav ul a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 160px;
+    }
+    footer {
+        width: 850px;
+        height: 800px;
+    }
+    footer .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 850px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 390px;
+    }
+    header .nav ul a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 250px;
+    }
     footer {
         width: 850px;
         height: 800px;
@@ -262,6 +293,22 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 750px) and (max-width: 800px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .nav ul li a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 350px;
+    }
     footer {
         width: 800px;
         height: 700px;
@@ -280,6 +327,22 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 700px) and (max-width: 750px) {
+    header {
+        width: 1000px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .nav ul li a {
+        font-size: 1.3rem;
+    }
+    header .nav .btn-login {
+        margin-right: 400px;
+    }
     footer {
         width: 750px;
         height: 700px;
@@ -298,6 +361,23 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 650px) and (max-width: 700px) {
+    header {
+        width: 1000px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+    }
+    header .nav ul li a {
+        font-size: 0.9rem;
+    }
+    header .nav .btn-login {
+        margin-right: 360px;
+    }
     footer {
         width: 670px;
         height: 700px;
@@ -316,6 +396,23 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 650px) {
+    header {
+        width: 1000px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+    }
+    header .nav ul li a {
+        font-size: 0.9rem;
+    }
+    header .nav .btn-login {
+        margin-right: 420px;
+    }
     footer {
         width: 630px;
         height: 700px;
@@ -334,6 +431,25 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 550px) and (max-width: 600px) {
+    header {
+        width: 1000px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .nav ul li a {
+        font-size: 0.9rem;
+    }
+    header .nav .btn-login {
+        margin-right: 450px;
+    }
     footer {
         width: 600px;
         height: 700px;
@@ -357,6 +473,25 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 500px) and (max-width: 550px) {
+    header {
+        width: 1000px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .nav ul li a {
+        font-size: 0.9rem;
+    }
+    header .nav .btn-login {
+        margin-right: 500px;
+    }
     footer {
         width: 550px;
         height: 700px;
@@ -380,6 +515,25 @@ footer .social-media i:hover {
 }
 
 @media only screen and (min-width: 450px) and (max-width: 500px) {
+    header {
+        width: 1000px;
+    }
+    .logo-img {
+        width: 180px;
+    }
+    header .nav ul {
+        width: 340px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .nav ul li a {
+        font-size: 0.8rem;
+    }
+    header .nav .btn-login {
+        margin-right: 540px;
+    }
     footer {
         width: 500px;
         height: 700px;
