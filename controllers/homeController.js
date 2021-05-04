@@ -27,7 +27,7 @@ const homeController = {
             await fetch(url + '/parceiros')
                 .then(res => res.json())
                 .then(data => {
-                    return res.render('parceiros', { listaParceiros: data })
+                    return res.render('parceiros', { usuario: req.session.usuarioLogado, listaParceiros: data })
                 });
 
         } catch(err) {
