@@ -22,8 +22,8 @@ const parceirosController = {
             attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
         });
-
         return res.json(parceiros);
+        // return res.render('parceiros', {listaParceiros: parceiros});
     },
 
     show: async (req, res) => {

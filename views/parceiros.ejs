@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>DOAME</title>
 </head>
-
 <body>
     <header>
         <div class="logo">
@@ -35,13 +34,10 @@
     </header>
 
     <main>
-        <section class="container">
-            <img class="banner" src="/images/logo/banner.png">
-        </section>
 
         <section class="projects">
             <div class="container">
-                <% for( let i = 0; i <= 2; i++ ) { %>
+                <% for( let i = 0; i <= 3; i++ ) { %>
                     <% let parceiro = listaParceiros[i]; %> 
                 <article>
                     <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
@@ -55,18 +51,8 @@
             </div>
         </section>
 
-        <section>
-            <div class="body-site"></div>
-        </section>
-
-        <section data-anime="left">
-            <div class="porque-doar">
-                <h2>É mais sobre pessoas e menos sobre dinheiro!</h2>
-                <p>O mundo precisa de mais solidariedade. Seja um motivador! Ao doar com a DoAME, você inspira amor e influencia outras pessoas a praticarem atos de bondade.</p>
-            </div>
-        </section>
-
     </main>
+
     <footer>
         <div class="hiperlinks">
             <ul class="footer-nav">
@@ -87,36 +73,6 @@
         </div>
         DOAME © 2021
     </footer>
-    <div class="modal">
-        <div class="modal-header">
-            <button class="close" onclick="btnClose()">X</button>
-        </div>
 
-        <a href="#" id="google-button"><button><img src="/images/icons/google_icon.png" alt="Google">Login com Google</button></a>
 
-        <div id="lines">
-            <div class="line"></div>
-            <p>OU</p>
-            <div class="line"></div>
-        </div>
-
-        <form id="form_contact">
-            <input type="email" id="email" name="email" placeholder="Email">
-            <input type="password" id="senha" name="senha" placeholder="Senha">
-            <div class="mensagem-erro"></div>
-        </form>
-
-        <div class="password-missed">
-            <a href="#">Esqueceu a senha?</a>
-            <a class="login-logar" id="login" onclick="sendLoginData(email.value, senha.value)">Login</a>
-        </div>
-
-        <div class="sign-up">
-            <p>Criar uma conta é fácil</p>
-            <a href="#"><button onclick="redirectUrl('doadores/cadastro')">Cadastre-se</button></a>
-        </div>
-    </div>
-    <script src="/javascripts/main.js"></script>
 </body>
-
-</html>
