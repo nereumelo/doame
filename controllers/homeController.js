@@ -10,11 +10,24 @@ const homeController = {
             await fetch('http://localhost:3000/parceiros/')
                 .then(res => res.json())
                 .then(data => {
-                    res.render('main', { listaParceiros: data })
+                    return res.render('main', { listaParceiros: data })
                 });
 
         } catch(err) {
-            res.render('main', console.log('erro: ' + err));
+            return res.render('main', console.log('erro: ' + err));
+        }
+    },
+
+    listaParceiros: async (req,res) => {
+        try {
+            await fetch('http://localhost:3000/parceiros/')
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('parceiros', { listaParceiros: data })
+                });
+
+        } catch(err) {
+            return res.render('parceiros', console.log('erro: ' + err));
         }
     },
 

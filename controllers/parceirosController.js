@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Parceiro, Artigo, Imagem, Endereco } = require('../models');
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
 const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 

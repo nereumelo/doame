@@ -34,10 +34,9 @@
     </header>
 
     <main>
-
         <section class="projects">
             <div class="container">
-                <% for( let i = 0; i <= 3; i++ ) { %>
+                <% for( let i = 0; i <= listaParceiros.length-1; i++ ) { %>
                     <% let parceiro = listaParceiros[i]; %> 
                 <article>
                     <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>

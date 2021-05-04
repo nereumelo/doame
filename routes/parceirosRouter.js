@@ -8,6 +8,7 @@ const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Val
 
 router.get('/cadastro', parceirosController.view);
 
+
 router.get('/', parceirosController.index);
 router.get('/:id/', parceirosController.show);
 router.post('/', campoVazio, campoRepetido, formatoValido, parceirosController.create);
