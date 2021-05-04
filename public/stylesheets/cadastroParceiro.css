@@ -19,9 +19,10 @@ main {
     align-items: center;
 }
 
-main img {
+main .image {
     margin-top: 7%;
     width: 500px;
+    cursor: pointer;
 }
 
 main #header {
