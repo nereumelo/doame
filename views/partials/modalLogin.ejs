@@ -11,16 +11,12 @@
         <div class="line"></div>
     </div>
 
-    <form id="form_contact">
+    <form id="form_contact" action="/login" method='POST'>
         <input type="email" id="email" name="email" placeholder="Email">
         <input type="password" id="senha" name="senha" placeholder="Senha">
         <div class="mensagem-erro"></div>
+        <button class="login-logar" id="login" type="submit">Entrar</button>
     </form>
-
-    <div class="password-missed">
-        <a href="#">Esqueceu a senha?</a>
-        <a class="login-logar" id="login" onclick="sendLoginData(email.value, senha.value)">Login</a>
-    </div>
 
     <div class="sign-up">
         <p>Criar uma conta é fácil</p>
