@@ -92,11 +92,10 @@ header .btn-login {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 header .btn-login:hover {
     background: #8a0705;
     transition: 0.5s;
-=======
+}
 .search-btn>i {
     font-size: 20px;
 }
@@ -122,7 +121,6 @@ header .login {
 header .login .nome-usuario {
     margin-right: 40px;
     margin-bottom: 5px;
->>>>>>> 13c1b797ccff48c0771ddc6843cd0d22ddb3cc19
 }
 
 header .btn-sair {
@@ -142,8 +140,6 @@ header .btn-sair:hover {
     background: #8a0705;
 }
 
-<<<<<<< HEAD
-=======
 header .btn-sair {
     margin-right: 40px;
     width: 80px;
@@ -161,8 +157,6 @@ header .btn-sair:hover {
     background: #8a0705;
 }
 
-
->>>>>>> 13c1b797ccff48c0771ddc6843cd0d22ddb3cc19
 /*FIXANDO HEADER COM SCROLL*/
 
 .scrolling-ativado {
