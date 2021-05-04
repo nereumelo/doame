@@ -35,13 +35,14 @@ function animeScroll() {
 }
 
 function login(){
+    let nome = localStorage.getItem("nome");
     document.querySelector('.modal').style.display = "none";
     document.querySelector('.btn-login').style.display = "block";
-    document.querySelector('.nome-usuario').innerText = localStorage.getItem("nome");
+    document.querySelector('.nome-usuario').innerText = nome.split(' ')[0];
     document.querySelector('.nome-usuario').style.marginRight = "40px";
     document.querySelector('.nome-usuario').style.marginLeft = "-20px";
     document.querySelector('.nome-usuario').style.color = "white";
-    document.querySelector('.nome-usuario').style.fontSize = "20px";
+    document.querySelector('.nome-usuario').style.fontSize = "16px";
     // if (localStorage.getItem('name') === '[]') {
     //     console.log('Local storage is empty');
     // }
@@ -73,14 +74,16 @@ const sendLoginData = async(email, senha) => {
 
     if (data.logado) {
         localStorage.setItem("nome", data.usuario);
+        let nome = localStorage.getItem("nome");
+ 
         document.querySelector('.modal').style.display = "none";
         document.querySelector('.btn-login').style.display = "block";
-        document.querySelector('.nome-usuario').innerText = localStorage.getItem("nome");
-        // document.querySelector('.nome-usuario').style.marginRight = "40px";
-        // document.querySelector('.nome-usuario').style.marginLeft = "-20px";
-        // document.querySelector('.nome-usuario').style.color = "white";
-        // document.querySelector('.nome-usuario').style.fontSize = "20px";;
-        console.log(localStorage)
+        document.querySelector('.nome-usuario').innerText = nome.split(' ')[0];
+        document.querySelector('.nome-usuario').style.marginRight = "40px";
+        document.querySelector('.nome-usuario').style.marginLeft = "-20px";
+        document.querySelector('.nome-usuario').style.color = "white";
+        document.querySelector('.nome-usuario').style.fontSize = "16px";
+        // console.log(localStorage)
         
 
     } else {
