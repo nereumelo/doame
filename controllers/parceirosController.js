@@ -10,11 +10,11 @@ const buscaParceiro = (id) => Parceiro.findByPk(id, ({
 }));
 
 const parceirosController = {
-    view: async (req,res) => {
+    viewCadastro: async (req,res) => {
         await res.render('cadastroParceiro');
     },
 
-    index: async (req, res) => {
+    indexJSON: async (req, res) => {
         const parceiros = await Parceiro.findAll({
             attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
@@ -23,14 +23,7 @@ const parceirosController = {
         // return res.render('parceiros', {listaParceiros: parceiros});
     },
 
-    show: async (req, res) => {
-        const { id } = req.params;
-        const parceiro = await buscaParceiro(id);
-
-        return res.json(parceiro);
-    },
-
-    listAll: async (req,res) => {
+    viewIndex: async (req,res) => {
         const url = req.protocol + '://' + req.get('host');
         try {
             await fetch(url + '/parceiros/JSON')
@@ -41,6 +34,28 @@ const parceirosController = {
 
         } catch(err) {
             return res.render('parceiros', console.log('erro: ' + err));
+        }
+    },
+
+    showJSON: async (req, res) => {
+        const { id } = req.params;
+        const parceiro = await buscaParceiro(id);
+
+        return res.json(parceiro);
+    },
+
+    viewShow: async (req, res) => {
+        const { id } = req.params;
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + `/parceiros/${id}/JSON`)
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('perfilParceiro', { usuario: req.session.usuarioLogado, parceiro: data })
+                });
+
+        } catch(err) {
+            return res.render('perfilParceiro', console.log('erro: ' + err));
         }
     },
 
