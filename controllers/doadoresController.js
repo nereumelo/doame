@@ -27,12 +27,13 @@ const doadoresController = {
             senha: senhaCrypt
         });
 
-        return res.json(novoDoador);
+        return res.redirect('/');
     },
 
     update: async (req, res) => {
         const { id } = req.params;
         const atualizaDoador = req.body;
+        
 
         await Doador.update(atualizaDoador, {
             where: { id }

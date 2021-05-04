@@ -93,6 +93,7 @@ const sendLoginData = async(email, senha) => {
 }
 
 
+
 const redirectUrl = (pathName) => {
     location = pathName;
 }
