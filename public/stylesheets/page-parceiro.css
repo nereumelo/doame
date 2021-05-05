@@ -55,17 +55,17 @@
 .texto-parceiros h2 {
     color: rgb(255, 255, 255);
     text-shadow: 0.1em 0.1em 0.2em rgb(37, 37, 37);
-    margin-bottom: 15px;
 }
 
 .texto-parceiros {
     width: 50%;
     align-items: center;
-    margin-top: 180px;
     font-size: 24px;
     text-align: center;
-    margin-right: 100px;
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bottom-parceiro-noticias {
