@@ -13,15 +13,16 @@
         </div> -->
         <div class="login">
             <% if(usuario) { %>
-                <form action="/logout" method="POST">
+                <form class="form-login" action="/logout" method="POST">
                     <p class="nome-usuario">
-                        Olá, <%= usuario.nome.split(' ')[0] %>
+                        Olá,
+                        <%= usuario.nome.split(' ')[0] %>
                     </p>
                     <button class="btn-sair" type="submit">Sair</button>
                 </form>
                 <% } else { %>
                     <button class="btn-login" onclick="btnLogin()">Login</button>
                     <% } %>
-            </div>
+        </div>
     </div>
 </header>

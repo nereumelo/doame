@@ -80,9 +80,12 @@ main #header {
 }
 
 button {
+<<<<<<< HEAD
     margin-top: 25px;
     margin-left: 80px;
     text-transform: uppercase;
+=======
+>>>>>>> dd3ba5a92cb691c5629172572ba538bcacae2533
     background-color: var(--azul-claro);
     color: var(--branco);
     border: none;
@@ -93,6 +96,8 @@ button {
     width: 250px;
     height: 40px;
     transition: 0.5s;
+    margin-top: 25px;
+    font-size: 20px;
 }
 
 button:hover {

@@ -1,31 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-
 @import url('/public/stylesheets/paleta.css');
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins';
-  background-color: var(--branco);
-  font-size: 16px;
-  color: var(--vermelho-claro);
+    font-family: 'Poppins';
+    background-color: var(--branco);
+    font-size: 16px;
+    color: var(--vermelho-claro);
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.container{
+.c {
     display: flex;
-    padding-top: 90px;
-    padding-bottom: 50px;
     justify-content: space-around;
+    padding-top: 130px;
+    padding-bottom: 50px;
 }
 
 .forms {
@@ -43,7 +41,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 form input {
@@ -55,10 +52,9 @@ form input {
     margin-top: 15px;
     padding-left: 8px;
     outline: none;
-
 }
 
-select{
+select {
     height: 40px;
     width: 70%;
     background-color: var(--cinza-claro);
@@ -68,10 +64,9 @@ select{
     outline: none;
     cursor: inherit;
     text-align: center;
-    color :rgb(110, 110, 110);
+    color: rgb(110, 110, 110);
     padding-left: 5px;
 }
-
 
 .sign-up {
     margin-top: 15px;
@@ -86,7 +81,7 @@ select{
     text-decoration: none;
 }
 
-.sign-up a button {
+button {
     color: var(--branco);
     background-color: var(--azul-claro);
     border: none;
@@ -99,19 +94,18 @@ select{
     transition: 0.5s;
 }
 
-.sign-up a button:hover {
+button:hover {
     color: white;
     box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
 }
 
-
-h1{
+h1 {
     font-size: 20px;
     text-align: center;
     padding-bottom: 10px;
 }
 
-.mapa{
+.mapa {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -131,4 +125,3 @@ h1{
     width: 60%;
     height: 1px;
 }
-
