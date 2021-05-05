@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Parceiro, Artigo, Endereco } = require('../models');
+const { Parceiro, Artigo, Endereco, sequelize } = require('../models');
 const bcrypt = require('bcryptjs');
 const fetch = require('node-fetch');
 const saltRounds = 10;
@@ -16,7 +16,7 @@ const parceirosController = {
 
     indexJSON: async (req, res) => {
         const parceiros = await Parceiro.findAll({
-            attributes: ['id', 'nome', 'descricao', 'cnpj','imagem', 'email', 'updatedAt'],
+            attributes: ['id', 'nome', 'descricao', 'cnpj', 'cep', 'imagem', 'email', 'updatedAt'],
             order: [['updatedAt', 'DESC']]
         });
         return res.json(parceiros);
@@ -76,7 +76,7 @@ const parceirosController = {
     },
 
     create: async (req, res) => {
-        const { nome, descricao, cnpj, imagem, email, senha } = req.body;
+        const { nome, descricao, cnpj, cep, imagem, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
 
         const novoParceiro = await Parceiro.create({
@@ -87,7 +87,23 @@ const parceirosController = {
             email,
             senha: senhaCrypt
         });
-        return res.redirect('/');
+
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + `/parceiros/${novoParceiro.dataValues.id}/endereco?cep=${cep}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('endereco acessado')
+                    return res.redirect('/');
+                    // return res.render('perfilParceiro', { usuario: req.session.usuarioLogado, parceiro: data })
+                });
+        } catch(err) {
+            console.log('endereco nao acessado')
+            return res.status(400).redirect('/parceiros/cadastro');
+        }
     },
 
     update: async (req, res) => {
@@ -119,24 +135,30 @@ const parceirosController = {
 
     // Controller (endereco)
     createAddress: async (req, res) => {
+        console.log('criando endereco...');
+        const query = req.query;
         const { parceiros_id } = req.params;
-        const { pais, estado, cidade, bairro, logradouro, cep, numero, complemento } = req.body;
-
         const parceiro = await buscaParceiro(parceiros_id);
 
-        parceiro.enderecos = await Endereco.create({
-            parceiros_id,
-            pais,
-            estado,
-            cidade,
-            bairro,
-            logradouro,
-            cep,
-            numero,
-            complemento,
-        });
+        try {
+            await fetch(`https://viacep.com.br/ws/${query.cep}/json/`)
+                .then(res => res.json())
+                .then(data => {
+                    const { cep, logradouro, bairro, localidade, uf } = data;
 
-        return res.json(parceiro);
+                    parceiro.enderecos = Endereco.create({
+                        parceiros_id,
+                        estado: uf,
+                        cidade: localidade,
+                        bairro,
+                        logradouro,
+                        cep,
+                    });
+                });
+        } catch(err) {
+            console.log('erro ao criar endereco: ' + err);
+            return res.status(400);
+        }
     },
 
     updateAddress: async (req, res) => {
