@@ -78,13 +78,21 @@ const parceirosController = {
     create: async (req, res) => {
         const { nome, descricao, cnpj, cep, imagem, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
+        let _imagem;
+
+        if (imagem) {
+            _imagem = imagem;
+        }
+        else {
+            _imagem = "/images/default.png";
+        }
 
         const novoParceiro = await Parceiro.create({
             nome,
             descricao,
             cnpj,
             cep,
-            imagem,
+            imagem: _imagem,
             email,
             senha: senhaCrypt
         });
