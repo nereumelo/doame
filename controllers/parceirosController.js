@@ -83,6 +83,7 @@ const parceirosController = {
             nome,
             descricao,
             cnpj,
+            cep,
             imagem,
             email,
             senha: senhaCrypt
@@ -92,16 +93,11 @@ const parceirosController = {
         try {
             await fetch(url + `/parceiros/${novoParceiro.dataValues.id}/endereco?cep=${cep}`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('endereco acessado')
-                    return res.redirect('/');
-                    // return res.render('perfilParceiro', { usuario: req.session.usuarioLogado, parceiro: data })
-                });
+            .then(() => {
+                return res.redirect('/');
+            });
         } catch(err) {
-            console.log('endereco nao acessado')
             return res.status(400).redirect('/parceiros/cadastro');
         }
     },
@@ -145,7 +141,6 @@ const parceirosController = {
                 .then(res => res.json())
                 .then(data => {
                     const { cep, logradouro, bairro, localidade, uf } = data;
-
                     parceiro.enderecos = Endereco.create({
                         parceiros_id,
                         estado: uf,
@@ -155,9 +150,10 @@ const parceirosController = {
                         cep,
                     });
                 });
+                return res.redirect('/');
         } catch(err) {
             console.log('erro ao criar endereco: ' + err);
-            return res.status(400);
+            return res.redirect('/');
         }
     },
 
