@@ -20,11 +20,11 @@ const btnClose = () => {
 
 const nomeUsuario = document.querySelector(".nome-usuario");
 const menu = document.querySelector(".menu");
-nomeUsuario.addEventListener("mouseover", () => {
-    menu.style.display = "flex";
-});
-nomeUsuario.addEventListener("mouseout", () => {
-    menu.style.display = "none";
+nomeUsuario.addEventListener("click", () => {
+    if(menu.style.display == 'none')
+        menu.style.display = "flex";
+    else
+        menu.style.display = "none";
 });
 
 //animate-scroll
