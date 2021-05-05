@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
 }
 
-header .logo .logo-img {
+.logo-img {
     cursor: pointer;
     height: 85px;
     margin-left: 10%;
