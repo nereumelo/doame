@@ -80,12 +80,9 @@ main #header {
 }
 
 button {
-<<<<<<< HEAD
     margin-top: 25px;
     margin-left: 80px;
     text-transform: uppercase;
-=======
->>>>>>> dd3ba5a92cb691c5629172572ba538bcacae2533
     background-color: var(--azul-claro);
     color: var(--branco);
     border: none;
@@ -96,8 +93,6 @@ button {
     width: 250px;
     height: 40px;
     transition: 0.5s;
-    margin-top: 25px;
-    font-size: 20px;
 }
 
 button:hover {
@@ -111,7 +106,7 @@ button:hover {
 @media only screen and (min-width: 900px) and (max-width: 950px) {
     main {
         height: 700px;
-        width: 1000px;
+        width: 950px;
         margin-bottom: 50px;
     }
     main img {
@@ -122,7 +117,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
@@ -141,7 +136,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
@@ -160,14 +155,33 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
 
 @media only screen and (min-width: 750px) and (max-width: 800px) {
     main {
-        height: 750px;
+        height: 820px;
+        width: 750px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 600px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 750px) {
+    main {
+        height: 800px;
         width: 700px;
         margin-bottom: 50px;
     }
@@ -179,26 +193,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
-        margin-left: 10px;
-    }
-}
-
-@media only screen and (min-width: 700px) and (max-width: 750px) {
-    main {
-        height: 750px;
-        width: 650px;
-        margin-bottom: 50px;
-    }
-    main img {
-        width: 300px;
-        margin-left: 100px;
-    }
-    main #header {
-        font-size: 1.3rem;
-    }
-    form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
@@ -217,7 +212,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
@@ -236,7 +231,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
@@ -255,15 +250,15 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
 
 @media only screen and (min-width: 450px) and (max-width: 550px) {
     main {
-        height: 700px;
-        width: 470px;
+        height: 750px;
+        width: 500px;
         margin-bottom: 50px;
     }
     main img {
@@ -274,7 +269,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 500px;
+        height: 600px;
         margin-left: 10px;
     }
 }
