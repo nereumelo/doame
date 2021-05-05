@@ -103,9 +103,22 @@ button:hover {
 
 /* responsividade */
 
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    main {
+        height: 1000px;
+        width: 1250px;
+        margin-bottom: 50px;
+    }
+
+    form {
+        height: 600px;
+        margin-left: 10px;
+    }
+}
+
 @media only screen and (min-width: 900px) and (max-width: 950px) {
     main {
-        height: 700px;
+        height: 900px;
         width: 950px;
         margin-bottom: 50px;
     }
@@ -124,7 +137,7 @@ button:hover {
 
 @media only screen and (min-width: 850px) and (max-width: 900px) {
     main {
-        height: 750px;
+        height: 820px;
         width: 900px;
         margin-bottom: 50px;
     }
@@ -143,7 +156,7 @@ button:hover {
 
 @media only screen and (min-width: 800px) and (max-width: 850px) {
     main {
-        height: 750px;
+        height: 820px;
         width: 800px;
         margin-bottom: 50px;
     }
