@@ -10,6 +10,7 @@
 /*MAIN-BANNER*/
 
 .top-parceiro {
+    padding-top: 30px;
     width: 100%;
     display: flex;
     height: 500px;
@@ -17,6 +18,7 @@
 }
 
 .imagens-parceiros {
+    margin-top: 40px;
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -26,7 +28,6 @@
 .imagens-parceiros img {
     width: 400px;
     height: 280px;
-    margin-left: 80px;
     box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.51);
     border-radius: 5px;
     background-size: cover;
@@ -58,7 +59,7 @@
 }
 
 .texto-parceiros {
-    width: 50%;
+    width: 600px;
     align-items: center;
     font-size: 24px;
     text-align: center;
@@ -66,43 +67,60 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 40px;
 }
-
-.bottom-parceiro-noticias {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    height: 100px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    height: 200px;
-}
-
-.bottom-parceiro-noticias .noticias {
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: 0.9s;
-    cursor: pointer;
-}
-
-.bottom-parceiro-noticias .noticias:hover {
-    opacity: 1;
-}
-
-.noticias .imagem-noticias {
-    height: 170px;
-    width: 300px;
-    border-radius: 5px;
-}
-
-.noticias .texto-noticias {
-    height: 100px;
-    text-align: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
 
 /* responsividade */
+
+@media only screen and (min-width: 950px) and (max-width: 1000px) {
+    .imagens-parceiros {
+        margin-top: 150px;
+    }
+    .texto-parceiros {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 950px) {
+    
+}
+
+@media only screen and (min-width: 850px) and (max-width: 900px) {
+    
+}
+
+@media only screen and (min-width: 800px) and (max-width: 850px) {
+    
+}
+
+@media only screen and (min-width: 750px) and (max-width: 800px) {
+    
+}
+
+@media only screen and (min-width: 700px) and (max-width: 750px) {
+    
+}
+
+@media only screen and (min-width: 650px) and (max-width: 700px) {
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 650px) {
+    
+}
+
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+    
+}
+
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+    
+}
+
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+    
+}
+
+@media only screen and (min-width: 400px) and (max-width: 450px) {
+    
+}
