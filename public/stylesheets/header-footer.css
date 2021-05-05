@@ -74,7 +74,8 @@ header .nav ul :hover {
 
 .form-login {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
 }
 
 header .login .nome-usuario {
@@ -122,6 +123,7 @@ header .login {
 header .login .nome-usuario {
     margin-right: 0px;
     margin-bottom: 5px;
+    display: flex;
 }
 
 header .btn-sair {
