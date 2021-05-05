@@ -19,7 +19,11 @@
                     Olá,
                     <%= usuario.nome.split(' ')[0] %>
                 </p>
-                <button class="btn-sair" type="submit">Sair</button>
+                <div class="menu" style="display: none;">
+                    <a href="#">Editar perfil</a>
+                    <a href="#">Mudar senha</a>
+                    <a href="#">Sair</a>
+                </div>
             </form>
             <% } else { %>
                 <button class="btn-login" onclick="btnLogin()">Login</button>

@@ -74,6 +74,7 @@ header .nav ul :hover {
 }
 
 .login {
+    width: 180px;
     display: flex;
     align-items: center;
 }
