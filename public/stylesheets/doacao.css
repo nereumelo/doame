@@ -19,7 +19,7 @@ main {
     justify-content: center;
 }
 
-.c {
+.container {
     display: flex;
     justify-content: space-around;
     padding-top: 130px;

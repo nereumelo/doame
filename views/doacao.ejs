@@ -17,7 +17,7 @@
                 <div class="line"></div>
             </div>
             <form action="/doacoes?doadores_id=<%= usuario.id %>&parceiros_id=<%= parceiro.id %> "  method="POST">
-                <input type="text" id="nome" name="valor" placeholder="Valor a ser doado" onkeypress="$(this).mask('R$ 999.990,00')">
+                <input type="text" id="valor" name="valor" placeholder="Valor a ser doado" onkeypress="$(this).mask('990.00')">
                 <select name="forma_pagamento">
                     <option value="Cartão de Crédito"selected>Cartão de Crédito</option>
                     <option value="Boleto Bancário">Boleto Bancário</option>
