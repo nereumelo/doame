@@ -12,16 +12,19 @@
     <body>
         <%- include partials/header %>
             <main>
-                <%= JSON.stringify(listaDoacoes) %>
-                <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Perfil</h2>
-                    <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
-                        <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
-                    <% } %>
-                <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações realizadas</h2>
+                <a  href="/perfil/edit"><h3 style="text-align: right; padding-top: 90px; padding-bottom: 50px;">Editar perfil</h3></a>
+                <h2 style="text-align: center; padding-bottom: 50px;">Perfil</h2>
+                <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
+                    <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
+                <% } %>
+                <% if (usuario.cnpj) { %>
+                    <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações recebidas</h2>
+                <% } else { %>
+                    <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações realizadas</h2>
+                <% } %>
                 <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
                     <p><strong><%= i+1 %>- Valor: </strong>R$ <%= listaDoacoes[i].valor %>       <strong>Forma de pagamento: </strong> <%= listaDoacoes[i].forma_pagamento %></p>
                 <% } %>
-                <a href="/perfil/edit"><h3>Editar perfil</h3></a>
             </main>
             <%- include partials/footer %>
                 <%- include partials/modalLogin %>
