@@ -6,10 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         doadores_id: DataTypes.INTEGER,
         valor: DataTypes.DOUBLE,
         forma_pagamento: DataTypes.STRING(45),
-        status: {
-            type: DataTypes.ENUM,
-            values: ['Em andamento', 'Concluído', 'Não realizado']
-        }, createdAt: {
+        createdAt: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
             field: 'created_at',
@@ -26,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "doacoes",
         timestamps: true
     });
+
+    Doacao.associate = (models) => {
+        Doacao.belongsTo(models.Parceiro, { as: "parceiro", foreignKey: "parceiros_id" });
+    };
 
     return Doacao;
 }

@@ -55,18 +55,27 @@ const homeController = {
 
     viewPerfil: async (req, res) => {
         if (req.session.usuarioLogado) {
+            const url = req.protocol + "://" + req.get("host");
+            let user;
+
             try {
-                await fetch(url + "/parceiros/JSON")
+                if (req.session.usuarioLogado.cnpj) user = 'parceiro';
+                else user = 'doador';
+
+                await fetch(url + `/doacoes/${user}/${req.session.usuarioLogado.id}`)
                     .then((res) => res.json())
                     .then((data) => {
-                        return res.render("main", {
+                        console.log(data);
+                        return res.render("perfil", {
                             usuario: req.session.usuarioLogado,
-                            listaParceiros: data,
+                            listaDoacoes: data,
                         });
                     });
             } catch (err) {
                 res.json({ erro: err });
             }
+
+
             res.render("perfil", { usuario: req.session.usuarioLogado });
         }
         else 
