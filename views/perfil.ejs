@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include partials/head %>
+
+    <head>
+
+        <link rel='stylesheet' href='/stylesheets/main.css'>
+        <title>DOAME</title>
+    </head>
+
+    <body>
+        <%- include partials/header %>
+            <main>
+                <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Perfil</h2>
+                    <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
+                        <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
+                    <% } %>
+            </main>
+            <%- include partials/footer %>
+                <%- include partials/modalLogin %>
+                    <script src="/javascripts/main.js"></script>
+    </body>
+
+</html>

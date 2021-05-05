@@ -53,6 +53,26 @@ const homeController = {
         return res.redirect("/");
     },
 
+    viewPerfil: async (req, res) => {
+        if (req.session.usuarioLogado) {
+            try {
+                await fetch(url + "/parceiros/JSON")
+                    .then((res) => res.json())
+                    .then((data) => {
+                        return res.render("main", {
+                            usuario: req.session.usuarioLogado,
+                            listaParceiros: data,
+                        });
+                    });
+            } catch (err) {
+                res.json({ erro: err });
+            }
+            res.render("perfil", { usuario: req.session.usuarioLogado });
+        }
+        else 
+            res.redirect("/");
+    },
+
     viewEditPerfil: async (req, res) => {
         if (req.session.usuarioLogado)
             res.render("editPerfil", { usuario: req.session.usuarioLogado });
