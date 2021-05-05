@@ -21,7 +21,7 @@ body {
 }
 
 .forms {
-    height: 500px;
+    height: auto;
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -35,6 +35,8 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 form input {
