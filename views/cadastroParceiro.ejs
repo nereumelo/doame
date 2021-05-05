@@ -6,8 +6,8 @@
     <head>
         <link rel="stylesheet" href="/stylesheets/cadastroParceiro.css">
         <title>DoAME | Cadastro do Parceiro</title>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> -->
     </head>
 
     <body>
@@ -20,8 +20,8 @@
                 <form action="/parceiros" method="POST">
                     <input type="text" name="nome" id="name" placeholder="Digite o seu nome">
                     <input type="text" name="descricao" id="descricao" placeholder="Descrição">
-                    <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" onkeypress="$(this).mask('00.000.000/0000-00')">
-                    <input type="text" name="cep" id="cep" placeholder="CEP" onkeypress="$(this).mask('00.000-000')">
+                    <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ">
+                    <input type="text" name="cep" id="cep" placeholder="CEP">
                     <input type="email" name="email" id="email" placeholder="Email">
                     <input type="password" name="senha" id="senha" placeholder="Senha">
                     <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha">
