@@ -31,9 +31,9 @@ header {
 
 header .nav {
     display: flex;
-    width: 800px;
+    width: 600px;
     justify-content: space-between;
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 
 header .nav ul {
@@ -54,7 +54,6 @@ header .nav a {
 }
 
 .nome-usuario {
-    margin-right: 40px;
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -63,7 +62,7 @@ header .nav a {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 200px;
 }
 
 header .nav ul :hover {
@@ -77,12 +76,11 @@ header .nav ul :hover {
 }
 
 .login {
-    width: 200px;
+    width: 400px;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 15px;
+    justify-content: flex-end;
     align-items: center;
-    margin-top: 15px;
+    margin: 15px 40px 15px 0;
 }
 
 .form-login {
