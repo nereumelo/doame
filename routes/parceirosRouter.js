@@ -5,6 +5,7 @@ const parceirosController = require('../controllers/parceirosController');
 // const validarCadastroParceiros = require('../middlewares/ValidarCadastroParceiros');
 // const ValidarSenha = require('../middlewares/ValidarSenha');
 const { campoVazio, campoRepetido, formatoValido } = require('../middlewares/Valida');
+const { estaLogado } = require('../middlewares/Autentica');
 
 router.get('/cadastro', parceirosController.viewCadastro);
 
@@ -13,6 +14,8 @@ router.get('/', parceirosController.viewIndex);
 
 router.get('/:id/JSON', parceirosController.showJSON);
 router.get('/:id/', parceirosController.viewShow);
+
+router.get('/:id/doar', estaLogado, parceirosController.viewDonate);
 
 router.post('/', campoVazio, campoRepetido, formatoValido, parceirosController.create);
 router.put('/:id', campoVazio, formatoValido, parceirosController.update);

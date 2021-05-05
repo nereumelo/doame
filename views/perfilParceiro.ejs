@@ -18,22 +18,17 @@
                             <img title="Imagem do artigo do parceiro" style="background-image: url('<%= parceiro.imagem %>');">
                         </div>
 
-                        <div class="texto-parceiros"> Conheça as instituições parceiras da DOAME. Saiba o que precisam e conte conosco como facilitador!</div>
+                        <div class="texto-parceiros">
+                            <h2><%= parceiro.nome %></h2>
+                            <p><%= parceiro.descricao %></p>
+                            <button onclick="location+='/doar'">DOAR</button>
+                        </div>
                     </div>
 
                     <div class="bottom-parceiro-noticias">
-                        <div class="noticias">
-                            <img src="/images/donation_opacityred.png" class="imagem-noticias">
-                            <p class="texto-noticias">NOTICIAS INSTITUIÇÕES</p>
-                        </div>
-                        <div class="noticias">
-                            <img src="/images/donation_opacityred.png" class="imagem-noticias">
-                            <p class="texto-noticias">NOTICIAS INSTITUIÇÕES</p>
-                        </div>
-                        <div class="noticias">
-                            <img src="/images/donation_opacityred.png" class="imagem-noticias">
-                            <p class="texto-noticias">NOTICIAS INSTITUIÇÕES</p>
-                        </div>
+                        <% for( let i=0; i <= 2; i++ ) { %>
+                            <%- include partials/cardNoticia %>
+                        <% } %>
                     </div>
                 </div>
             </main>
