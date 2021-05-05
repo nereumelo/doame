@@ -16,7 +16,6 @@ const homeController = {
 
         } catch(err) {
             res.json({ erro: err });
-            res.render('error');
         }
     },
 
@@ -31,7 +30,7 @@ const homeController = {
         let usuario = (doador ? doador : parceiro);
         
         if(!usuario) {
-            return res.send({ 
+            return res.status(400).json({ 
                 message: 'Usuário não encontrado no banco de dados',
                 usuario: null
             });
@@ -41,7 +40,7 @@ const homeController = {
             return res.redirect('/');
         }
         else {
-            return res.send({
+            return res.status(400).json({
                 message: 'Credenciais incorretas',
                 usuario: null
             });
