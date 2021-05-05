@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url('./paleta.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +20,7 @@ main {
 }
 
 main .image {
-    margin-top: 7%;
+    margin-top: 5%;
     width: 500px;
     cursor: pointer;
 }
@@ -34,7 +35,7 @@ main #header {
 .forms {
     /* border: 1px solid red; */
     width: 900px;
-    height: 250px;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -42,7 +43,7 @@ main #header {
 .forms form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .forms form input {
@@ -60,13 +61,13 @@ main #header {
 
 .agree-with {
     margin-top: 20px;
-    width: 350px;
+    width: 415px;
     display: flex;
     align-items: center;
 }
 
-.agree-with input {
-    margin: 10px;
+.agree-with #terms {
+    width: 20px;
 }
 
 .agree-with label {
@@ -78,8 +79,9 @@ main #header {
     text-decoration: underline;
 }
 
-a button {
-    margin-top: 45px;
+button {
+    margin-top: 25px;
+    margin-left: 80px;
     text-transform: uppercase;
     background-color: var(--azul-claro);
     color: var(--branco);
@@ -101,65 +103,173 @@ button:hover {
 
 /* responsividade */
 
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+@media only screen and (min-width: 900px) and (max-width: 950px) {
     main {
-        height: 900px;
-        width: 1300px;
-    }
-}
-
-@media only screen and (min-width: 1100px) and (max-width: 1200px) {
-    main {
-        height: 800px;
-        width: 1200px;
-    }
-}
-
-@media only screen and (min-width: 900px) and (max-width: 1000px) {
-    main {
-        height: 1000px;
+        height: 700px;
         width: 1000px;
-    }
-}
-
-@media only screen and (min-width:700px) and (max-width: 900px) {
-    main {
-        height: 800px;
-        width: 1300px;
-    }
-    .forms {
-        margin-top: 50px;
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
     }
 }
 
-@media only screen and (min-width: 400px) and (max-width: 700px) {
+@media only screen and (min-width: 850px) and (max-width: 900px) {
     main {
-        margin-top: 150px;
-        height: 200px;
+        height: 750px;
         width: 900px;
-    }
-    .forms {
-        margin-top: 50px;
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
     }
 }
 
-@media only screen and (min-width: 100px) and (max-width: 400px) {
+@media only screen and (min-width: 800px) and (max-width: 850px) {
     main {
+        height: 750px;
         width: 800px;
-    }
-    .forms {
-        margin-top: 50px;
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 800px) {
+    main {
+        height: 750px;
+        width: 700px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 750px) {
+    main {
+        height: 750px;
+        width: 650px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 700px) {
+    main {
+        height: 750px;
+        width: 650px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 650px) {
+    main {
+        height: 700px;
+        width: 650px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+    main {
+        height: 750px;
+        width: 600px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 550px) {
+    main {
+        height: 700px;
+        width: 470px;
+        margin-bottom: 50px;
+    }
+    main img {
+        width: 300px;
+        margin-left: 100px;
+    }
+    main #header {
+        font-size: 1.3rem;
+    }
+    form {
+        height: 500px;
+        margin-left: 10px;
     }
 }
