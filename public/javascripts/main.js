@@ -18,10 +18,10 @@ const btnClose = () => {
 
 }
 
-const nomeUsuario = document.querySelector(".nome-usuario");
+const nomeUsuario = document.querySelector(".login");
 const menu = document.querySelector(".menu");
 nomeUsuario.addEventListener("click", () => {
-    if (menu.style.display == 'none')
+    if(menu.style.display == 'none')
         menu.style.display = "flex";
     else
         menu.style.display = "none";
@@ -33,6 +33,7 @@ const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
 function animeScroll() {
+    console.log('teste')
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
     target.forEach(function(element) {
         if ((windowTop) > element.offsetTop) {
@@ -45,8 +46,4 @@ function animeScroll() {
 
 window.addEventListener('scroll', function() {
     animeScroll();
-})
-
-window.addEventListener('load', function() {
-    login()
 })
