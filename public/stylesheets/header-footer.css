@@ -31,9 +31,9 @@ header .logo .logo-img {
 
 header .nav {
     display: flex;
-    flex-direction: row;
     width: 800px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-right: 80px;
 }
 
 header .nav ul {
@@ -54,6 +54,7 @@ header .nav a {
 }
 
 .nome-usuario {
+    margin-right: 40px;
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -72,15 +73,14 @@ header .nav ul :hover {
     transition: 0.9s;
 }
 
-header .login {
+.form-login {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 50px;
+    width: 300px;
 }
 
-header .login .nome-usuario {
-    margin-right: 40px;
-    margin-bottom: 5px;
-}
 
 header .btn-login {
     width: 100px;
@@ -120,30 +120,8 @@ header .login {
     display: flex;
 }
 
-header .login .nome-usuario {
-    margin-right: 40px;
-    margin-bottom: 5px;
-}
 
 header .btn-sair {
-    margin-right: 40px;
-    width: 80px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
-    font-size: 20px;
-    background: #7CDCDF;
-    color: white;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-header .btn-sair:hover {
-    background: #8a0705;
-}
-
-header .btn-sair {
-    margin-right: 40px;
     width: 80px;
     height: 40px;
     border-radius: 15px;

@@ -1,6 +1,6 @@
 <header>
-    <div class="logo">
-        <img class="logo-img" onclick="location='/'" src="/images/logo/Logomarca Doame (3).png">
+    <div class="logo" onclick="location='/'">
+        <img class="logo-img" src="/images/logo/Logomarca Doame (3).png">
     </div>
     <div class="nav">
         <ul>
@@ -11,18 +11,18 @@
             <input type="text" class="search-txt" placeholder="Buscar"></input>
             <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
         </div> -->
-        <div class="login">
-            <% if(usuario) { %>
-                <form class="form-login" action="/logout" method="POST">
-                    <p class="nome-usuario">
-                        Olá,
-                        <%= usuario.nome.split(' ')[0] %>
-                    </p>
-                    <button class="btn-sair" type="submit">Sair</button>
-                </form>
-                <% } else { %>
-                    <button class="btn-login" onclick="btnLogin()">Login</button>
-                    <% } %>
-        </div>
+    </div>
+    <div class="login">
+        <% if(usuario) { %>
+            <form class="form-login" action="/logout" method="POST">
+                <p class="nome-usuario">
+                    Olá,
+                    <%= usuario.nome.split(' ')[0] %>
+                </p>
+                <button class="btn-sair" type="submit">Sair</button>
+            </form>
+            <% } else { %>
+                <button class="btn-login" onclick="btnLogin()">Login</button>
+                <% } %>
     </div>
 </header>
