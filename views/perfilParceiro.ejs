@@ -19,16 +19,20 @@
                         </div>
 
                         <div class="texto-parceiros">
-                            <h2><%= parceiro.nome %></h2>
-                            <p><%= parceiro.descricao %></p>
-                            <button onclick="location+='/doar'">DOAR</button>
+                            <h2>
+                                <%= parceiro.nome %>
+                            </h2>
+                            <p>
+                                <%= parceiro.descricao %>
+                            </p>
+                            <button class="btn-doar" onclick="location+='/doar'">DOAR</button>
                         </div>
                     </div>
 
                     <div class="bottom-parceiro-noticias">
                         <% for( let i=0; i <= 2; i++ ) { %>
                             <%- include partials/cardNoticia %>
-                        <% } %>
+                                <% } %>
                     </div>
                 </div>
             </main>

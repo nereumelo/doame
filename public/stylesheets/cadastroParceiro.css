@@ -78,9 +78,7 @@ main #header {
     text-decoration: underline;
 }
 
-a button {
-    margin-top: 45px;
-    text-transform: uppercase;
+button {
     background-color: var(--azul-claro);
     color: var(--branco);
     border: none;
@@ -91,6 +89,8 @@ a button {
     width: 250px;
     height: 40px;
     transition: 0.5s;
+    margin-top: 25px;
+    font-size: 20px;
 }
 
 button:hover {
