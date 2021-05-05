@@ -2,23 +2,23 @@
 <html lang="en">
 
 <%- include partials/head %>
-
-    <head>
-        <link rel="stylesheet" href="/stylesheets/doacao.css">
-        <title>Doação</title>
-    </head>
-
-    <body>
-        <%- include partials/header %>
-            <section class=c ontainer>
-                <div class="forms">
-                    <h1>Continue com sua doação</h1>
-                    <div id="lines">
-                        <div class="line"></div>
-                    </div>
-                    <form action="/doacoes?doadores_id=<%= usuario.id %>&parceiros_id=<%= parceiro.id %> " method="POST">
-                        <input type="text" id="nome" name="valor" placeholder="Valor a ser doado">
-                        <select name="forma_pagamento">
+<head>
+    <link rel="stylesheet" href="/stylesheets/doacao.css">
+    <title>Doação</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+<body>
+    <%- include partials/header %>
+    <section class= container>
+        <div class="forms">
+            <h1>Continue com sua doação</h1>
+            <div id="lines">
+                <div class="line"></div>
+            </div>
+            <form action="/doacoes?doadores_id=<%= usuario.id %>&parceiros_id=<%= parceiro.id %> "  method="POST">
+                <input type="text" id="nome" name="valor" placeholder="Valor a ser doado" onkeypress="$(this).mask('R$ 999.990,00')">
+                <select name="forma_pagamento">
                     <option value="Cartão de Crédito"selected>Cartão de Crédito</option>
                     <option value="Boleto Bancário">Boleto Bancário</option>
                     <option value="Pix">Pix</option>
