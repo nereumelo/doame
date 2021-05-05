@@ -14,15 +14,15 @@
     </div>
     <div class="login">
         <% if(usuario) { %>
-                <p class="nome-usuario">
-                    Olá,
-                    <%= usuario.nome.split(' ')[0] %>
-                </p>
-                <div class="menu" style="display: none;">
-                    <a href='/logout'>Sair</a>
-                    <a href="#">Editar perfil</a>
-                    <a href="#">Mudar senha</a>
-                </div>
+            <p class="nome-usuario">
+                Olá,
+                <%= usuario.nome.split(' ')[0] %>
+            </p>
+            <div class="menu" style="display: none;">
+                <a href="/perfil/edit">Editar perfil</a>
+                <!-- <a href="">Mudar senha</a> -->
+                <button href='/logout'>Sair</button>
+            </div>
             </form>
             <% } else { %>
                 <button class="btn-login" onclick="btnLogin()">Login</button>

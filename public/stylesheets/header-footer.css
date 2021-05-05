@@ -63,6 +63,7 @@ header .nav a {
     text-align: center;
     justify-content: center;
     align-items: center;
+    width: 150px;
 }
 
 header .nav ul :hover {
@@ -76,11 +77,13 @@ header .nav ul :hover {
 }
 
 .login {
-    width: 180px;
+    width: 500px;
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
     align-items: center;
+    z-index: 30;
+    margin-top: 30px;
 }
 
 .form-login {
@@ -136,6 +139,48 @@ header .btn-sair {
 }
 
 header .btn-sair:hover {
+    background: #8a0705;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 15px;
+    width: 120px;
+    transition: all 2s;
+    margin-right: 35px;
+}
+
+.menu a {
+    height: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #7CDCDF;
+    border-radius: 15px 15px 0 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.menu a:hover {
+    background-color: #8a0705;
+    transition: 0.2s;
+}
+
+.menu button {
+    background: #d96c6a;
+    border-radius: 0 0 15px 15px;
+    color: white;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.menu button:hover {
     background: #8a0705;
 }
 
