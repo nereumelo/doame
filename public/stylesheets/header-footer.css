@@ -112,11 +112,11 @@ header .btn-login:hover {
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
-    width: 0px;
 }
 
 header .login {
     display: flex;
+    margin-top: 20px;
 }
 
 header .login .nome-usuario {
