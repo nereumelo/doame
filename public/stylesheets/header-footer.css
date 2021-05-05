@@ -10,6 +10,7 @@ body {
     font-family: 'Poppins';
 }
 
+
 /*HEADER*/
 
 header {
@@ -96,6 +97,7 @@ header .btn-login:hover {
     background: #8a0705;
     transition: 0.5s;
 }
+
 .search-btn>i {
     font-size: 20px;
 }
@@ -157,6 +159,7 @@ header .btn-sair:hover {
     background: #8a0705;
 }
 
+
 /*FIXANDO HEADER COM SCROLL*/
 
 .scrolling-ativado {
@@ -169,6 +172,7 @@ header .btn-sair:hover {
 .scrolling-ativado nav a {
     text-shadow: 0.02em 0.02em #333
 }
+
 
 /* FOOTER */
 
