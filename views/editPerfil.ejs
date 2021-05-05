@@ -16,7 +16,7 @@
                 <h2 style="text-align: center;">Editar perfil</h2>
                 <form action="/perfil/edit" method="post" class="formulario">
                     <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
-                        <input type="text" nome="<%= Object.keys(usuario)[i] %>" placeholder="<%= Object.values(usuario)[i] %>">
+                        <input type="text" name="<%= Object.keys(usuario)[i] %>" placeholder="<%= Object.values(usuario)[i] %>">
                         <% } %>
                             <input type="password" name="senha" id="senha" placeholder="senha atual">
                             <input type="password" name="novaSenha" id="novaSenha" placeholder="nova senha">
