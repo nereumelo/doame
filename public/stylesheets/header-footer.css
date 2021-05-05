@@ -61,6 +61,8 @@ header .nav a {
     text-shadow: 0.1em 0.1em 0.2em #333;
     cursor: pointer;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 header .nav ul :hover {
@@ -76,6 +78,8 @@ header .nav ul :hover {
 .login {
     width: 180px;
     display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
     align-items: center;
 }
 
