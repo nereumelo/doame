@@ -22,7 +22,7 @@ main {
 .c {
     display: flex;
     justify-content: space-around;
-    padding-top: 90px;
+    padding-top: 130px;
     padding-bottom: 50px;
 }
 
