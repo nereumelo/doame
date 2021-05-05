@@ -16,7 +16,7 @@
                 <form class="form-login" action="/logout" method="POST">
                     <p class="nome-usuario">
                         Olá,
-                        <%= usuario.nome %>
+                        <%= usuario.nome.split(' ')[0] %>
                     </p>
                     <button class="btn-sair" type="submit">Sair</button>
                 </form>

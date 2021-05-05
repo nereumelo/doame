@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
     const Endereco = sequelize.define(
         "Endereco", {
         parceiros_id: DataTypes.INTEGER,
-        pais: DataTypes.STRING(100),
         estado: DataTypes.STRING(100),
         cidade: DataTypes.STRING(100),
         bairro: DataTypes.STRING(100),

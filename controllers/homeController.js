@@ -16,7 +16,6 @@ const homeController = {
 
         } catch(err) {
             res.json({ erro: err });
-            res.render('error');
         }
     },
 
@@ -26,12 +25,10 @@ const homeController = {
 
     auth: async (req,res) => {
         const { email, senha } = req.body;
-        const usuario = await Doador.findOne({ where: { email} });
+        const doador = await Doador.findOne({ where: { email} });
+        const parceiro = await Parceiro.findOne({ where: { email } });
+        let usuario = (doador ? doador : parceiro);
         
-        if (!usuario) {
-            const usuario = await Parceiro.findOne({ where: { email } });
-        }
-
         if(!usuario) {
             return res.status(400).json({ 
                 message: 'Usuário não encontrado no banco de dados',
