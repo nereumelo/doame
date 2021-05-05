@@ -26,9 +26,5 @@ router.post('/:parceiros_id/endereco', campoVazio, parceirosController.createAdd
 router.put('/:parceiros_id/endereco/:id', campoVazio, parceirosController.updateAddress);
 router.delete('/:parceiros_id/endereco/:id/', parceirosController.deleteAddress);
 
-// Rotar de Artigos de Parceiros
-router.post('/:parceiros_id/artigo', campoVazio, parceirosController.createArt);
-router.put('/:parceiros_id/artigo/:id', campoVazio, parceirosController.updateArt);
-router.delete('/:parceiros_id/artigo/:id', parceirosController.deleteArt);
 
 module.exports = router;

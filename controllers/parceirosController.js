@@ -1,12 +1,12 @@
 require('dotenv').config();
-const { Parceiro, Artigo, Endereco, sequelize } = require('../models');
+const { Parceiro, Endereco, sequelize } = require('../models');
 const bcrypt = require('bcryptjs');
 const fetch = require('node-fetch');
 const saltRounds = 10;
 const pepper = process.env.PWD_PEPPER;
 
 const buscaParceiro = (id) => Parceiro.findByPk(id, ({
-    include: ["enderecos", "artigos"]
+    include: ["enderecos"]
 }));
 
 const parceirosController = {
@@ -189,49 +189,6 @@ const parceirosController = {
         });
 
         return res.send(endereco);
-    },
-
-
-    // Controller (Artigo)
-    createArt: async (req, res) => {
-        const { parceiros_id } = req.params;
-        const { titulo, corpo } = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id)
-
-        parceiro.artigos = await Artigo.create({
-            parceiros_id,
-            titulo,
-            corpo
-        });
-
-        return res.json(parceiro);
-    },
-
-    updateArt: async (req, res) => {
-        const { parceiros_id, id } = req.params;
-        const newArtigo = req.body;
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.artigo = await Artigo.update(newArtigo, {
-            where: { id }
-        });
-
-        return res.json(newArtigo);
-    },
-
-    deleteArt: async (req, res) => {
-        const { parceiros_id, id } = req.params;
-        const artigoDel = req.body
-
-        const parceiro = await buscaParceiro(parceiros_id);
-
-        parceiro.artigos = await Artigo.destroy({
-            where: { id }
-        });
-
-        return res.json(artigoDel);
     },
 }
 
