@@ -50,6 +50,13 @@ const homeController = {
     logout: async (req, res) => {
         req.session.usuarioLogado = null;
         return res.redirect('/');
+    },
+
+    editPerfil: async (req, res) => {
+        const perfil = req.session.usuarioLogado;
+        console.log(Object.keys(perfil).length);
+        console.log(Object.keys(perfil));
+        res.render('editPerfil', { usuario: perfil, });
     }
 }
 
