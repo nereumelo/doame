@@ -55,13 +55,24 @@ const parceirosController = {
                 });
 
         } catch(err) {
-            return res.render('perfilParceiro', console.log('erro: ' + err));
+            return res.render('/', console.log('erro: ' + err));
         }
     },
 
     viewDonate: async (req, res) => {
+        const { id } = req.params;
+        const url = req.protocol + '://' + req.get('host');
+        try {
+            await fetch(url + `/parceiros/${id}/JSON`)
+                .then(res => res.json())
+                .then(data => {
+                    return res.render('doacao', { usuario: req.session.usuarioLogado, parceiro: data })
+                });
 
-        res.render('doacao', { usuario: req.session.usuarioLogado });
+        } catch(err) {
+            return res.render('/', console.log('erro: ' + err));
+        }
+       
     },
 
     create: async (req, res) => {

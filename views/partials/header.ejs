@@ -15,7 +15,7 @@
             <% if(usuario) { %>
                 <form action="/logout" method="POST">
                     <p class="nome-usuario">
-                        <%= usuario.nome %>
+                        Olá, <%= usuario.nome.split(' ')[0] %>
                     </p>
                     <button class="btn-sair" type="submit">Sair</button>
                 </form>
