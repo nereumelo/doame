@@ -5,23 +5,27 @@
 
     <head>
 
-        <link rel='stylesheet' href='/stylesheets/main.css'>
+        <link rel="stylesheet" href="/stylesheets/editarPerfil.css">
         <title>DOAME</title>
     </head>
 
     <body>
         <%- include partials/header %>
-            <main>
-                <h2 style="text-align: center; padding-top: 90px;">Editar perfil</h2>
-                <form action="/perfil/edit" method="post">
-                    <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
-                        <input type="text" nome="<%= Object.keys(usuario)[i] %>" placeholder="<%= Object.values(usuario)[i] %>">
-                        <% } %>
-                            <input type="password" name="senha" id="senha" placeholder="senha atual">
-                            <input type="password" name="novaSenha" id="novaSenha" placeholder="nova senha">
-                            <button type="submit">Salvar alterações</button>
-                </form>
-            </main>
+            <section class = "container">
+                <div class = "forms">
+                    <h2 style="text-align: center;">Editar perfil</h2>
+                    <form action="/perfil/edit" method="post" class="formulario">
+                        <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
+                            <input type="text" nome="<%= Object.keys(usuario)[i] %>" placeholder="<%= Object.values(usuario)[i] %>">
+                            <% } %>
+                                <input type="password" name="senha" id="senha" placeholder="senha atual">
+                                <input type="password" name="novaSenha" id="novaSenha" placeholder="nova senha">
+                                <div class="sign-up">
+                                    <button type="submit">Salvar alterações</button>
+                                </div>
+                    </form>
+             </div>
+            </section>
             <%- include partials/footer %>
                 <%- include partials/modalLogin %>
                     <script src="/javascripts/main.js"></script>
