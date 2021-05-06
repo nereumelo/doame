@@ -96,7 +96,7 @@ button:hover {
 
 @media only screen and (min-width: 1000px) and (max-width:1200px) {
     .container {
-        height: 650px;
+        height: 525px;
         width: 800px;
     }
     .container h1 {
@@ -106,14 +106,14 @@ button:hover {
 
 @media only screen and (min-width: 700px) and (max-width: 1000px) {
     .container {
-        height: 600px;
-        width: 800px;
+        height: 625px;
+        width: 500px;
     }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 700px) {
     .container {
-        height: 1200px;
+        height: 625px;
         width: 500px;
     }
     .container h1 {
