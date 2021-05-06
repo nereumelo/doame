@@ -14,15 +14,14 @@
             <main>
                 <div class="noticias-parceiros">
                     <div class="top-parceiro">
-                        <div class="imagens-parceiros">
-                            <img style="background-image: url('<%= parceiro.imagem %>');">
+                        <div class="imagens-parceiros" style="background-image: url('<%= parceiro.imagem %>');">
                         </div>
 
                         <div class="texto-parceiros">
                             <h2>
                                 <%= parceiro.nome %>
                             </h2>
-                            <p>
+                            <p class="descricao">
                                 <%= parceiro.descricao %>
                             </p>
                             <button class="btn-doar" onclick="location+='/doar'">DOAR</button>
