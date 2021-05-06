@@ -87,7 +87,7 @@ button:hover {
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
     .container {
-        height: 550px;
+        height: 520px;
     }
     .container h1 {
         font-size: 2.6rem;
