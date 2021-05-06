@@ -265,7 +265,6 @@ form {
 
 .login-logar {
     margin-top: 30px;
-    background-color: greenyellow;
     width: 50%;
     height: 40px;
     background-color: var(--vermelho-claro);
@@ -282,35 +281,6 @@ form {
     box-shadow: inset 400px 0 0 0 var(--azul-claro);
 }
 
-
-/* esqueceu a senha ? */
-
-.password-missed {
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-}
-
-.password-missed a {
-    text-decoration: none;
-    color: var(--cinza-claro-escuro);
-}
-
-.password-missed #login {
-    margin-left: 20px;
-    text-decoration: underline;
-}
-
-.password-missed #login:hover {
-    color: var(--vermelho-claro);
-}
-
-.password-missed a:hover {
-    text-decoration: underline;
-    color: white;
-}
 
 
 /* cadastre-se */
