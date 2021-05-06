@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url('/stylesheets/paleta.css');
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 110px;
+    padding-bottom: 50px;
+}
+.container h3{
+    text-align: right;
+    padding-bottom: 50px;
+}
+.container h2{
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.info {
+    height:300px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}

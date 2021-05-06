@@ -6,28 +6,37 @@
     <head>
 
         <link rel='stylesheet' href='/stylesheets/main.css'>
+        <link rel='stylesheet' href='/stylesheets/perfil.css'>
         <title>DOAME</title>
     </head>
 
     <body>
         <%- include partials/header %>
             <main>
-                <a  href="/perfil/edit"><h3 style="text-align: right; padding-top: 90px; padding-bottom: 50px;">Editar perfil</h3></a>
-                <h2 style="text-align: center; padding-bottom: 50px;">Perfil</h2>
-                <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
-                    <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
-                <% } %>
-                <% if (usuario.cnpj) { %>
-                    <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações recebidas</h2>
-                <% } else { %>
-                    <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações realizadas</h2>
-                <% } %>
-                <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
-                    <p><strong><%= i+1 %>- Valor: </strong>R$ <%= listaDoacoes[i].valor %>       <strong>Forma de pagamento: </strong> <%= listaDoacoes[i].forma_pagamento %></p>
-                <% } %>
+                <section class="container">
+                    <a  href="/perfil/edit"><h3>Editar perfil</h3></a>
+                    <a  onclick="callConfirmModal()"><h3>Excluir conta</h3></a>
+                    <%- include partials/modalConfirm %>
+                <div class = "info">
+                    <h2>Perfil</h2>
+                    <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
+                        <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
+                    <% } %>
+                    </div>
+                <div class ="transacao">
+                    <% if (usuario.cnpj) { %>
+                        <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações recebidas</h2>
+                    <% } else { %>
+                        <h2 style="text-align: center; padding-top: 90px; padding-bottom: 50px;">Doações realizadas</h2>
+                    <% } %>
+                    <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
+                        <p><strong><%= i+1 %>- Valor: </strong>R$ <%= listaDoacoes[i].valor %>       <strong>Forma de pagamento: </strong> <%= listaDoacoes[i].forma_pagamento %></p>
+                    <% } %>
+                </div>
+                </section>
             </main>
             <%- include partials/footer %>
-                <%- include partials/modalLogin %>
+                
                     <script src="/javascripts/main.js"></script>
     </body>
 

@@ -47,3 +47,12 @@ function animeScroll() {
 window.addEventListener('scroll', function() {
     animeScroll();
 })
+
+const callConfirmModal = () => {
+    document.querySelector('.confirmModal').style.display = "block";
+}
+
+const closeConfirmModal = () => {
+    document.querySelector('.confirmModal').style.display = "none";
+
+}
