@@ -71,6 +71,12 @@ container p {
     justify-content: flex-end;
 }
 
+.botao2 { 
+    margin-left: 15px;
+    background-color: #d96c6a !important;
+}
+
+
 button {
     margin-bottom: 20px;
 }
@@ -90,5 +96,5 @@ button {
 
 .botoes button:hover {
     color: white;
-    box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
+    box-shadow: inset 350px 0 0 0 var(--vermelho-sangue);
 }
