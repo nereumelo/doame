@@ -93,9 +93,6 @@ const homeController = {
         const usuario = req.session.usuarioLogado;
         const perfil = req.body;
 
-        console.log(usuario);
-        console.log(JSON.stringify(perfil));
-
         if (perfil.nome) 
             usuario.nome = perfil.nome;
         if (perfil.descricao) 
@@ -113,24 +110,38 @@ const homeController = {
             usuario.senha = novaSenhaCrypt;
         }
 
-        // if(usuario.cnpj) {
-        //     const usuario = await Parceiro.findByPk(usuario.id);
-        // } else {
-        //     const usuario = await Doador.findByPk(usuario.id);
-        // }
+        if(usuario.cnpj) {
+            await Parceiro.update(usuario, {
+                where: { id: usuario.id }
+            });
+        } else {
+            await Doador.update(usuario, {
+                where: { id: usuario.id }
+            });
+        }
 
-        // if(perfil.senha != null && perfil.novaSenha != null) {
-        //     const validaSenha = (bcrypt.compareSync(perfil.senha + pepper, usuario.senha));
-        //     if (validaSenha) {
-        //         const novaSenhaCrypt = bcrypt.hashSync(perfil.novaSenha + pepper, saltRounds);
-
-        //         await Parceiro.update(, { where: { id } });
-        //     }
-        // }
-
-        return res.json({ usuario });
-        return res.send(validaSenha);
+        return res.redirect('/perfil/edit');
     },
+
+    DeletePerfil: async (req, res) => {
+        const usuario = req.session.usuarioLogado;
+        
+        if(usuario.cnpj) {
+            await Parceiro.destroy({
+                where: { id: usuario.id },
+                cascade: true
+            });
+        } else {
+            await Doador.destroy({
+                where: { id: usuario.id },
+                cascade: true
+            });
+        }
+
+        req.session.usuarioLogado = null;
+
+        return res.redirect('/');
+    }
 };
 
 module.exports = homeController;
