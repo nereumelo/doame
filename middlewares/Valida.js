@@ -2,6 +2,11 @@ module.exports = {
     campoVazio: async (req, res, next) => {
         const dados = await req.body;
         const camposVazios = [];
+
+        console.log(dados);
+        if (!dados.terms)
+            return res.status(400).json({ erro: `Termos de uso e política de privacidade não aceitos.` });
+
         for (const [chave, valor] of Object.entries(dados)) {
             if (!valor)
                 camposVazios.push(chave);
