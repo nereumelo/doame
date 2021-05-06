@@ -24,21 +24,23 @@ main {
     padding-top: 110px;
     padding-bottom: 50px;
 }
-.container h3{
+
+.container h3 {
     text-align: right;
     padding-bottom: 10px;
 }
-.container h2{
+
+.container h2 {
     text-align: center;
     padding-bottom: 10px;
-
 }
 
-container p{
+container p {
     margin-left: 20px;
 }
+
 .info {
-    height:150px;
+    height: 150px;
     width: 1000px;
     display: flex;
     flex-direction: column;
@@ -49,7 +51,7 @@ container p{
     margin-bottom: 20px;
 }
 
-.transacao{
+.transacao {
     min-height: 80px;
     width: 1000px;
     display: flex;
@@ -60,20 +62,18 @@ container p{
     border-radius: 8px;
 }
 
-.user{
-    padding-left:30px;
+.user {
+    padding-left: 30px;
 }
 
-.botoes{
+.botoes {
     display: flex;
     justify-content: flex-end;
 }
 
-button{
-    margin-left: 30px;
+button {
     margin-bottom: 20px;
 }
-
 
 .botoes button {
     color: var(--branco);

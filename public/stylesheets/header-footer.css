@@ -76,19 +76,11 @@ header .nav ul :hover {
 }
 
 .login {
-<<<<<<< HEAD
-    width: 270px;
-=======
     width: 400px;
->>>>>>> daab1178a6db676073bb1cb36c761ef567af2298
     display: flex;
     justify-content: flex-end;
     align-items: center;
-<<<<<<< HEAD
-    margin-top: 20px;
-=======
     margin: 15px 40px 15px 0;
->>>>>>> daab1178a6db676073bb1cb36c761ef567af2298
 }
 
 .form-login {
