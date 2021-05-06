@@ -158,11 +158,8 @@ const parceirosController = {
                         cep,
                     });
                 });
-                return res.redirect('/');
-        } catch(err) {
-            console.log('erro ao criar endereco: ' + err);
-            return res.redirect('/');
-        }
+            } catch(err) {}
+        return res.redirect('/');
     },
 
     updateAddress: async (req, res) => {

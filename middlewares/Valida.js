@@ -1,3 +1,5 @@
+const querystring = require('querystring');
+
 module.exports = {
     campoVazio: async (req, res, next) => {
         const dados = await req.body;
@@ -8,8 +10,10 @@ module.exports = {
                 camposVazios.push(chave);
         }
 
-        if (camposVazios.length)
-            return res.status(400).json({ erro: `Campo(s) '${camposVazios.join(', ')}' vazio(s).` });
+        if (camposVazios.length) {
+            const data = { 'erro': `Campo(s) '${camposVazios.join(', ')}' vazio(s).` };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
 
         next();
     },
@@ -17,10 +21,12 @@ module.exports = {
     checaAceite: async (req, res, next) => {
         const dados = await req.body;
 
-        if (!dados.terms)
-            return res.status(400).json({ erro: `Termos de uso e política de privacidade não aceitos.` });
+        if (!dados.terms) {
+            const data = { 'erro': `Termos de uso e política de privacidade não aceitos.` };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
         
-            next();
+        next();
     },
 
     campoRepetido: async (req, res, next) => {
@@ -31,16 +37,19 @@ module.exports = {
             const doadores = await Doador.findOne({ where: { email } });
 
             if (doadores) {
-                return res.status(400).json({ erro: `Email já cadastrado, cadastre outro email.` });
+                const data = { 'erro': `Email já cadastrado, cadastre outro email.` };
+                return res.redirect('/erro?' + querystring.stringify(data));
             }
         } else {
             const parceirosCNPJ = await Parceiro.findOne({ where: { cnpj } });
             const parceirosEmail = await Parceiro.findOne({ where: { email } });
 
             if (parceirosCNPJ) {
-                return res.status(400).json({ erro: `CNPJ já cadastrado, cadastre outro CNPJ.` });
+                const data = { 'erro': `CNPJ já cadastrado, insira outro CNPJ.` };
+                return res.redirect('/erro?' + querystring.stringify(data));
             } else if (parceirosEmail) {
-                return res.status(400).json({ erro: `Email já cadastrado, cadastre outro email.` });
+                const data = { 'erro': `Email já cadastrado, insira outro email.` };
+                return res.redirect('/erro?' + querystring.stringify(data));
             }
         }
         next();
@@ -51,15 +60,19 @@ module.exports = {
         let senhaTeste = senha;
 
         if (email) {
-            if (!tipoEmail(email))
-                return res.status(400).json({ erro: "Email invalido" });
+            if (!tipoEmail(email)) {
+                const data = { 'erro': "Email invalido" };
+                return res.redirect('/erro?' + querystring.stringify(data));
+            }
         } 
 
         if (novaSenha)
             senhaTeste = novaSenha;
         
-        if (!tipoSenha(senhaTeste))
-            return res.status(400).json({ erro: "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e 1 símbolo especial ($, *, &, @, #)" });
+        if (!tipoSenha(senhaTeste)) {
+            const data = { 'erro': "Sua senha deve conter: Tamanho mínino de 8 caracteres e no mínimo 1 Letra maiúscula, 1 número e 1 símbolo especial ($, *, &, @, #)" };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
         next();
     },
 
@@ -67,8 +80,10 @@ module.exports = {
         const { senha, senha2 } = await req.body;
         if (senha === senha2)
             next();
-        else
-            return res.status(400).json({ erro: "Senhas diferentes inseridas." });
+        else {
+            const data = { 'erro': "Senhas diferentes inseridas." };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
     },
 
 }

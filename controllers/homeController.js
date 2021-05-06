@@ -19,7 +19,8 @@ const homeController = {
                     });
                 });
         } catch (err) {
-            res.json({ erro: err });
+            const data = { 'erro': err };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 

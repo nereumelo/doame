@@ -4,7 +4,8 @@ module.exports =  {
         if (req.session.usuarioLogado != null) {
             next();
         } else {
-            res.redirect('/erro');
+            const data = { 'erro': 'É preciso entrar para acessar esta página.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 
@@ -12,7 +13,8 @@ module.exports =  {
         if (req.session.usuarioLogado.cnpj == null) {
             next();
         } else {
-            res.redirect('/erro');
+            const data = { 'erro': 'Apenas doadores podem acessar esta página.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 
@@ -20,7 +22,8 @@ module.exports =  {
         if (req.session.usuarioLogado.cnpj != null) {
             next();
         } else {
-            res.redirect('/');
+            const data = { 'erro': 'Apenas parceiros podem acessar esta página.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 
