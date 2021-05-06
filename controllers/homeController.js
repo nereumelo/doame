@@ -33,18 +33,12 @@ const homeController = {
         let usuario = doador ? doador : parceiro;
 
         if (!usuario) {
-            return res.status(400).json({
-                message: "Usuário não encontrado no banco de dados",
-                usuario: null,
-            });
+            return res.redirect('/erro');
         } else if (bcrypt.compareSync(senha + pepper, usuario.senha)) {
             req.session.usuarioLogado = usuario;
             return res.redirect("/");
         } else {
-            return res.status(400).json({
-                message: "Credenciais incorretas",
-                usuario: null,
-            });
+            return res.redirect('/erro');
         }
     },
 
@@ -79,14 +73,14 @@ const homeController = {
             res.render("perfil", { usuario: req.session.usuarioLogado });
         }
         else 
-            res.redirect("/");
+            res.redirect("/erro");
     },
 
     viewEditPerfil: async (req, res) => {
         if (req.session.usuarioLogado)
             res.render("editPerfil", { usuario: req.session.usuarioLogado });
         else 
-            res.redirect("/");
+            res.redirect("/erro");
     },
 
     editPerfil: async (req, res) => {
@@ -141,6 +135,11 @@ const homeController = {
         req.session.usuarioLogado = null;
 
         return res.redirect('/');
+    },
+
+    erro: async (req, res) => {
+
+        res.render('erro', { usuario: req.session.usuarioLogado })
     }
 };
 

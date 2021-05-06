@@ -4,7 +4,7 @@ module.exports =  {
         if (req.session.usuarioLogado != null) {
             next();
         } else {
-            res.redirect('/');
+            res.redirect('/erro');
         }
     },
 
@@ -12,7 +12,7 @@ module.exports =  {
         if (req.session.usuarioLogado.cnpj == null) {
             next();
         } else {
-            res.redirect('/');
+            res.redirect('/erro');
         }
     },
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include partials/head %>
+
+    <head>
+
+        <link rel='stylesheet' href='/stylesheets/erro.css'>
+        <title>DOAME</title>
+    </head>
+
+    <body>
+        <%- include partials/header %>
+            <main>
+               <div class="mensagem">
+                    <h2>Aparentemente você não tem autorização para acessar essa página.</h2>
+                    <h2>Que tal tentar novamente?</h2>
+               </div>
+               <div class="imagem" style="background-image: url('/images/error-page.jpg');">
+               </div>
+            </main>
+            <!-- <%- include partials/footer %> -->
+                    <script src="/javascripts/main.js"></script>
+    </body>
+
+</html>
