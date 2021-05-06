@@ -57,6 +57,14 @@ module.exports = {
         next();
     },
 
+    confirmaSenha: async (req, res, next) => {
+        const { senha, senha2 } = await req.body;
+        if (senha === senha2)
+            next();
+        else
+            return res.status(400).json({ erro: "Senhas diferentes inseridas." });
+    },
+
 }
 
 function tipoEmail(email) {

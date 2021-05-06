@@ -1,6 +1,3 @@
-//header fixo com scroll
-var urlRoot = location.protocol + '//' + location.host;
-
 window.addEventListener('scroll', function() {
     let header = document.querySelector('header');
     let windowPosition = window.scrollY > 0
@@ -13,18 +10,19 @@ const btnLogin = () => {
     document.querySelector('.modal').style.display = "flex";
 }
 
+
 const btnClose = () => {
     document.querySelector('.modal').style.display = "none";
-
+    
 }
 
 const nomeUsuario = document.querySelector(".login");
 const menu = document.querySelector(".menu");
 nomeUsuario.addEventListener("click", () => {
     if(menu.style.display == 'none')
-        menu.style.display = "flex";
+    menu.style.display = "flex";
     else
-        menu.style.display = "none";
+    menu.style.display = "none";
 });
 
 //animate-scroll
@@ -43,16 +41,18 @@ function animeScroll() {
     });
 }
 
-
 window.addEventListener('scroll', function() {
     animeScroll();
 })
 
-const callConfirmModal = () => {
-    document.querySelector('.confirmModal').style.display = "block";
+const modal = document.getElementById('modal_container');
+const close = document.getElementById('close');
+
+function callModal() {
+    modal.classList.add('show');
 }
 
-const closeConfirmModal = () => {
-    document.querySelector('.confirmModal').style.display = "none";
-
-}
+close.addEventListener('click', () => {
+    modal.classList.remove('show');
+    location.reload();
+})
