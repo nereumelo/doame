@@ -44,29 +44,37 @@ window.addEventListener('scroll', function() {
     animeScroll();
 })
 
-var urlParams;
-(window.onpopstate = function () {
-    var match,
+
+try {
+    var urlParams;
+    (window.onpopstate = function () {
+        var match,
         pl     = /\+/g,  // Regex for replacing addition symbol with a space
         search = /([^&=]+)=?([^&]*)/g,
         decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
         query  = window.location.search.substring(1);
-
-    urlParams = {};
-    while (match = search.exec(query))
-       urlParams[decode(match[1])] = decode(match[2]);
-})();
-
-document.querySelector('.message').innerText = urlParams['erro'];
+        
+        urlParams = {};
+        while (match = search.exec(query))
+        urlParams[decode(match[1])] = decode(match[2]);
+    })();
+    
+    document.querySelector('.message').innerText = urlParams['erro'];
+    
+} catch {}
 
 const modal = document.getElementById('modal_container');
-const _close = document.getElementById('close');
+const close = document.getElementById('close');
 
-function callModal() {
-    modal.classList.add('show');
-}
+try {
+    function callModal() {
+        modal.classList.add('show');
+    }
+} catch {}
 
-_close.addEventListener('click', () => {
-    modal.classList.remove('show');
-    location.reload();
-})
+try {
+    close.addEventListener('click', () => {
+        modal.classList.remove('show');
+        location.reload();
+    })
+} catch {}

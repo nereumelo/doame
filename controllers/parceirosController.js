@@ -106,7 +106,8 @@ const parceirosController = {
                 return res.redirect('/');
             });
         } catch(err) {
-            return res.status(400).redirect('/parceiros/cadastro');
+            const data = { 'erro': 'CEP não encontrado.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 
@@ -139,7 +140,6 @@ const parceirosController = {
 
     // Controller (endereco)
     createAddress: async (req, res) => {
-        console.log('criando endereco...');
         const query = req.query;
         const { parceiros_id } = req.params;
         const parceiro = await buscaParceiro(parceiros_id);

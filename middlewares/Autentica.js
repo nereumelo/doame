@@ -1,3 +1,4 @@
+const querystring = require('querystring');
 
 module.exports =  {
     estaLogado: (req, res, next) => {
