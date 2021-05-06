@@ -31,24 +31,28 @@ main {
 }
 
 .container h2 {
-    margin-top: 15px;
     text-align: center;
+    margin-top: 10px;
 }
 
-container p {
-    margin-left: 20px;
-}
 
 .info {
-    height: 150px;
+    min-height: 100px;
     width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: white;
     box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     margin-bottom: 20px;
+}
+
+.info > div {
+    margin: 15px 0 20px;
+    width: 90%;
+    line-height: 28px;
 }
 
 .transacao {
@@ -62,7 +66,7 @@ container p {
     border-radius: 8px;
 }
 
-.user {
+.donates {
     display: flex;
     justify-content: center;
 }

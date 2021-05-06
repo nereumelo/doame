@@ -1,4 +1,4 @@
-const { Doacao } = require("../models");
+const { Doacao, Parceiro, Doador } = require("../models");
 
 const doacoesController = {
     index: async (req, res) => {
@@ -13,7 +13,13 @@ const doacoesController = {
         const { doadores_id } = req.params;
 
         const doacoesDoador = await Doacao.findAll({
-            where: { doadores_id }
+            where: { doadores_id },
+            include: [{
+                model: Parceiro,
+                as: "parceiro",
+                attributes: ['nome']
+            }],
+            order: [['updatedAt', 'DESC']]
         });
 
         return res.json(doacoesDoador);
@@ -23,7 +29,13 @@ const doacoesController = {
         const { parceiros_id } = req.params;
 
         const doacoesParceiro = await Doacao.findAll({
-            where: { parceiros_id }
+            where: { parceiros_id },
+            include: [{
+                model: Doador,
+                as: "doador",
+                attributes: ['nome']
+            }],
+            order: [['updatedAt', 'DESC']]
         });
 
         return res.json(doacoesParceiro);

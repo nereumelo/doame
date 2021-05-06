@@ -18,8 +18,8 @@
                 <button onclick="callModal()" class="botao2">Excluir conta</button>
             </div>
             <div class="info">
-                <h2>Perfil</h2>
-                <div class="user">
+                <h2>Dados do perfil</h2>
+                <div>
                     <% for( let i=1; i < Object.keys(usuario).length-3; i++ ) { %>
                         <p><strong><%= Object.keys(usuario)[i] %>: </strong><%= Object.values(usuario)[i] %></p>
                     <% } %>
@@ -31,13 +31,18 @@
                 <% } else { %>
                     <h2>Doações realizadas</h2>
                 <% } %>
-                <div class="user">
+                <div class="donates">
                     <table>
                         <tr>
                             <th class="sm-col">&nbsp</th>
                             <th class="sm-col">Id</th>
                             <th>Valor</th>
                             <th>Forma de pagamento</th>
+                            <% if (usuario.cnpj) { %>
+                                <th>Doador</th>
+                            <% } else { %>
+                                <th>Parceiro</th>
+                            <% } %>
                         </tr>
                     <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
                         <tr>
@@ -45,6 +50,11 @@
                             <td class="sm-col"><%= listaDoacoes[i].id %></td>
                             <td>R$ <%= listaDoacoes[i].valor %></td>
                             <td><%= listaDoacoes[i].forma_pagamento %></td>
+                            <% if (usuario.cnpj) { %>
+                                <td><%= listaDoacoes[i].doador.nome %></td>
+                            <% } else { %>
+                                <td><%= listaDoacoes[i].parceiro.nome %></td>
+                            <% } %>
                         </tr>
                     <% } %>
                     </table>
