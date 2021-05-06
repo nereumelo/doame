@@ -20,6 +20,10 @@ body {
     padding-bottom: 50px;
 }
 
+h2 {
+    margin-top: 30px;
+}
+
 .forms {
     height: auto;
     width: 400px;
@@ -75,4 +79,3 @@ button:hover {
     color: white;
     box-shadow: inset 350px 0 0 0 var(--vermelho-claro);
 }
-

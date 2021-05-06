@@ -77,12 +77,12 @@ header .nav ul :hover {
 }
 
 .login {
-    width: 200px;
+    width: 270px;
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .form-login {
