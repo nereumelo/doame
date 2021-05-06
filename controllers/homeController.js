@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { Doador, Parceiro } = require("../models");
+const querystring = require('querystring');
 const bcrypt = require("bcryptjs");
 const fetch = require("node-fetch");
 const pepper = process.env.PWD_PEPPER;
@@ -33,12 +34,14 @@ const homeController = {
         let usuario = doador ? doador : parceiro;
 
         if (!usuario) {
-            return res.redirect('/erro');
+            const data = { 'erro': 'Usuário não cadastrado no banco de dados.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         } else if (bcrypt.compareSync(senha + pepper, usuario.senha)) {
             req.session.usuarioLogado = usuario;
             return res.redirect("/");
         } else {
-            return res.redirect('/erro');
+            const data = { 'erro': 'Credenciais incorretas.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
         }
     },
 
@@ -72,15 +75,20 @@ const homeController = {
 
             res.render("perfil", { usuario: req.session.usuarioLogado });
         }
-        else 
-            res.redirect("/erro");
+        else {
+            const data = { 'erro': 'É preciso entrar para ter acesso ao perfil.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
+        
     },
 
     viewEditPerfil: async (req, res) => {
         if (req.session.usuarioLogado)
             res.render("editPerfil", { usuario: req.session.usuarioLogado });
-        else 
-            res.redirect("/erro");
+        else {
+            const data = { 'erro': 'É preciso entrar para ter acesso ao perfil.' };
+            return res.redirect('/erro?' + querystring.stringify(data));
+        }
     },
 
     editPerfil: async (req, res) => {

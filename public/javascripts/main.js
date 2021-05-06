@@ -31,7 +31,6 @@ const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
 function animeScroll() {
-    console.log('teste')
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
     target.forEach(function(element) {
         if ((windowTop) > element.offsetTop) {
@@ -45,14 +44,29 @@ window.addEventListener('scroll', function() {
     animeScroll();
 })
 
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+document.querySelector('.message').innerText = urlParams['erro'];
+
 const modal = document.getElementById('modal_container');
-const close = document.getElementById('close');
+const _close = document.getElementById('close');
 
 function callModal() {
     modal.classList.add('show');
 }
 
-close.addEventListener('click', () => {
+_close.addEventListener('click', () => {
     modal.classList.remove('show');
     location.reload();
 })
