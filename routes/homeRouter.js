@@ -10,5 +10,7 @@ router.get('/obrigado', homeController.thanks);
 router.get('/perfil', homeController.viewPerfil);
 router.get('/perfil/edit', homeController.viewEditPerfil);
 router.post('/perfil/edit', homeController.editPerfil);
+router.get('/perfil/delete', homeController.DeletePerfil);
+router.get('/erro', homeController.erro);
 
 module.exports = router;

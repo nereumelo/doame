@@ -20,6 +20,10 @@ section.projects .container {
     padding: 60px;
 }
 
+.video {
+    width: 100%;
+}
+
 section.projects article {
     width: 250px;
     max-width: 100%;
@@ -135,14 +139,6 @@ section .porque-doar p {
     opacity: 0.7;
 }
 
-.body-site p {
-    font-family: 'Poppins';
-    text-align: end;
-    color: white;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 60px;
-}
 
 
 /* modal login */

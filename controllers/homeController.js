@@ -33,18 +33,12 @@ const homeController = {
         let usuario = doador ? doador : parceiro;
 
         if (!usuario) {
-            return res.status(400).json({
-                message: "Usuário não encontrado no banco de dados",
-                usuario: null,
-            });
+            return res.redirect('/erro');
         } else if (bcrypt.compareSync(senha + pepper, usuario.senha)) {
             req.session.usuarioLogado = usuario;
             return res.redirect("/");
         } else {
-            return res.status(400).json({
-                message: "Credenciais incorretas",
-                usuario: null,
-            });
+            return res.redirect('/erro');
         }
     },
 
@@ -79,22 +73,19 @@ const homeController = {
             res.render("perfil", { usuario: req.session.usuarioLogado });
         }
         else 
-            res.redirect("/");
+            res.redirect("/erro");
     },
 
     viewEditPerfil: async (req, res) => {
         if (req.session.usuarioLogado)
             res.render("editPerfil", { usuario: req.session.usuarioLogado });
         else 
-            res.redirect("/");
+            res.redirect("/erro");
     },
 
     editPerfil: async (req, res) => {
         const usuario = req.session.usuarioLogado;
         const perfil = req.body;
-
-        console.log(usuario);
-        console.log(JSON.stringify(perfil));
 
         if (perfil.nome) 
             usuario.nome = perfil.nome;
@@ -113,24 +104,43 @@ const homeController = {
             usuario.senha = novaSenhaCrypt;
         }
 
-        // if(usuario.cnpj) {
-        //     const usuario = await Parceiro.findByPk(usuario.id);
-        // } else {
-        //     const usuario = await Doador.findByPk(usuario.id);
-        // }
+        if(usuario.cnpj) {
+            await Parceiro.update(usuario, {
+                where: { id: usuario.id }
+            });
+        } else {
+            await Doador.update(usuario, {
+                where: { id: usuario.id }
+            });
+        }
 
-        // if(perfil.senha != null && perfil.novaSenha != null) {
-        //     const validaSenha = (bcrypt.compareSync(perfil.senha + pepper, usuario.senha));
-        //     if (validaSenha) {
-        //         const novaSenhaCrypt = bcrypt.hashSync(perfil.novaSenha + pepper, saltRounds);
-
-        //         await Parceiro.update(, { where: { id } });
-        //     }
-        // }
-
-        return res.json({ usuario });
-        return res.send(validaSenha);
+        return res.redirect('/perfil/edit');
     },
+
+    DeletePerfil: async (req, res) => {
+        const usuario = req.session.usuarioLogado;
+        
+        if(usuario.cnpj) {
+            await Parceiro.destroy({
+                where: { id: usuario.id },
+                cascade: true
+            });
+        } else {
+            await Doador.destroy({
+                where: { id: usuario.id },
+                cascade: true
+            });
+        }
+
+        req.session.usuarioLogado = null;
+
+        return res.redirect('/');
+    },
+
+    erro: async (req, res) => {
+
+        res.render('erro', { usuario: req.session.usuarioLogado })
+    }
 };
 
 module.exports = homeController;
