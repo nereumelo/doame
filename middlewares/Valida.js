@@ -3,9 +3,6 @@ module.exports = {
         const dados = await req.body;
         const camposVazios = [];
 
-        if (!dados.terms)
-            return res.status(400).json({ erro: `Termos de uso e política de privacidade não aceitos.` });
-
         for (const [chave, valor] of Object.entries(dados)) {
             if (!valor)
                 camposVazios.push(chave);
@@ -15,6 +12,15 @@ module.exports = {
             return res.status(400).json({ erro: `Campo(s) '${camposVazios.join(', ')}' vazio(s).` });
 
         next();
+    },
+
+    checaAceite: async (req, res, next) => {
+        const dados = await req.body;
+
+        if (!dados.terms)
+            return res.status(400).json({ erro: `Termos de uso e política de privacidade não aceitos.` });
+        
+            next();
     },
 
     campoRepetido: async (req, res, next) => {

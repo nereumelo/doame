@@ -32,8 +32,22 @@
                     <h2>Doações realizadas</h2>
                 <% } %>
                 <div class="user">
+                    <table>
+                        <tr>
+                            <th class="sm-col">&nbsp</th>
+                            <th class="sm-col">Id</th>
+                            <th>Valor</th>
+                            <th>Forma de pagamento</th>
+                        </tr>
                     <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
-                        <p><strong><%= i+1 %>- Valor: </strong>R$ <%= listaDoacoes[i].valor %> <strong>Forma de pagamento:</strong><%= listaDoacoes[i].forma_pagamento %></p><% } %>
+                        <tr>
+                            <td class="sm-col"><%= i+1 %></td>
+                            <td class="sm-col"><%= listaDoacoes[i].id %></td>
+                            <td>R$ <%= listaDoacoes[i].valor %></td>
+                            <td><%= listaDoacoes[i].forma_pagamento %></td>
+                        </tr>
+                    <% } %>
+                    </table>
                 </div>
             </div>
         </section>

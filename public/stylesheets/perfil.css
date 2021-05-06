@@ -31,8 +31,8 @@ main {
 }
 
 .container h2 {
+    margin-top: 15px;
     text-align: center;
-    padding-bottom: 10px;
 }
 
 container p {
@@ -63,7 +63,8 @@ container p {
 }
 
 .user {
-    padding-left: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .botoes {
@@ -98,6 +99,32 @@ button {
     color: white;
     box-shadow: inset 350px 0 0 0 var(--vermelho-sangue);
 }
+
+/* Table */
+
+table {
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+  padding: 3px 20px;
+  text-align: left;
+}
+
+td {
+    border: 2px solid #666;
+
+}
+
+.sm-col {
+    width: 20px;
+}
+
+
+
 
 /* Modal */
 
