@@ -81,10 +81,10 @@ const parceirosController = {
         let _imagem;
 
         if (imagem) {
-            _imagem = imagem;
+            _imagem = "/images/parceiros/" + imagem;
         }
         else {
-            _imagem = "/images/default.png";
+            _imagem = "/images/parceiros/default.png";
         }
 
         const novoParceiro = await Parceiro.create({

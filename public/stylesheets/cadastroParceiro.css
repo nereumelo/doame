@@ -59,6 +59,10 @@ main #header {
     outline: none;
 }
 
+#imagem {
+    padding-top: 10px;
+}
+
 .agree-with {
     margin-top: 20px;
     width: 415px;
@@ -111,7 +115,7 @@ button:hover {
     }
 
     form {
-        height: 600px;
+        min-height: 600px;
         margin-left: 10px;
     }
 }
@@ -130,7 +134,7 @@ button:hover {
         font-size: 1.3rem;
     }
     form {
-        height: 600px;
+        min-height: 600px;
         margin-left: 10px;
     }
 }

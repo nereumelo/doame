@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-@import url('/public/stylesheets/paleta.css');
+@import url('/stylesheets/paleta.css');
 * {
     margin: 0;
     padding: 0;
@@ -50,8 +50,13 @@ form input {
     border: none;
     border-radius: 8px;
     margin-top: 15px;
-    padding-left: 8px;
+    padding-left: 12px;
     outline: none;
+}
+
+#imagem {
+    padding-top: 10px;
+    color: #666;
 }
 
 .sign-up {

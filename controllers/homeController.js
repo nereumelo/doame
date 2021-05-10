@@ -105,7 +105,7 @@ const homeController = {
         if (perfil.cep) 
             usuario.cep = perfil.cep;
         if (perfil.imagem) 
-            usuario.imagem = perfil.imagem;
+            usuario.imagem = "/images/parceiros/" + perfil.imagem;
         if (perfil.email) 
             usuario.email = perfil.email;
         if (perfil.senha && bcrypt.compareSync(perfil.senha + pepper, usuario.senha)) {
