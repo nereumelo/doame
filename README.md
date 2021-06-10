@@ -15,7 +15,7 @@ Fundraising platform for partner institutions
   
 ## Demo
 
-Insert gif or link to demo
+![Video Demo](https://raw.githubusercontent.com/nvmelo/doame/main/demo/demo.mp4)
 
   
 ## Run Locally
