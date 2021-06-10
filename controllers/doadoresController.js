@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const { Doador } = require("../models");
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
@@ -20,7 +20,6 @@ const doadoresController = {
     create: async (req, res) => {
         const { nome, email, senha } = req.body;
         const senhaCrypt = bcrypt.hashSync(senha + pepper, saltRounds);
-
         const novoDoador = await Doador.create({
             nome,
             email,

@@ -34,7 +34,6 @@
                 <div class="donates">
                     <table>
                         <tr>
-                            <th class="sm-col">&nbsp</th>
                             <th class="sm-col">Id</th>
                             <th>Valor</th>
                             <th>Forma de pagamento</th>
@@ -46,7 +45,6 @@
                         </tr>
                     <% for( let i=0; i < Object.keys(listaDoacoes).length; i++ ) { %>
                         <tr>
-                            <td class="sm-col"><%= i+1 %></td>
                             <td class="sm-col"><%= listaDoacoes[i].id %></td>
                             <td>R$ <%= listaDoacoes[i].valor %></td>
                             <td><%= listaDoacoes[i].forma_pagamento %></td>

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         'Doador', {
         nome: DataTypes.STRING(150),
         email: DataTypes.STRING(100),
-        senha: DataTypes.STRING(45),
+        senha: DataTypes.STRING(100),
         createdAt: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),

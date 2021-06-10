@@ -8,8 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         bairro: DataTypes.STRING(100),
         logradouro: DataTypes.STRING(200),
         cep: DataTypes.STRING(20),
-        numero: DataTypes.STRING(10),
-        complemento: DataTypes.STRING(150)
     }, {
         tableName: "enderecos",
         timestamps: false

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         cep: DataTypes.STRING(8),
         imagem: DataTypes.STRING(500),
         email: DataTypes.STRING(100),
-        senha: DataTypes.STRING(45),
+        senha: DataTypes.STRING(100),
         createdAt: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),

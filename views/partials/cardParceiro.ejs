@@ -1,4 +1,5 @@
 <% let parceiro=listaParceiros[i]; %>
+<% if (parceiro) { %>
     <article onclick="location='/parceiros/<%= parceiro.id %>'" style='cursor: pointer;'>
         <div class="thumb" style="background-image: url('<%= parceiro.imagem %>')"></div>
         <span class="titulo-projeto">
@@ -11,3 +12,4 @@
             <img class="querodoar" src="/images/logo/querodoar.png" onclick="location='/parceiros/<%= parceiro.id %>/doar'">
         </div>
     </article>
+<% } %>
