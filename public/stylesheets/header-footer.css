@@ -106,6 +106,42 @@ header .btn-login:hover {
     transition: 0.5s;
 }
 
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background: #5cdddf00;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.search-box:hover>.search-txt {
+    width: 200px;
+    padding: 0 10px;
+}
+
+.search-box:hover>.search-btn {
+    background: #7CDCDF;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #7CDCDF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 .search-btn>i {
     font-size: 20px;
 }
@@ -121,6 +157,7 @@ header .btn-login:hover {
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
+    width: 0px;
 }
 
 header .btn-sair {
